@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f92666f55fa648d283214a74f0b489c2" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.BOLETA" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CARGO" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CLIENTE" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMPRA_PROVEEDOR" Width="1.5" PointX="10.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMUNA" Width="1.5" PointX="8.25" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COSTO_ENVIO" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DESPACHO" Width="1.5" PointX="10.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DETALLE_ORDEN" Width="1.5" PointX="12.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DIRECCION" Width="1.5" PointX="10.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EMPLEADO" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="7.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTADO_DESPACHO" Width="1.5" PointX="8.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTADO_RECEPCION" Width="1.5" PointX="10.5" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FACTURA" Width="1.5" PointX="9.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FAMILIA_PRODUCTO" Width="1.5" PointX="8.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MEDIO_PAGO" Width="1.5" PointX="7.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORDEN_COMPRA" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="10.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRODUCTO_PROVEEDOR" Width="1.5" PointX="12.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="8.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RECEPCION_PRODUCTO" Width="1.5" PointX="12.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.REGION" Width="1.5" PointX="6" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RESUMEN_PRODUCTOS" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RUBRO" Width="1.5" PointX="10.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPO_COMPRA" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPO_EMPRESA" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPO_PRODUCTO" Width="1.5" PointX="8.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.BOLETA_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.BOLETA_MEDIO_PAGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.BOLETA_ORDEN_COMPRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.EMPLEADO_CARGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CLIENTE_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DIRECCION_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.EMPRESA_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.COMPRA_PROVEEDOR_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PRODUCTO_PROV_COMPRA_PROV_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.COMUNA_REGION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DIRECCION_COMUNA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ORDEN_COMPRA_COSTO_ENVIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DESPACHO_DETALLE_ORDEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DESPACHO_EMPLEADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DESPACHO_ESTADO_DESPACHO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DETALLE_ORDEN_ORDEN_COMPRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DETALLE_ORDEN_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DIRECCION_EMPRESA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.EMPLEADO_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ORDEN_COMPRA_EMPLEADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.RECEPCION_PRODUCTO_EMPLEADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.EMPRESA_TIPO_EMPRESA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FACTURA_EMPRESA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.RECEPCION_PRO_EST_RECEPCION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FACTURA_MEDIO_PAGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FACTURA_ORDEN_COMPRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PRODUCTO_FAMILIA_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ORDEN_COMPRA_TIPO_COMPRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.RECEPCION_PROD_ORDEN_COMPRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PRODUCTO_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PRODUCTO_TIPO_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USUARIO_TIPO_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.RUBRO_PROVEEDOR" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
