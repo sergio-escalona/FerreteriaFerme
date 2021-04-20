@@ -19,7 +19,7 @@ namespace FerreteriaFerme.Datos
             this.USUARIO = new HashSet<USUARIO>();
         }
     
-        public string ID_TIPOUSU { get; set; }
+        public short ID_TIPOUSU { get; set; }
         public string NOMBRE { get; set; }
     
         public virtual ICollection<USUARIO> USUARIO { get; set; }

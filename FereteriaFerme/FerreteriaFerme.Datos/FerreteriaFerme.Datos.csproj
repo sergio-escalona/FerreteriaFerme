@@ -108,6 +108,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FerreteriaFermeModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FerreteriaFermeModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MEDIO_PAGO.cs">
       <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
     </Compile>
@@ -174,7 +179,7 @@
     <Content Include="FerreteriaFermeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FerreteriaFermeModel.edmx</DependentUpon>
-      <LastGenOutput>FerreteriaFermeModel.cs</LastGenOutput>
+      <LastGenOutput>FerreteriaFermeModel1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

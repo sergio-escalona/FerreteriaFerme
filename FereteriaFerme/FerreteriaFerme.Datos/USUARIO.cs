@@ -23,7 +23,7 @@ namespace FerreteriaFerme.Datos
         public short ID_USUARIO { get; set; }
         public string NOMBRE_USUARIO { get; set; }
         public string CONTRASENA { get; set; }
-        public string ID_TIPOUSU { get; set; }
+        public short ID_TIPOUSU { get; set; }
     
         public virtual ICollection<CLIENTE> CLIENTE { get; set; }
         public virtual ICollection<EMPLEADO> EMPLEADO { get; set; }

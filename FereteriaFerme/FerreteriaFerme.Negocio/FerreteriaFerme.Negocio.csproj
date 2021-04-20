@@ -48,7 +48,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boleta.cs" />
+    <Compile Include="Cargo.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Compra_Proveedor.cs" />
+    <Compile Include="Comuna.cs" />
+    <Compile Include="Costo_envio.cs" />
+    <Compile Include="Despacho.cs" />
+    <Compile Include="Detalle_Orden.cs" />
+    <Compile Include="Direccion.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Estado_Despacho.cs" />
+    <Compile Include="Estado_Recepcion.cs" />
+    <Compile Include="Factura.cs" />
+    <Compile Include="Familia_Producto.cs" />
+    <Compile Include="Medio_Pago.cs" />
+    <Compile Include="Orden_Compra.cs" />
+    <Compile Include="Producto.cs" />
+    <Compile Include="Producto_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs" />
+    <Compile Include="Recepcion_Producto.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="Resumen_Productos.cs" />
+    <Compile Include="Rubro.cs" />
+    <Compile Include="Tipo_Compra.cs" />
+    <Compile Include="Tipo_Empresa.cs" />
+    <Compile Include="Tipo_Producto.cs" />
+    <Compile Include="Tipo_Usuario.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FerreteriaFerme.Datos\FerreteriaFerme.Datos.csproj">
