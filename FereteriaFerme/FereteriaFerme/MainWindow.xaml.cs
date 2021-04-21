@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FerreteriaFerme.Negocio;
 
 namespace FereteriaFerme
 {
@@ -23,6 +24,14 @@ namespace FereteriaFerme
         public MainWindow()
         {
             InitializeComponent();
+            MostrarProducto();
+        }
+
+        private void MostrarProducto()
+        {
+            Producto pro = new Producto();
+            dtg_productos.ItemsSource = pro.ReadAll();
+            dtg_productos.Items.Refresh();
         }
     }
 }

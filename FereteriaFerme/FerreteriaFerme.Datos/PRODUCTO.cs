@@ -25,7 +25,7 @@ namespace FerreteriaFerme.Datos
         public short ID_FAMILIA { get; set; }
         public Nullable<System.DateTime> FECHA_VENCIMIENTO { get; set; }
         public short ID_TIPO { get; set; }
-        public string DESCRIPCIÓN { get; set; }
+        public string DESCRIPCION { get; set; }
         public int PRECIO_CLP { get; set; }
         public int PRECIO_USD { get; set; }
         public short STOCK { get; set; }

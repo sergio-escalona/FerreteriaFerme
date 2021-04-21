@@ -51,6 +51,7 @@
     <Compile Include="Boleta.cs" />
     <Compile Include="Cargo.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="CommonBC.cs" />
     <Compile Include="Compra_Proveedor.cs" />
     <Compile Include="Comuna.cs" />
     <Compile Include="Costo_envio.cs" />
