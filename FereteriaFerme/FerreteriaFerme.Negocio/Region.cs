@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    class Region
+    public class Region
     {
         //Campos
         private string _ID_REGION;

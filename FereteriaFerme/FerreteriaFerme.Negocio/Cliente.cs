@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    class Cliente
+    public class Cliente
     {
         //Campos
         private string _RUT_CLIENTE;

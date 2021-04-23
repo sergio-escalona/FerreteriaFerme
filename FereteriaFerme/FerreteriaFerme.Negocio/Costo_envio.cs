@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    class Costo_envio
+    public class Costo_envio
     {
         //Campo
         private short _ID_COSTOENVIO;

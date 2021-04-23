@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    class Rubro
+    public class Rubro
     {
         //Campos
         private short _ID_RUBRO;

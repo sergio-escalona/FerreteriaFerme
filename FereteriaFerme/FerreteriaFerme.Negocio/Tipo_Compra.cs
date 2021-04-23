@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    class Tipo_Compra
+    public class Tipo_Compra
     {
         //Campos
         private short _ID_TIPOCOM;

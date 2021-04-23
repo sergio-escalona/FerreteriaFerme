@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    class Orden_Compra
+    public class Orden_Compra
     {
         //Campos
         private decimal _ID_COMPRA;

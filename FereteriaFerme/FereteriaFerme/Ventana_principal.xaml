@@ -1,0 +1,14 @@
+﻿<Window x:Class="FerreteriaFerme.Ventana_principal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Ventana_principal" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btn_agregarProducto" Content="Agregar Producto" HorizontalAlignment="Left" Margin="150,197,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProducto_Click"/>
+        <Button x:Name="btn_listarProducto" Content="Listar Producto" HorizontalAlignment="Left" Margin="332,197,0,0" VerticalAlignment="Top" Width="117" Height="36" RenderTransformOrigin="-2.613,-2.007" Click="Btn_listarProducto_Click"/>
+
+    </Grid>
+</Window>

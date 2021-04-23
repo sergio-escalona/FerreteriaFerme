@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    class Empleado
+    public class Empleado
     {
         //Campos
         private string _RUT_EMPLEADO;
