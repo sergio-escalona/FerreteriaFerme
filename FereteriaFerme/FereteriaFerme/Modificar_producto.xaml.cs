@@ -93,6 +93,7 @@ namespace FerreteriaFerme
             dp_vencimiento.IsEnabled = true;
         }
 
+        DateTime? vencimiento;
         //Guardar cambios
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
@@ -103,13 +104,23 @@ namespace FerreteriaFerme
 
             if (pro.Read())
             {
+                if (rb_si.IsChecked == true)
+                {
+                    vencimiento = DateTime.Parse(dp_vencimiento.Text);
+                }
+
+                else
+                {
+                    vencimiento = null;
+                }
+
                 Producto prd = new Producto()
                 {
                     ID_PRODUCTO = id,
                     NOMBRE_PRODUCTO = txt_nombre.Text,
                     ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
                     ID_FAMILIA = (short)cb_familia.SelectedValue,
-                    FECHA_VENCIMIENTO = DateTime.Parse(dp_vencimiento.Text),
+                    FECHA_VENCIMIENTO = vencimiento,
                     ID_TIPO = (short)cb_tipo.SelectedValue,
                     DESCRIPCION = txt_descripcion.Text,
                     PRECIO_CLP = int.Parse(txt_clp.Text),

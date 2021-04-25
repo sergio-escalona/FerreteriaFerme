@@ -88,17 +88,29 @@ namespace FerreteriaFerme
         {
             dp_vencimiento.IsEnabled = true;
         }
-        
+
+        DateTime? vencimiento;
+
         //Guardar producto
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
+            if (rb_si.IsChecked == true)
+            {
+                vencimiento = DateTime.Parse(dp_vencimiento.Text);
+            }
+
+            else
+            {
+                vencimiento = null;
+            }
+
             Producto pro = new Producto()
             {
-                ID_PRODUCTO = Concatenar((short)cb_proveedor.SelectedValue, (short)cb_familia.SelectedValue, DateTime.Parse(dp_vencimiento.Text), (short)cb_tipo.SelectedValue),
+                ID_PRODUCTO = Concatenar((short)cb_proveedor.SelectedValue, (short)cb_familia.SelectedValue, vencimiento, (short)cb_tipo.SelectedValue),
                 NOMBRE_PRODUCTO = txt_nombre.Text,
                 ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
                 ID_FAMILIA = (short)cb_familia.SelectedValue,
-                FECHA_VENCIMIENTO = DateTime.Parse(dp_vencimiento.Text),
+                FECHA_VENCIMIENTO = vencimiento,
                 ID_TIPO = (short)cb_tipo.SelectedValue,
                 DESCRIPCION = txt_descripcion.Text,
                 PRECIO_CLP = int.Parse(txt_clp.Text),
@@ -121,12 +133,20 @@ namespace FerreteriaFerme
         }
 
         //Concatenador de id producto
-        static long Concatenar(short proveedor, short familia, DateTime vencimiento, short tipo)
+        static long Concatenar(short proveedor, short familia, DateTime? vencimiento, short tipo)
         {
             // Convierte los valores a string
             String s1 = proveedor.ToString();
             String s2 = familia.ToString();
-            String s3 = vencimiento.ToString("yyyyMMdd");
+            String s3;
+            if (vencimiento == null)
+            {
+                s3 = "00000000";
+            }
+            else
+            {
+                s3 = vencimiento?.ToString("yyyyMMdd");
+            }
             String s4 = tipo.ToString();
 
             // Concatena los strings
