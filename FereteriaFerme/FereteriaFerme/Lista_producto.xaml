@@ -7,7 +7,43 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="67,50,0,0" VerticalAlignment="Top" Width="670"/>
+        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="67,50,0,0" VerticalAlignment="Top" Width="670" AutoGenerateColumns="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_PRODUCTO}" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Path=NOMBRE_PRODUCTO}" />
+                <DataGridTextColumn Header="Proveedor" Binding="{Binding Path=NombreProveedor}" />
+                <DataGridTextColumn Header="Familia" Binding="{Binding Path=DescripcionFamilia}" />
+                <DataGridTextColumn Header="Vencimiento" Binding="{Binding Path=FECHA_VENCIMIENTO, StringFormat=dd/MM/yyyy}" />
+                <DataGridTextColumn Header="Tipo" Binding="{Binding Path=DescripcionTipo}" />
+                <DataGridTextColumn Header="Descripción" Binding="{Binding Path=DESCRIPCION}" />
+                <DataGridTextColumn Header="Precio CLP" Binding="{Binding Path=PRECIO_CLP}" />
+                <DataGridTextColumn Header="Precio USD" Binding="{Binding Path=PRECIO_USD}" />
+                <DataGridTextColumn Header="Stock" Binding="{Binding Path=STOCK}" />
+                <DataGridTemplateColumn Header="Foto" Width="50" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding FOTO}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click">Modificar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_eliminar" Click="Btn_eliminar_Click">Eliminar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
 
     </Grid>
 </Window>

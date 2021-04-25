@@ -76,6 +76,9 @@
     <Compile Include="Agregar_producto.xaml.cs">
       <DependentUpon>Agregar_producto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modificar_producto.xaml.cs">
+      <DependentUpon>Modificar_producto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventana_principal.xaml.cs">
       <DependentUpon>Ventana_principal.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
       <DependentUpon>Lista_producto.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Modificar_producto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventana_principal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

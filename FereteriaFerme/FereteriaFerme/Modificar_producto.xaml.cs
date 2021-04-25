@@ -18,17 +18,21 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Agregar_producto.xaml
+    /// Lógica de interacción para Modificar_producto.xaml
     /// </summary>
-    public partial class Agregar_producto : Window
+    public partial class Modificar_producto : Window
     {
-        public Agregar_producto()
+        public Modificar_producto(long id)
         {
             InitializeComponent();
+            this.id = id;
             Llenarproveedor();
             Llenarfamilia();
             Llenartipo();
+            Cargar_datos();
         }
+
+        long id;
 
         //Llenar combobox de proveedor
         private void Llenarproveedor()
@@ -88,58 +92,93 @@ namespace FerreteriaFerme
         {
             dp_vencimiento.IsEnabled = true;
         }
-        
-        //Guardar producto
+
+        //Guardar cambios
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
             Producto pro = new Producto()
             {
-                ID_PRODUCTO = Concatenar((short)cb_proveedor.SelectedValue, (short)cb_familia.SelectedValue, DateTime.Parse(dp_vencimiento.Text), (short)cb_tipo.SelectedValue),
-                NOMBRE_PRODUCTO = txt_nombre.Text,
-                ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
-                ID_FAMILIA = (short)cb_familia.SelectedValue,
-                FECHA_VENCIMIENTO = DateTime.Parse(dp_vencimiento.Text),
-                ID_TIPO = (short)cb_tipo.SelectedValue,
-                DESCRIPCION = txt_descripcion.Text,
-                PRECIO_CLP = int.Parse(txt_clp.Text),
-                PRECIO_USD = int.Parse(txt_usd.Text),
-                STOCK = short.Parse(txt_stock.Text),
-                FOTO = getJPGFromImageControl(img_producto.Source as BitmapImage)
+                ID_PRODUCTO = id
             };
 
-            if (pro.Create())
+            if (pro.Read())
             {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+                Producto prd = new Producto()
+                {
+                    ID_PRODUCTO = id,
+                    NOMBRE_PRODUCTO = txt_nombre.Text,
+                    ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
+                    ID_FAMILIA = (short)cb_familia.SelectedValue,
+                    FECHA_VENCIMIENTO = DateTime.Parse(dp_vencimiento.Text),
+                    ID_TIPO = (short)cb_tipo.SelectedValue,
+                    DESCRIPCION = txt_descripcion.Text,
+                    PRECIO_CLP = int.Parse(txt_clp.Text),
+                    PRECIO_USD = int.Parse(txt_usd.Text),
+                    STOCK = short.Parse(txt_stock.Text),
+                    FOTO = getJPGFromImageControl(img_producto.Source as BitmapImage)
+                };
 
-            else
-            {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                MessageBoxButton.OK, MessageBoxImage.Warning);
+                if (prd.Update())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
         }
 
-        //Concatenador de id producto
-        static long Concatenar(short proveedor, short familia, DateTime vencimiento, short tipo)
+        //Carga de datos
+        private void Cargar_datos()
         {
-            // Convierte los valores a string
-            String s1 = proveedor.ToString();
-            String s2 = familia.ToString();
-            String s3 = vencimiento.ToString("yyyyMMdd");
-            String s4 = tipo.ToString();
+            Producto pro = new Producto()
+            {
+                ID_PRODUCTO = id
+            };
 
-            // Concatena los strings
-            String s = s1 + s2 + s3 + s4;
-
-            // Convierte el string a int
-            long c = long.Parse(s);
-
-            // Retorna la id
-            return c;
+            if (pro.Read())
+            {
+                txt_nombre.Text = pro.NOMBRE_PRODUCTO;
+                cb_proveedor.SelectedValue = pro.ID_PROVEEDOR;
+                cb_familia.SelectedValue = pro.ID_FAMILIA;
+                if (pro.FECHA_VENCIMIENTO == null)
+                {
+                    rb_no.IsChecked = true;
+                }
+                else
+                {
+                    rb_si.IsChecked = true;
+                    dp_vencimiento.SelectedDate = pro.FECHA_VENCIMIENTO;
+                }
+                cb_tipo.SelectedValue = pro.ID_TIPO;
+                txt_descripcion.Text = pro.DESCRIPCION;
+                txt_clp.Text = pro.PRECIO_CLP.ToString();
+                txt_usd.Text = pro.PRECIO_USD.ToString();
+                txt_stock.Text = pro.STOCK.ToString();
+                img_producto.Source = ConvertByteArrayToBitMapImage(pro.FOTO);
+            }
         }
 
-        //Imagen a array
+        //Convertir array a imagen
+        public BitmapImage ConvertByteArrayToBitMapImage(byte[] imageByteArray)
+        {
+            BitmapImage img = new BitmapImage();
+            using (MemoryStream memStream = new MemoryStream(imageByteArray))
+            {
+                img.BeginInit();
+                img.CacheOption = BitmapCacheOption.OnLoad;
+                img.StreamSource = memStream;
+                img.EndInit();
+                img.Freeze();
+            }
+            return img;
+        }
+
+        //Convertir imagen a array
         public byte[] getJPGFromImageControl(BitmapImage imageC)
         {
             MemoryStream memStream = new MemoryStream();
