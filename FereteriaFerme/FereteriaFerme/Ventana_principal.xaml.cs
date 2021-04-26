@@ -38,5 +38,26 @@ namespace FerreteriaFerme
             lispro.Show();
             this.Hide();
         }
+
+        private void Btn_agregarProveedor_Click(object sender, RoutedEventArgs e)
+        {
+            Agregar_proveedor ap = new Agregar_proveedor();
+            ap.Show();
+            this.Hide();
+        }
+
+        private void Btn_listarProveedor_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_Proveedor lp = new Lista_Proveedor();
+            lp.Show();
+            this.Hide();
+        }
+
+        private void Btn_listar_orden_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_orden_compra loc = new Lista_orden_compra();
+            loc.Show();
+            this.Hide();
+        }
     }
 }

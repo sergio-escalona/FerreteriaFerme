@@ -7,8 +7,11 @@
         mc:Ignorable="d"
         Title="Ventana_principal" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btn_agregarProducto" Content="Agregar Producto" HorizontalAlignment="Left" Margin="150,197,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProducto_Click"/>
-        <Button x:Name="btn_listarProducto" Content="Listar Producto" HorizontalAlignment="Left" Margin="332,197,0,0" VerticalAlignment="Top" Width="117" Height="36" RenderTransformOrigin="-2.613,-2.007" Click="Btn_listarProducto_Click"/>
+        <Button x:Name="btn_agregarProducto" Content="Agregar Producto" HorizontalAlignment="Left" Margin="37,29,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProducto_Click"/>
+        <Button x:Name="btn_listarProducto" Content="Listar Producto" HorizontalAlignment="Left" Margin="196,29,0,0" VerticalAlignment="Top" Width="117" Height="36" RenderTransformOrigin="-2.613,-2.007" Click="Btn_listarProducto_Click"/>
+        <Button x:Name="btn_agregarProveedor" Content="Agregar Proveedor" HorizontalAlignment="Left" Margin="37,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProveedor_Click"/>
+        <Button x:Name="btn_listarProveedor" Content="Listar Proveedor" HorizontalAlignment="Left" Margin="196,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listarProveedor_Click"/>
+        <Button x:Name="btn_listar_orden" Content="Lista Orden Compras" HorizontalAlignment="Left" Margin="196,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listar_orden_Click"/>
 
     </Grid>
 </Window>

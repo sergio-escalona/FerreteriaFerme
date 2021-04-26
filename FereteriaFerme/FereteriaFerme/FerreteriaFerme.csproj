@@ -76,13 +76,40 @@
     <Compile Include="Agregar_producto.xaml.cs">
       <DependentUpon>Agregar_producto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Agregar_proveedor.xaml.cs">
+      <DependentUpon>Agregar_proveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_detalle_orden.xaml.cs">
+      <DependentUpon>Lista_detalle_orden.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_orden_compra.xaml.cs">
+      <DependentUpon>Lista_orden_compra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_Proveedor.xaml.cs">
+      <DependentUpon>Lista_Proveedor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modificar_producto.xaml.cs">
       <DependentUpon>Modificar_producto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_proveedor.xaml.cs">
+      <DependentUpon>Modificar_proveedor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventana_principal.xaml.cs">
       <DependentUpon>Ventana_principal.xaml</DependentUpon>
     </Compile>
     <Page Include="Agregar_producto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Agregar_proveedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_detalle_orden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_orden_compra.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,7 +125,15 @@
       <DependentUpon>Lista_producto.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Lista_Proveedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modificar_producto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_proveedor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

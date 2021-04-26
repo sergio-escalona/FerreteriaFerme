@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FerreteriaFerme.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,48 +11,45 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FerreteriaFerme;
-using FerreteriaFerme.Negocio;
 
-namespace FereteriaFerme
+namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para Lista_Proveedor.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Lista_Proveedor : Window
     {
-        public MainWindow()
+        public Lista_Proveedor()
         {
             InitializeComponent();
-            MostrarProducto();
+            MostrarProveedor();
         }
 
-        private void MostrarProducto()
+        private void MostrarProveedor()
         {
-            Producto pro = new Producto();
-            dtg_productos.ItemsSource = pro.ReadAll();
-            dtg_productos.Items.Refresh();
+            Proveedor pro = new Proveedor();
+            dtg_proveedor.ItemsSource = pro.ReadAll();
+            dtg_proveedor.Items.Refresh();
         }
 
         private void Btn_modificar_Click(object sender, RoutedEventArgs e)
         {
-            Producto fila = (Producto)dtg_productos.SelectedItem;
-            long id = fila.ID_PRODUCTO;
-            Modificar_producto mp = new Modificar_producto(id);
+            Proveedor fila = (Proveedor)dtg_proveedor.SelectedItem;
+            short id = fila.ID_PROVEEDOR;
+            Modificar_proveedor mp = new Modificar_proveedor(id);
             mp.Show();
             this.Hide();
         }
 
         private void Btn_eliminar_Click(object sender, RoutedEventArgs e)
         {
-            Producto fila = (Producto)dtg_productos.SelectedItem;
-            long id = fila.ID_PRODUCTO;
+            Proveedor fila = (Proveedor)dtg_proveedor.SelectedItem;
+            short id = fila.ID_PROVEEDOR;
 
-            Producto pro = new Producto()
+            Proveedor pro = new Proveedor()
             {
-                ID_PRODUCTO = id
+                ID_PROVEEDOR = id
             };
 
             MessageBoxResult eliminar = MessageBox.Show("¿Esta seguro de eliminar?", "Confirmar",
@@ -61,8 +59,9 @@ namespace FereteriaFerme
             {
                 if (pro.Delete())
                 {
-                    MostrarProducto();
-                    MessageBoxResult exito = MessageBox.Show("Producto eliminado", "Exito",MessageBoxButton.OK, MessageBoxImage.Information);
+                    MostrarProveedor();
+                    MessageBoxResult exito = MessageBox.Show("Proveedor eliminado", "Exito", 
+                        MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }

@@ -168,5 +168,12 @@ namespace FerreteriaFerme
             encoder.Save(memStream);
             return memStream.ToArray();
         }
+
+        private void Btn_volver_Click(object sender, RoutedEventArgs e)
+        {
+            Ventana_principal vp = new Ventana_principal();
+            vp.Show();
+            this.Hide();
+        }
     }
 }

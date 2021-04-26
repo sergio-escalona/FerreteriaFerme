@@ -30,6 +30,7 @@
         <RadioButton x:Name="rb_si" Content="Si" HorizontalAlignment="Left" Margin="320,115,0,0" VerticalAlignment="Top" GroupName="Vencimiento" Checked="Rb_si_Checked"/>
         <RadioButton x:Name="rb_no" Content="No" HorizontalAlignment="Left" Margin="362,115,0,0" VerticalAlignment="Top" GroupName="Vencimiento" IsChecked="True" Checked="Rb_no_Checked"/>
         <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="500,337,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click"/>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="38,375,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.313,0.572" Click="Btn_volver_Click"/>
 
     </Grid>
 </Window>

@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FereteriaFerme;
 
 namespace FerreteriaFerme
 {
@@ -197,6 +198,13 @@ namespace FerreteriaFerme
             encoder.Frames.Add(BitmapFrame.Create(imageC));
             encoder.Save(memStream);
             return memStream.ToArray();
+        }
+
+        private void Btn_volver_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow lp = new MainWindow();
+            lp.Show();
+            this.Hide();
         }
     }
 }
