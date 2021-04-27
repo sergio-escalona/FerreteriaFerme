@@ -59,5 +59,19 @@ namespace FerreteriaFerme
             loc.Show();
             this.Hide();
         }
+
+        private void Btn_agregar_empleado_Click(object sender, RoutedEventArgs e)
+        {
+            Agregar_empleado age = new Agregar_empleado();
+            age.Show();
+            this.Hide();
+        }
+
+        private void Btn_lista_empleado_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_empleado lim = new Lista_empleado();
+            lim.Show();
+            this.Hide();
+        }
     }
 }

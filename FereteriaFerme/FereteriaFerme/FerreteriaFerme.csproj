@@ -73,6 +73,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Agregar_empleado.xaml.cs">
+      <DependentUpon>Agregar_empleado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Agregar_producto.xaml.cs">
       <DependentUpon>Agregar_producto.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,9 @@
     </Compile>
     <Compile Include="Lista_detalle_orden.xaml.cs">
       <DependentUpon>Lista_detalle_orden.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_empleado.xaml.cs">
+      <DependentUpon>Lista_empleado.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lista_orden_compra.xaml.cs">
       <DependentUpon>Lista_orden_compra.xaml</DependentUpon>
@@ -97,6 +103,10 @@
     <Compile Include="Ventana_principal.xaml.cs">
       <DependentUpon>Ventana_principal.xaml</DependentUpon>
     </Compile>
+    <Page Include="Agregar_empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Agregar_producto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lista_detalle_orden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_empleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

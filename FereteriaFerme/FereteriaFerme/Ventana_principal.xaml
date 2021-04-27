@@ -12,6 +12,8 @@
         <Button x:Name="btn_agregarProveedor" Content="Agregar Proveedor" HorizontalAlignment="Left" Margin="37,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProveedor_Click"/>
         <Button x:Name="btn_listarProveedor" Content="Listar Proveedor" HorizontalAlignment="Left" Margin="196,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listarProveedor_Click"/>
         <Button x:Name="btn_listar_orden" Content="Lista Orden Compras" HorizontalAlignment="Left" Margin="196,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listar_orden_Click"/>
+        <Button x:Name="btn_agregar_empleado" Content="Agregar Empleado" HorizontalAlignment="Left" Margin="37,193,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_empleado_Click"/>
+        <Button x:Name="btn_lista_empleado" Content="Lista Empleados" HorizontalAlignment="Left" Margin="196,193,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_empleado_Click"/>
 
     </Grid>
 </Window>

@@ -15,6 +15,7 @@ namespace FerreteriaFerme.Negocio
         private short _ID_CARGO;
         private string _descripcionCargo;
         private short _ID_USUARIO;
+        private string _nombreUsuario;
 
         //Propiedades
         public string RUT_EMPLEADO { get; set; }
@@ -23,6 +24,7 @@ namespace FerreteriaFerme.Negocio
         public short ID_CARGO { get; set; }
         public string DescripcionCargo { get { return _descripcionCargo; } }
         public short ID_USUARIO { get; set; }
+        public string NombreUsuario { get { return _nombreUsuario; } }
 
         public Empleado()
         {
@@ -78,6 +80,10 @@ namespace FerreteriaFerme.Negocio
 
                 /* Se copian las propiedades de datos al negocio */
                 CommonBC.Syncronize(emp, this);
+
+                /* Carga descripción de los Tipos */
+                LeerNombreCargo();
+                LeerNombreUsuario();
 
                 return true;
             }
@@ -179,6 +185,8 @@ namespace FerreteriaFerme.Negocio
 
                 Empleado negocio = new Empleado();
                 CommonBC.Syncronize(dato, negocio);
+                negocio.LeerNombreCargo();
+                negocio.LeerNombreUsuario();
 
                 listadoEmpresa.Add(negocio);
             }
@@ -202,6 +210,74 @@ namespace FerreteriaFerme.Negocio
             catch (Exception ex)
             {
                 return new List<Empleado>();
+            }
+        }
+
+        //Buscar usuario
+        public List<Empleado> ReadUsuario(short idUsuario)
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.EMPLEADO> listaDatos =
+                    bbdd.EMPLEADO.Where(b => b.ID_USUARIO == idUsuario).ToList<Datos.EMPLEADO>();
+
+                List<Empleado> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Empleado>();
+            }
+        }
+
+        //Mostrar usuario
+        public void LeerNombreUsuario()
+        {
+            Usuario us = new Usuario() { ID_USUARIO = ID_USUARIO };
+
+            if (us.Read())
+            {
+                _nombreUsuario = us.NOMBRE_USUARIO;
+            }
+            else
+            {
+                _nombreUsuario = String.Empty;
+            }
+        }
+
+        //Buscar cargo
+        public List<Empleado> ReadCargo(short idCargo)
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.EMPLEADO> listaDatos =
+                    bbdd.EMPLEADO.Where(b => b.ID_CARGO == idCargo).ToList<Datos.EMPLEADO>();
+
+                List<Empleado> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Empleado>();
+            }
+        }
+
+        //Mostrar cargo
+        public void LeerNombreCargo()
+        {
+            Cargo ca = new Cargo() { ID_CARGO = ID_CARGO };
+
+            if (ca.Read())
+            {
+                _descripcionCargo = ca.NOMBRE_CARGO;
+            }
+            else
+            {
+                _descripcionCargo = String.Empty;
             }
         }
     }
