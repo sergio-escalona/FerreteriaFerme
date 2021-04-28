@@ -32,5 +32,63 @@ namespace FerreteriaFerme
             dtg_empleados.ItemsSource = emp.ReadAll();
             dtg_empleados.Items.Refresh();
         }
+
+        private void Btn_modificar_empleado_Click(object sender, RoutedEventArgs e)
+        {
+            Empleado fila = (Empleado)dtg_empleados.SelectedItem;
+            string rut = fila.RUT_EMPLEADO.Trim();
+            Modificar_empleado me = new Modificar_empleado(rut);
+            me.Show();
+            this.Hide();
+        }
+
+        private void Btn_modificar_usuario_Click(object sender, RoutedEventArgs e)
+        {
+            Empleado fila = (Empleado)dtg_empleados.SelectedItem;
+            short id = fila.ID_USUARIO;
+            Modificar_usuario mu = new Modificar_usuario(id);
+            mu.Show();
+            this.Hide();
+        }
+
+        private void Btn_eliminar_Click(object sender, RoutedEventArgs e)
+        {
+            Empleado fila = (Empleado)dtg_empleados.SelectedItem;
+            string rut = fila.RUT_EMPLEADO.Trim();
+            short id = fila.ID_USUARIO;
+
+            Empleado emp = new Empleado()
+            {
+                RUT_EMPLEADO = rut
+            };
+
+            Usuario usu = new Usuario()
+            {
+                ID_USUARIO = id
+            };
+
+            MessageBoxResult eliminar = MessageBox.Show("¿Esta seguro de eliminar?", "Confirmar",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (eliminar == MessageBoxResult.Yes)
+            {
+                if (emp.Delete())
+                {
+                    if (usu.Delete())
+                    {
+                        MostrarEmpleado();
+                        MessageBoxResult exito = MessageBox.Show("Empleado y usuario eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                                        
+                }
+            }
+        }
+
+        private void Btn_volver_Click(object sender, RoutedEventArgs e)
+        {
+            Ventana_principal vp = new Ventana_principal();
+            vp.Show();
+            this.Hide();
+        }
     }
 }

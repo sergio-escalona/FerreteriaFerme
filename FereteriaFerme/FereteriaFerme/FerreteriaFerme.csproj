@@ -94,11 +94,17 @@
     <Compile Include="Lista_Proveedor.xaml.cs">
       <DependentUpon>Lista_Proveedor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modificar_empleado.xaml.cs">
+      <DependentUpon>Modificar_empleado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modificar_producto.xaml.cs">
       <DependentUpon>Modificar_producto.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modificar_proveedor.xaml.cs">
       <DependentUpon>Modificar_proveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_usuario.xaml.cs">
+      <DependentUpon>Modificar_usuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventana_principal.xaml.cs">
       <DependentUpon>Ventana_principal.xaml</DependentUpon>
@@ -143,11 +149,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modificar_empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modificar_producto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modificar_proveedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_usuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

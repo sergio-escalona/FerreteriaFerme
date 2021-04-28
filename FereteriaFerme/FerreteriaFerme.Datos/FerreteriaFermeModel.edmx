@@ -4,283 +4,287 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2">
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BOLETA">
           <Key>
             <PropertyRef Name="ID_BOLETA" />
           </Key>
-          <Property Name="ID_BOLETA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="FECHA_BOLETA" Nullable="false" Type="date" />
-          <Property Name="NETO_BOLETA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="IVA_BOLETA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="TOTAL_BOLETA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="ID_COMPRA" Nullable="false" Precision="38" Scale="0" Type="number" />
-          <Property Name="RUT_CLIENTE" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="ID_MEDIO" Nullable="false" Precision="2" Scale="0" Type="number" />
+          <Property Name="ID_BOLETA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="FECHA_BOLETA" Type="date" Nullable="false" />
+          <Property Name="NETO_BOLETA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="IVA_BOLETA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TOTAL_BOLETA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ID_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RUT_CLIENTE" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="ID_MEDIO" Type="number" Precision="2" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="CARGO">
           <Key>
             <PropertyRef Name="ID_CARGO" />
           </Key>
-          <Property Name="ID_CARGO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE_CARGO" Nullable="false" MaxLength="20" Type="varchar2" />
+          <Property Name="ID_CARGO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_CARGO" Type="varchar2" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="CLIENTE">
           <Key>
             <PropertyRef Name="RUT_CLIENTE" />
           </Key>
-          <Property Name="RUT_CLIENTE" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="NOMBRES" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="APELLIDOS" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="ID_USUARIO" Nullable="false" Precision="5" Scale="0" Type="number" />
-          <Property Name="CORREO_CLIENTE" Nullable="false" MaxLength="50" Type="varchar2" />
+          <Property Name="RUT_CLIENTE" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="NOMBRES" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="APELLIDOS" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="number" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="CORREO_CLIENTE" Type="varchar2" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="COMPRA_PROVEEDOR">
           <Key>
             <PropertyRef Name="ID_COMPRA" />
           </Key>
-          <Property Name="ID_COMPRA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="FECHA_COMPRA" Nullable="false" Type="date" />
-          <Property Name="ID_PROVEEDOR" Nullable="false" Precision="3" Scale="0" Type="number" />
+          <Property Name="ID_COMPRA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="FECHA_COMPRA" Type="date" Nullable="false" />
+          <Property Name="ID_PROVEEDOR" Type="number" Precision="3" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="COMUNA">
           <Key>
             <PropertyRef Name="ID_COMUNA" />
           </Key>
-          <Property Name="ID_COMUNA" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="NOMBRE_COMUNA" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="ID_REGION" Nullable="false" MaxLength="4" Type="varchar2" />
+          <Property Name="ID_COMUNA" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_COMUNA" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ID_REGION" Type="varchar2" MaxLength="4" Nullable="false" />
         </EntityType>
         <EntityType Name="COSTO_ENVIO">
           <Key>
             <PropertyRef Name="ID_COSTOENVIO" />
           </Key>
-          <Property Name="ID_COSTOENVIO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE" Nullable="false" MaxLength="30" Type="varchar2" />
-          <Property Name="VALOR" Nullable="false" Precision="6" Scale="0" Type="number" />
+          <Property Name="ID_COSTOENVIO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="VALOR" Type="number" Precision="6" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="DESPACHO">
           <Key>
             <PropertyRef Name="ID_DESPACHO" />
           </Key>
-          <Property Name="ID_DESPACHO" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="ID_DETALLE" Nullable="false" Precision="38" Scale="0" Type="number" />
-          <Property Name="ID_ESTADO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="RUT_EMPLEADO" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="FECHA_ENVIO" Nullable="false" Type="date" />
+          <Property Name="ID_DESPACHO" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ID_DETALLE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="RUT_EMPLEADO" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="FECHA_ENVIO" Type="date" Nullable="false" />
           <Property Name="FECHA_RECEPCION" Type="date" />
         </EntityType>
         <EntityType Name="DETALLE_ORDEN">
           <Key>
             <PropertyRef Name="ID_DETALLE" />
           </Key>
-          <Property Name="ID_DETALLE" Nullable="false" Precision="38" Scale="0" Type="number" />
-          <Property Name="ID_PRODUCTO" Nullable="false" Precision="17" Scale="0" Type="number" />
-          <Property Name="CANTIDAD" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="ID_COMPRA" Nullable="false" Precision="38" Scale="0" Type="number" />
+          <Property Name="ID_DETALLE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="number" Precision="17" Scale="0" Nullable="false" />
+          <Property Name="CANTIDAD" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="ID_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'FERME_PRUEBAS.DIRECCION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="DIRECCION">
           <Key>
             <PropertyRef Name="ID_DIRECCION" />
+            
+            
           </Key>
-          <Property Name="ID_DIRECCION" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="DIRECCION" Nullable="false" MaxLength="100" Type="varchar2" />
-          <Property Name="ID_COMUNA" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="RUT_CLIENTE" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="ID_EMPRESA" Nullable="false" Precision="5" Scale="0" Type="number" />
+          <Property Name="ID_DIRECCION" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="ID_COMUNA" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="RUT_CLIENTE" Type="varchar2" MaxLength="10" />
+          <Property Name="ID_EMPRESA" Type="number" Precision="5" Scale="0" />
         </EntityType>
         <EntityType Name="EMPLEADO">
           <Key>
             <PropertyRef Name="RUT_EMPLEADO" />
           </Key>
-          <Property Name="RUT_EMPLEADO" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="NOMBRES_EMPLEADO" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="APELLIDOS_EMPLEADO" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="ID_CARGO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="ID_USUARIO" Nullable="false" Precision="5" Scale="0" Type="number" />
+          <Property Name="RUT_EMPLEADO" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="NOMBRES_EMPLEADO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="APELLIDOS_EMPLEADO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ID_CARGO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="ID_USUARIO" Type="number" Precision="5" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="EMPRESA">
           <Key>
             <PropertyRef Name="ID_EMPRESA" />
           </Key>
-          <Property Name="ID_EMPRESA" Nullable="false" Precision="5" Scale="0" Type="number" />
-          <Property Name="RAZON_SOCIAL" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="RUT_EMPRESA" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="ID_TIPO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="CORREO_EMPRESA" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="RUT_CLIENTE" MaxLength="10" Type="varchar2" />
+          <Property Name="ID_EMPRESA" Type="number" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="RAZON_SOCIAL" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="RUT_EMPRESA" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="ID_TIPO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="CORREO_EMPRESA" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="RUT_CLIENTE" Type="varchar2" MaxLength="10" />
         </EntityType>
         <EntityType Name="ESTADO_DESPACHO">
           <Key>
             <PropertyRef Name="ID_ESTADO" />
           </Key>
-          <Property Name="ID_ESTADO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE_ESTADO" Nullable="false" MaxLength="50" Type="varchar2" />
+          <Property Name="ID_ESTADO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_ESTADO" Type="varchar2" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ESTADO_RECEPCION">
           <Key>
             <PropertyRef Name="ID_ESTADO" />
           </Key>
-          <Property Name="ID_ESTADO" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="ESTADO" Nullable="false" MaxLength="20" Type="varchar2" />
+          <Property Name="ID_ESTADO" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="FACTURA">
           <Key>
             <PropertyRef Name="ID_FACTURA" />
           </Key>
-          <Property Name="ID_FACTURA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="FECHA_FACTURA" Nullable="false" Type="date" />
-          <Property Name="NETO_FACTURA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="IVA_FACTURA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="TOTAL_FACTURA" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="ID_COMPRA" Nullable="false" Precision="38" Scale="0" Type="number" />
-          <Property Name="ID_EMPRESA" Nullable="false" Precision="5" Scale="0" Type="number" />
-          <Property Name="ID_MEDIO" Nullable="false" Precision="2" Scale="0" Type="number" />
+          <Property Name="ID_FACTURA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="FECHA_FACTURA" Type="date" Nullable="false" />
+          <Property Name="NETO_FACTURA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="IVA_FACTURA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TOTAL_FACTURA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ID_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_EMPRESA" Type="number" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="ID_MEDIO" Type="number" Precision="2" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="FAMILIA_PRODUCTO">
           <Key>
             <PropertyRef Name="ID_FAMILIA" />
           </Key>
-          <Property Name="ID_FAMILIA" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="NOMBRE_FAMILIA" Nullable="false" MaxLength="20" Type="varchar2" />
+          <Property Name="ID_FAMILIA" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_FAMILIA" Type="varchar2" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="MEDIO_PAGO">
           <Key>
             <PropertyRef Name="ID_MEDIO" />
           </Key>
-          <Property Name="ID_MEDIO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE_MEDIO" Nullable="false" MaxLength="50" Type="varchar2" />
+          <Property Name="ID_MEDIO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_MEDIO" Type="varchar2" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ORDEN_COMPRA">
           <Key>
             <PropertyRef Name="ID_COMPRA" />
           </Key>
-          <Property Name="ID_COMPRA" Nullable="false" Precision="38" Scale="0" Type="number" />
-          <Property Name="FECHA_ORDEN" Nullable="false" Type="date" />
-          <Property Name="DESCUENTO" Precision="3" Scale="0" Type="number" />
-          <Property Name="RUT_EMPLEADO" MaxLength="10" Type="varchar2" />
-          <Property Name="ID_TIPOCOM" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="ID_COSTOENVIO" Nullable="false" Precision="2" Scale="0" Type="number" />
+          <Property Name="ID_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHA_ORDEN" Type="date" Nullable="false" />
+          <Property Name="DESCUENTO" Type="number" Precision="3" Scale="0" />
+          <Property Name="RUT_EMPLEADO" Type="varchar2" MaxLength="10" />
+          <Property Name="ID_TIPOCOM" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="ID_COSTOENVIO" Type="number" Precision="2" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="PRODUCTO">
           <Key>
             <PropertyRef Name="ID_PRODUCTO" />
           </Key>
-          <Property Name="ID_PRODUCTO" Nullable="false" Precision="17" Scale="0" Type="number" />
-          <Property Name="NOMBRE_PRODUCTO" Nullable="false" MaxLength="30" Type="varchar2" />
-          <Property Name="ID_PROVEEDOR" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="ID_FAMILIA" Nullable="false" Precision="3" Scale="0" Type="number" />
+          <Property Name="ID_PRODUCTO" Type="number" Precision="17" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_PRODUCTO" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="ID_PROVEEDOR" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="ID_FAMILIA" Type="number" Precision="3" Scale="0" Nullable="false" />
           <Property Name="FECHA_VENCIMIENTO" Type="date" />
-          <Property Name="ID_TIPO" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="DESCRIPCION" Nullable="false" MaxLength="100" Type="varchar2" />
-          <Property Name="PRECIO_CLP" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="PRECIO_USD" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="STOCK" Nullable="false" Precision="4" Scale="0" Type="number" />
-          <Property Name="FOTO" Nullable="false" Type="blob" />
+          <Property Name="ID_TIPO" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="2000" Nullable="false" />
+          <Property Name="PRECIO_CLP" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="PRECIO_USD" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="STOCK" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="FOTO" Type="blob" Nullable="false" />
         </EntityType>
         <EntityType Name="PRODUCTO_PROVEEDOR">
           <Key>
             <PropertyRef Name="ID_PRODUCTO" />
           </Key>
-          <Property Name="ID_PRODUCTO" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="NOMBRE_PRODUCTO" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="CANTIDAD" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="PRECIO_UNITARIO" Nullable="false" Precision="8" Scale="0" Type="number" />
-          <Property Name="ID_COMPRA" Nullable="false" Precision="10" Scale="0" Type="number" />
+          <Property Name="ID_PRODUCTO" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_PRODUCTO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="CANTIDAD" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="PRECIO_UNITARIO" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="ID_COMPRA" Type="number" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
             <PropertyRef Name="ID_PROVEEDOR" />
           </Key>
-          <Property Name="ID_PROVEEDOR" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="NOMBRE_PROVEEDOR" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="RUT_PROVEEDOR" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="CELULAR" Nullable="false" Precision="12" Scale="0" Type="number" />
-          <Property Name="CORREO" Nullable="false" MaxLength="50" Type="varchar2" />
+          <Property Name="ID_PROVEEDOR" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_PROVEEDOR" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="RUT_PROVEEDOR" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="CELULAR" Type="number" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="CORREO" Type="varchar2" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="RECEPCION_PRODUCTO">
           <Key>
             <PropertyRef Name="ID_RECEPCION" />
           </Key>
-          <Property Name="ID_RECEPCION" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="ID_ESTADO" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="RUT_EMPLEADO" Nullable="false" MaxLength="10" Type="varchar2" />
-          <Property Name="ID_COMPRA" Nullable="false" Precision="38" Scale="0" Type="number" />
+          <Property Name="ID_RECEPCION" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="RUT_EMPLEADO" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="ID_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="REGION">
           <Key>
             <PropertyRef Name="ID_REGION" />
           </Key>
-          <Property Name="ID_REGION" Nullable="false" MaxLength="4" Type="varchar2" />
-          <Property Name="NOMBRE_REGION" Nullable="false" MaxLength="100" Type="varchar2" />
+          <Property Name="ID_REGION" Type="varchar2" MaxLength="4" Nullable="false" />
+          <Property Name="NOMBRE_REGION" Type="varchar2" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="RESUMEN_PRODUCTOS">
           <Key>
             <PropertyRef Name="ID_RESPRO" />
           </Key>
-          <Property Name="ID_RESPRO" Nullable="false" Precision="10" Scale="0" Type="number" />
-          <Property Name="MES_ANNO" Nullable="false" Precision="6" Scale="0" Type="number" />
-          <Property Name="ID_PRODUCTO" Nullable="false" Precision="14" Scale="0" Type="number" />
-          <Property Name="NOMBRE_PRODUCTO" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="TIPO_PRODUCTO" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="FAMILIA_PRODUCTO" Nullable="false" MaxLength="50" Type="varchar2" />
-          <Property Name="CANTIDAD" Nullable="false" Precision="5" Scale="0" Type="number" />
+          <Property Name="ID_RESPRO" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="MES_ANNO" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="number" Precision="14" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_PRODUCTO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="TIPO_PRODUCTO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="FAMILIA_PRODUCTO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="CANTIDAD" Type="number" Precision="5" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="RUBRO">
           <Key>
             <PropertyRef Name="ID_RUBRO" />
           </Key>
-          <Property Name="ID_RUBRO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE_RUBRO" Nullable="false" MaxLength="20" Type="varchar2" />
+          <Property Name="ID_RUBRO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_RUBRO" Type="varchar2" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="RUBRO_PROVEEDOR">
           <Key>
             <PropertyRef Name="ID_PROVEEDOR" />
             <PropertyRef Name="ID_RUBRO" />
           </Key>
-          <Property Name="ID_PROVEEDOR" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="ID_RUBRO" Nullable="false" Precision="2" Scale="0" Type="number" />
+          <Property Name="ID_PROVEEDOR" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="ID_RUBRO" Type="number" Precision="2" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="TIPO_COMPRA">
           <Key>
             <PropertyRef Name="ID_TIPOCOM" />
           </Key>
-          <Property Name="ID_TIPOCOM" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE" Nullable="false" MaxLength="30" Type="varchar2" />
+          <Property Name="ID_TIPOCOM" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="TIPO_EMPRESA">
           <Key>
             <PropertyRef Name="ID_TIPO" />
           </Key>
-          <Property Name="ID_TIPO" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE_TIPO" Nullable="false" MaxLength="30" Type="varchar2" />
+          <Property Name="ID_TIPO" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_TIPO" Type="varchar2" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="TIPO_PRODUCTO">
           <Key>
             <PropertyRef Name="ID_TIPO" />
           </Key>
-          <Property Name="ID_TIPO" Nullable="false" Precision="3" Scale="0" Type="number" />
-          <Property Name="NOMBRE_TIPO" Nullable="false" MaxLength="20" Type="varchar2" />
+          <Property Name="ID_TIPO" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_TIPO" Type="varchar2" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="TIPO_USUARIO">
           <Key>
             <PropertyRef Name="ID_TIPOUSU" />
           </Key>
-          <Property Name="ID_TIPOUSU" Nullable="false" Precision="2" Scale="0" Type="number" />
-          <Property Name="NOMBRE" Nullable="false" MaxLength="30" Type="varchar2" />
+          <Property Name="ID_TIPOUSU" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="USUARIO">
           <Key>
             <PropertyRef Name="ID_USUARIO" />
           </Key>
-          <Property Name="ID_USUARIO" Nullable="false" Precision="5" Scale="0" Type="number" />
-          <Property Name="NOMBRE_USUARIO" Nullable="false" MaxLength="30" Type="varchar2" />
-          <Property Name="CONTRASENA" Nullable="false" MaxLength="64" Type="varchar2" />
-          <Property Name="ID_TIPOUSU" Nullable="false" Precision="38" Scale="0" Type="number" />
+          <Property Name="ID_USUARIO" Type="number" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_USUARIO" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="CONTRASENA" Type="varchar2" MaxLength="64" Nullable="false" />
+          <Property Name="ID_TIPOUSU" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
         <Association Name="BOLETA_CLIENTE_FK">
-          <End Type="Self.CLIENTE" Multiplicity="1" Role="CLIENTE" />
-          <End Type="Self.BOLETA" Multiplicity="*" Role="BOLETA" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CLIENTE">
               <PropertyRef Name="RUT_CLIENTE" />
@@ -291,8 +295,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="BOLETA_MEDIO_PAGO_FK">
-          <End Type="Self.MEDIO_PAGO" Multiplicity="1" Role="MEDIO_PAGO" />
-          <End Type="Self.BOLETA" Multiplicity="*" Role="BOLETA" />
+          <End Role="MEDIO_PAGO" Type="Self.MEDIO_PAGO" Multiplicity="1" />
+          <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MEDIO_PAGO">
               <PropertyRef Name="ID_MEDIO" />
@@ -303,8 +307,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="BOLETA_ORDEN_COMPRA_FK">
-          <End Type="Self.ORDEN_COMPRA" Multiplicity="1" Role="ORDEN_COMPRA" />
-          <End Type="Self.BOLETA" Multiplicity="*" Role="BOLETA" />
+          <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="1" />
+          <End Role="BOLETA" Type="Self.BOLETA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ORDEN_COMPRA">
               <PropertyRef Name="ID_COMPRA" />
@@ -315,8 +319,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="CLIENTE_USUARIO_FK">
-          <End Type="Self.USUARIO" Multiplicity="1" Role="USUARIO" />
-          <End Type="Self.CLIENTE" Multiplicity="*" Role="CLIENTE" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="USUARIO">
               <PropertyRef Name="ID_USUARIO" />
@@ -327,8 +331,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="COMPRA_PROVEEDOR_PROVEEDOR_FK">
-          <End Type="Self.PROVEEDOR" Multiplicity="1" Role="PROVEEDOR" />
-          <End Type="Self.COMPRA_PROVEEDOR" Multiplicity="*" Role="COMPRA_PROVEEDOR" />
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+          <End Role="COMPRA_PROVEEDOR" Type="Self.COMPRA_PROVEEDOR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PROVEEDOR">
               <PropertyRef Name="ID_PROVEEDOR" />
@@ -339,8 +343,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="COMUNA_REGION_FK">
-          <End Type="Self.REGION" Multiplicity="1" Role="REGION" />
-          <End Type="Self.COMUNA" Multiplicity="*" Role="COMUNA" />
+          <End Role="REGION" Type="Self.REGION" Multiplicity="1" />
+          <End Role="COMUNA" Type="Self.COMUNA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="REGION">
               <PropertyRef Name="ID_REGION" />
@@ -351,8 +355,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DESPACHO_DETALLE_ORDEN_FK">
-          <End Type="Self.DETALLE_ORDEN" Multiplicity="1" Role="DETALLE_ORDEN" />
-          <End Type="Self.DESPACHO" Multiplicity="*" Role="DESPACHO" />
+          <End Role="DETALLE_ORDEN" Type="Self.DETALLE_ORDEN" Multiplicity="1" />
+          <End Role="DESPACHO" Type="Self.DESPACHO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DETALLE_ORDEN">
               <PropertyRef Name="ID_DETALLE" />
@@ -363,8 +367,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DESPACHO_EMPLEADO_FK">
-          <End Type="Self.EMPLEADO" Multiplicity="1" Role="EMPLEADO" />
-          <End Type="Self.DESPACHO" Multiplicity="*" Role="DESPACHO" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="DESPACHO" Type="Self.DESPACHO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPLEADO">
               <PropertyRef Name="RUT_EMPLEADO" />
@@ -375,8 +379,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DESPACHO_ESTADO_DESPACHO_FK">
-          <End Type="Self.ESTADO_DESPACHO" Multiplicity="1" Role="ESTADO_DESPACHO" />
-          <End Type="Self.DESPACHO" Multiplicity="*" Role="DESPACHO" />
+          <End Role="ESTADO_DESPACHO" Type="Self.ESTADO_DESPACHO" Multiplicity="1" />
+          <End Role="DESPACHO" Type="Self.DESPACHO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ESTADO_DESPACHO">
               <PropertyRef Name="ID_ESTADO" />
@@ -387,8 +391,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DETALLE_ORDEN_ORDEN_COMPRA_FK">
-          <End Type="Self.ORDEN_COMPRA" Multiplicity="1" Role="ORDEN_COMPRA" />
-          <End Type="Self.DETALLE_ORDEN" Multiplicity="*" Role="DETALLE_ORDEN" />
+          <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="1" />
+          <End Role="DETALLE_ORDEN" Type="Self.DETALLE_ORDEN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ORDEN_COMPRA">
               <PropertyRef Name="ID_COMPRA" />
@@ -399,8 +403,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DETALLE_ORDEN_PRODUCTO_FK">
-          <End Type="Self.PRODUCTO" Multiplicity="1" Role="PRODUCTO" />
-          <End Type="Self.DETALLE_ORDEN" Multiplicity="*" Role="DETALLE_ORDEN" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+          <End Role="DETALLE_ORDEN" Type="Self.DETALLE_ORDEN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PRODUCTO">
               <PropertyRef Name="ID_PRODUCTO" />
@@ -411,8 +415,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DIRECCION_CLIENTE_FK">
-          <End Type="Self.CLIENTE" Multiplicity="1" Role="CLIENTE" />
-          <End Type="Self.DIRECCION" Multiplicity="*" Role="DIRECCION" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+          <End Role="DIRECCION" Type="Self.DIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CLIENTE">
               <PropertyRef Name="RUT_CLIENTE" />
@@ -423,8 +427,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DIRECCION_COMUNA_FK">
-          <End Type="Self.COMUNA" Multiplicity="1" Role="COMUNA" />
-          <End Type="Self.DIRECCION" Multiplicity="*" Role="DIRECCION" />
+          <End Role="COMUNA" Type="Self.COMUNA" Multiplicity="1" />
+          <End Role="DIRECCION" Type="Self.DIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="COMUNA">
               <PropertyRef Name="ID_COMUNA" />
@@ -435,8 +439,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DIRECCION_EMPRESA_FK">
-          <End Type="Self.EMPRESA" Multiplicity="1" Role="EMPRESA" />
-          <End Type="Self.DIRECCION" Multiplicity="*" Role="DIRECCION" />
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="0..1" />
+          <End Role="DIRECCION" Type="Self.DIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPRESA">
               <PropertyRef Name="ID_EMPRESA" />
@@ -447,8 +451,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EMPLEADO_CARGO_FK">
-          <End Type="Self.CARGO" Multiplicity="1" Role="CARGO" />
-          <End Type="Self.EMPLEADO" Multiplicity="*" Role="EMPLEADO" />
+          <End Role="CARGO" Type="Self.CARGO" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CARGO">
               <PropertyRef Name="ID_CARGO" />
@@ -459,8 +463,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EMPLEADO_USUARIO_FK">
-          <End Type="Self.USUARIO" Multiplicity="1" Role="USUARIO" />
-          <End Type="Self.EMPLEADO" Multiplicity="*" Role="EMPLEADO" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="USUARIO">
               <PropertyRef Name="ID_USUARIO" />
@@ -471,8 +475,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EMPRESA_CLIENTE_FK">
-          <End Type="Self.CLIENTE" Multiplicity="0..1" Role="CLIENTE" />
-          <End Type="Self.EMPRESA" Multiplicity="*" Role="EMPRESA" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CLIENTE">
               <PropertyRef Name="RUT_CLIENTE" />
@@ -483,8 +487,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EMPRESA_TIPO_EMPRESA_FK">
-          <End Type="Self.TIPO_EMPRESA" Multiplicity="1" Role="TIPO_EMPRESA" />
-          <End Type="Self.EMPRESA" Multiplicity="*" Role="EMPRESA" />
+          <End Role="TIPO_EMPRESA" Type="Self.TIPO_EMPRESA" Multiplicity="1" />
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TIPO_EMPRESA">
               <PropertyRef Name="ID_TIPO" />
@@ -495,8 +499,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FACTURA_EMPRESA_FK">
-          <End Type="Self.EMPRESA" Multiplicity="1" Role="EMPRESA" />
-          <End Type="Self.FACTURA" Multiplicity="*" Role="FACTURA" />
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPRESA">
               <PropertyRef Name="ID_EMPRESA" />
@@ -507,8 +511,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FACTURA_MEDIO_PAGO_FK">
-          <End Type="Self.MEDIO_PAGO" Multiplicity="1" Role="MEDIO_PAGO" />
-          <End Type="Self.FACTURA" Multiplicity="*" Role="FACTURA" />
+          <End Role="MEDIO_PAGO" Type="Self.MEDIO_PAGO" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MEDIO_PAGO">
               <PropertyRef Name="ID_MEDIO" />
@@ -519,8 +523,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FACTURA_ORDEN_COMPRA_FK">
-          <End Type="Self.ORDEN_COMPRA" Multiplicity="1" Role="ORDEN_COMPRA" />
-          <End Type="Self.FACTURA" Multiplicity="*" Role="FACTURA" />
+          <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ORDEN_COMPRA">
               <PropertyRef Name="ID_COMPRA" />
@@ -531,8 +535,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="ORDEN_COMPRA_COSTO_ENVIO_FK">
-          <End Type="Self.COSTO_ENVIO" Multiplicity="1" Role="COSTO_ENVIO" />
-          <End Type="Self.ORDEN_COMPRA" Multiplicity="*" Role="ORDEN_COMPRA" />
+          <End Role="COSTO_ENVIO" Type="Self.COSTO_ENVIO" Multiplicity="1" />
+          <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="COSTO_ENVIO">
               <PropertyRef Name="ID_COSTOENVIO" />
@@ -543,8 +547,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="ORDEN_COMPRA_EMPLEADO_FK">
-          <End Type="Self.EMPLEADO" Multiplicity="0..1" Role="EMPLEADO" />
-          <End Type="Self.ORDEN_COMPRA" Multiplicity="*" Role="ORDEN_COMPRA" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
+          <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPLEADO">
               <PropertyRef Name="RUT_EMPLEADO" />
@@ -555,8 +559,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="ORDEN_COMPRA_TIPO_COMPRA_FK">
-          <End Type="Self.TIPO_COMPRA" Multiplicity="1" Role="TIPO_COMPRA" />
-          <End Type="Self.ORDEN_COMPRA" Multiplicity="*" Role="ORDEN_COMPRA" />
+          <End Role="TIPO_COMPRA" Type="Self.TIPO_COMPRA" Multiplicity="1" />
+          <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TIPO_COMPRA">
               <PropertyRef Name="ID_TIPOCOM" />
@@ -567,8 +571,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PRODUCTO_FAMILIA_PRODUCTO_FK">
-          <End Type="Self.FAMILIA_PRODUCTO" Multiplicity="1" Role="FAMILIA_PRODUCTO" />
-          <End Type="Self.PRODUCTO" Multiplicity="*" Role="PRODUCTO" />
+          <End Role="FAMILIA_PRODUCTO" Type="Self.FAMILIA_PRODUCTO" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="FAMILIA_PRODUCTO">
               <PropertyRef Name="ID_FAMILIA" />
@@ -579,8 +583,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PRODUCTO_PROV_COMPRA_PROV_FK">
-          <End Type="Self.COMPRA_PROVEEDOR" Multiplicity="1" Role="COMPRA_PROVEEDOR" />
-          <End Type="Self.PRODUCTO_PROVEEDOR" Multiplicity="*" Role="PRODUCTO_PROVEEDOR" />
+          <End Role="COMPRA_PROVEEDOR" Type="Self.COMPRA_PROVEEDOR" Multiplicity="1" />
+          <End Role="PRODUCTO_PROVEEDOR" Type="Self.PRODUCTO_PROVEEDOR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="COMPRA_PROVEEDOR">
               <PropertyRef Name="ID_COMPRA" />
@@ -591,8 +595,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PRODUCTO_PROVEEDOR_FK">
-          <End Type="Self.PROVEEDOR" Multiplicity="1" Role="PROVEEDOR" />
-          <End Type="Self.PRODUCTO" Multiplicity="*" Role="PRODUCTO" />
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PROVEEDOR">
               <PropertyRef Name="ID_PROVEEDOR" />
@@ -603,8 +607,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PRODUCTO_TIPO_PRODUCTO_FK">
-          <End Type="Self.TIPO_PRODUCTO" Multiplicity="1" Role="TIPO_PRODUCTO" />
-          <End Type="Self.PRODUCTO" Multiplicity="*" Role="PRODUCTO" />
+          <End Role="TIPO_PRODUCTO" Type="Self.TIPO_PRODUCTO" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TIPO_PRODUCTO">
               <PropertyRef Name="ID_TIPO" />
@@ -615,8 +619,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="RECEPCION_PRO_EST_RECEPCION_FK">
-          <End Type="Self.ESTADO_RECEPCION" Multiplicity="1" Role="ESTADO_RECEPCION" />
-          <End Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" Role="RECEPCION_PRODUCTO" />
+          <End Role="ESTADO_RECEPCION" Type="Self.ESTADO_RECEPCION" Multiplicity="1" />
+          <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ESTADO_RECEPCION">
               <PropertyRef Name="ID_ESTADO" />
@@ -627,8 +631,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="RECEPCION_PROD_ORDEN_COMPRA_FK">
-          <End Type="Self.ORDEN_COMPRA" Multiplicity="1" Role="ORDEN_COMPRA" />
-          <End Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" Role="RECEPCION_PRODUCTO" />
+          <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="1" />
+          <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ORDEN_COMPRA">
               <PropertyRef Name="ID_COMPRA" />
@@ -639,8 +643,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="RECEPCION_PRODUCTO_EMPLEADO_FK">
-          <End Type="Self.EMPLEADO" Multiplicity="1" Role="EMPLEADO" />
-          <End Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" Role="RECEPCION_PRODUCTO" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPLEADO">
               <PropertyRef Name="RUT_EMPLEADO" />
@@ -651,8 +655,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="RP_PROVEEDOR_FK">
-          <End Type="Self.PROVEEDOR" Multiplicity="1" Role="PROVEEDOR" />
-          <End Type="Self.RUBRO_PROVEEDOR" Multiplicity="*" Role="RUBRO_PROVEEDOR" />
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+          <End Role="RUBRO_PROVEEDOR" Type="Self.RUBRO_PROVEEDOR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PROVEEDOR">
               <PropertyRef Name="ID_PROVEEDOR" />
@@ -663,8 +667,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="RP_RUBRO_FK">
-          <End Type="Self.RUBRO" Multiplicity="1" Role="RUBRO" />
-          <End Type="Self.RUBRO_PROVEEDOR" Multiplicity="*" Role="RUBRO_PROVEEDOR" />
+          <End Role="RUBRO" Type="Self.RUBRO" Multiplicity="1" />
+          <End Role="RUBRO_PROVEEDOR" Type="Self.RUBRO_PROVEEDOR" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RUBRO">
               <PropertyRef Name="ID_RUBRO" />
@@ -675,8 +679,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="USUARIO_TIPO_USUARIO_FK">
-          <End Type="Self.TIPO_USUARIO" Multiplicity="1" Role="TIPO_USUARIO" />
-          <End Type="Self.USUARIO" Multiplicity="*" Role="USUARIO" />
+          <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TIPO_USUARIO">
               <PropertyRef Name="ID_TIPOUSU" />
@@ -695,7 +699,6 @@
           <EntitySet Name="COSTO_ENVIO" EntityType="Self.COSTO_ENVIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="DESPACHO" EntityType="Self.DESPACHO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="DETALLE_ORDEN" EntityType="Self.DETALLE_ORDEN" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="ESTADO_DESPACHO" EntityType="Self.ESTADO_DESPACHO" Schema="FERME_PRUEBAS" store:Type="Tables" />
@@ -717,141 +720,150 @@
           <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
+          <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" store:Type="Tables" store:Schema="FERME_PRUEBAS">
+            <DefiningQuery>SELECT 
+"DIRECCION"."ID_DIRECCION" AS "ID_DIRECCION", 
+"DIRECCION"."DIRECCION" AS "DIRECCION", 
+"DIRECCION"."ID_COMUNA" AS "ID_COMUNA", 
+"DIRECCION"."RUT_CLIENTE" AS "RUT_CLIENTE", 
+"DIRECCION"."ID_EMPRESA" AS "ID_EMPRESA"
+FROM "FERME_PRUEBAS"."DIRECCION" "DIRECCION"</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="BOLETA_CLIENTE_FK" Association="Self.BOLETA_CLIENTE_FK">
-            <End EntitySet="CLIENTE" Role="CLIENTE" />
-            <End EntitySet="BOLETA" Role="BOLETA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="BOLETA" EntitySet="BOLETA" />
           </AssociationSet>
           <AssociationSet Name="BOLETA_MEDIO_PAGO_FK" Association="Self.BOLETA_MEDIO_PAGO_FK">
-            <End EntitySet="MEDIO_PAGO" Role="MEDIO_PAGO" />
-            <End EntitySet="BOLETA" Role="BOLETA" />
+            <End Role="MEDIO_PAGO" EntitySet="MEDIO_PAGO" />
+            <End Role="BOLETA" EntitySet="BOLETA" />
           </AssociationSet>
           <AssociationSet Name="BOLETA_ORDEN_COMPRA_FK" Association="Self.BOLETA_ORDEN_COMPRA_FK">
-            <End EntitySet="ORDEN_COMPRA" Role="ORDEN_COMPRA" />
-            <End EntitySet="BOLETA" Role="BOLETA" />
+            <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
+            <End Role="BOLETA" EntitySet="BOLETA" />
           </AssociationSet>
           <AssociationSet Name="CLIENTE_USUARIO_FK" Association="Self.CLIENTE_USUARIO_FK">
-            <End EntitySet="USUARIO" Role="USUARIO" />
-            <End EntitySet="CLIENTE" Role="CLIENTE" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
           </AssociationSet>
           <AssociationSet Name="COMPRA_PROVEEDOR_PROVEEDOR_FK" Association="Self.COMPRA_PROVEEDOR_PROVEEDOR_FK">
-            <End EntitySet="PROVEEDOR" Role="PROVEEDOR" />
-            <End EntitySet="COMPRA_PROVEEDOR" Role="COMPRA_PROVEEDOR" />
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="COMPRA_PROVEEDOR" EntitySet="COMPRA_PROVEEDOR" />
           </AssociationSet>
           <AssociationSet Name="COMUNA_REGION_FK" Association="Self.COMUNA_REGION_FK">
-            <End EntitySet="REGION" Role="REGION" />
-            <End EntitySet="COMUNA" Role="COMUNA" />
+            <End Role="REGION" EntitySet="REGION" />
+            <End Role="COMUNA" EntitySet="COMUNA" />
           </AssociationSet>
           <AssociationSet Name="DESPACHO_DETALLE_ORDEN_FK" Association="Self.DESPACHO_DETALLE_ORDEN_FK">
-            <End EntitySet="DETALLE_ORDEN" Role="DETALLE_ORDEN" />
-            <End EntitySet="DESPACHO" Role="DESPACHO" />
+            <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
+            <End Role="DESPACHO" EntitySet="DESPACHO" />
           </AssociationSet>
           <AssociationSet Name="DESPACHO_EMPLEADO_FK" Association="Self.DESPACHO_EMPLEADO_FK">
-            <End EntitySet="EMPLEADO" Role="EMPLEADO" />
-            <End EntitySet="DESPACHO" Role="DESPACHO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="DESPACHO" EntitySet="DESPACHO" />
           </AssociationSet>
           <AssociationSet Name="DESPACHO_ESTADO_DESPACHO_FK" Association="Self.DESPACHO_ESTADO_DESPACHO_FK">
-            <End EntitySet="ESTADO_DESPACHO" Role="ESTADO_DESPACHO" />
-            <End EntitySet="DESPACHO" Role="DESPACHO" />
+            <End Role="ESTADO_DESPACHO" EntitySet="ESTADO_DESPACHO" />
+            <End Role="DESPACHO" EntitySet="DESPACHO" />
           </AssociationSet>
           <AssociationSet Name="DETALLE_ORDEN_ORDEN_COMPRA_FK" Association="Self.DETALLE_ORDEN_ORDEN_COMPRA_FK">
-            <End EntitySet="ORDEN_COMPRA" Role="ORDEN_COMPRA" />
-            <End EntitySet="DETALLE_ORDEN" Role="DETALLE_ORDEN" />
+            <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
+            <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
           </AssociationSet>
           <AssociationSet Name="DETALLE_ORDEN_PRODUCTO_FK" Association="Self.DETALLE_ORDEN_PRODUCTO_FK">
-            <End EntitySet="PRODUCTO" Role="PRODUCTO" />
-            <End EntitySet="DETALLE_ORDEN" Role="DETALLE_ORDEN" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
           </AssociationSet>
           <AssociationSet Name="DIRECCION_CLIENTE_FK" Association="Self.DIRECCION_CLIENTE_FK">
-            <End EntitySet="CLIENTE" Role="CLIENTE" />
-            <End EntitySet="DIRECCION" Role="DIRECCION" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="DIRECCION" EntitySet="DIRECCION" />
           </AssociationSet>
           <AssociationSet Name="DIRECCION_COMUNA_FK" Association="Self.DIRECCION_COMUNA_FK">
-            <End EntitySet="COMUNA" Role="COMUNA" />
-            <End EntitySet="DIRECCION" Role="DIRECCION" />
+            <End Role="COMUNA" EntitySet="COMUNA" />
+            <End Role="DIRECCION" EntitySet="DIRECCION" />
           </AssociationSet>
           <AssociationSet Name="DIRECCION_EMPRESA_FK" Association="Self.DIRECCION_EMPRESA_FK">
-            <End EntitySet="EMPRESA" Role="EMPRESA" />
-            <End EntitySet="DIRECCION" Role="DIRECCION" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="DIRECCION" EntitySet="DIRECCION" />
           </AssociationSet>
           <AssociationSet Name="EMPLEADO_CARGO_FK" Association="Self.EMPLEADO_CARGO_FK">
-            <End EntitySet="CARGO" Role="CARGO" />
-            <End EntitySet="EMPLEADO" Role="EMPLEADO" />
+            <End Role="CARGO" EntitySet="CARGO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
           </AssociationSet>
           <AssociationSet Name="EMPLEADO_USUARIO_FK" Association="Self.EMPLEADO_USUARIO_FK">
-            <End EntitySet="USUARIO" Role="USUARIO" />
-            <End EntitySet="EMPLEADO" Role="EMPLEADO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
           </AssociationSet>
           <AssociationSet Name="EMPRESA_CLIENTE_FK" Association="Self.EMPRESA_CLIENTE_FK">
-            <End EntitySet="CLIENTE" Role="CLIENTE" />
-            <End EntitySet="EMPRESA" Role="EMPRESA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
           </AssociationSet>
           <AssociationSet Name="EMPRESA_TIPO_EMPRESA_FK" Association="Self.EMPRESA_TIPO_EMPRESA_FK">
-            <End EntitySet="TIPO_EMPRESA" Role="TIPO_EMPRESA" />
-            <End EntitySet="EMPRESA" Role="EMPRESA" />
+            <End Role="TIPO_EMPRESA" EntitySet="TIPO_EMPRESA" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
           </AssociationSet>
           <AssociationSet Name="FACTURA_EMPRESA_FK" Association="Self.FACTURA_EMPRESA_FK">
-            <End EntitySet="EMPRESA" Role="EMPRESA" />
-            <End EntitySet="FACTURA" Role="FACTURA" />
+            <End Role="EMPRESA" EntitySet="EMPRESA" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
           </AssociationSet>
           <AssociationSet Name="FACTURA_MEDIO_PAGO_FK" Association="Self.FACTURA_MEDIO_PAGO_FK">
-            <End EntitySet="MEDIO_PAGO" Role="MEDIO_PAGO" />
-            <End EntitySet="FACTURA" Role="FACTURA" />
+            <End Role="MEDIO_PAGO" EntitySet="MEDIO_PAGO" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
           </AssociationSet>
           <AssociationSet Name="FACTURA_ORDEN_COMPRA_FK" Association="Self.FACTURA_ORDEN_COMPRA_FK">
-            <End EntitySet="ORDEN_COMPRA" Role="ORDEN_COMPRA" />
-            <End EntitySet="FACTURA" Role="FACTURA" />
+            <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
           </AssociationSet>
           <AssociationSet Name="ORDEN_COMPRA_COSTO_ENVIO_FK" Association="Self.ORDEN_COMPRA_COSTO_ENVIO_FK">
-            <End EntitySet="COSTO_ENVIO" Role="COSTO_ENVIO" />
-            <End EntitySet="ORDEN_COMPRA" Role="ORDEN_COMPRA" />
+            <End Role="COSTO_ENVIO" EntitySet="COSTO_ENVIO" />
+            <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
           </AssociationSet>
           <AssociationSet Name="ORDEN_COMPRA_EMPLEADO_FK" Association="Self.ORDEN_COMPRA_EMPLEADO_FK">
-            <End EntitySet="EMPLEADO" Role="EMPLEADO" />
-            <End EntitySet="ORDEN_COMPRA" Role="ORDEN_COMPRA" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
           </AssociationSet>
           <AssociationSet Name="ORDEN_COMPRA_TIPO_COMPRA_FK" Association="Self.ORDEN_COMPRA_TIPO_COMPRA_FK">
-            <End EntitySet="TIPO_COMPRA" Role="TIPO_COMPRA" />
-            <End EntitySet="ORDEN_COMPRA" Role="ORDEN_COMPRA" />
+            <End Role="TIPO_COMPRA" EntitySet="TIPO_COMPRA" />
+            <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
           </AssociationSet>
           <AssociationSet Name="PRODUCTO_FAMILIA_PRODUCTO_FK" Association="Self.PRODUCTO_FAMILIA_PRODUCTO_FK">
-            <End EntitySet="FAMILIA_PRODUCTO" Role="FAMILIA_PRODUCTO" />
-            <End EntitySet="PRODUCTO" Role="PRODUCTO" />
+            <End Role="FAMILIA_PRODUCTO" EntitySet="FAMILIA_PRODUCTO" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
           </AssociationSet>
           <AssociationSet Name="PRODUCTO_PROV_COMPRA_PROV_FK" Association="Self.PRODUCTO_PROV_COMPRA_PROV_FK">
-            <End EntitySet="COMPRA_PROVEEDOR" Role="COMPRA_PROVEEDOR" />
-            <End EntitySet="PRODUCTO_PROVEEDOR" Role="PRODUCTO_PROVEEDOR" />
+            <End Role="COMPRA_PROVEEDOR" EntitySet="COMPRA_PROVEEDOR" />
+            <End Role="PRODUCTO_PROVEEDOR" EntitySet="PRODUCTO_PROVEEDOR" />
           </AssociationSet>
           <AssociationSet Name="PRODUCTO_PROVEEDOR_FK" Association="Self.PRODUCTO_PROVEEDOR_FK">
-            <End EntitySet="PROVEEDOR" Role="PROVEEDOR" />
-            <End EntitySet="PRODUCTO" Role="PRODUCTO" />
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
           </AssociationSet>
           <AssociationSet Name="PRODUCTO_TIPO_PRODUCTO_FK" Association="Self.PRODUCTO_TIPO_PRODUCTO_FK">
-            <End EntitySet="TIPO_PRODUCTO" Role="TIPO_PRODUCTO" />
-            <End EntitySet="PRODUCTO" Role="PRODUCTO" />
+            <End Role="TIPO_PRODUCTO" EntitySet="TIPO_PRODUCTO" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
           </AssociationSet>
           <AssociationSet Name="RECEPCION_PRO_EST_RECEPCION_FK" Association="Self.RECEPCION_PRO_EST_RECEPCION_FK">
-            <End EntitySet="ESTADO_RECEPCION" Role="ESTADO_RECEPCION" />
-            <End EntitySet="RECEPCION_PRODUCTO" Role="RECEPCION_PRODUCTO" />
+            <End Role="ESTADO_RECEPCION" EntitySet="ESTADO_RECEPCION" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
           </AssociationSet>
           <AssociationSet Name="RECEPCION_PROD_ORDEN_COMPRA_FK" Association="Self.RECEPCION_PROD_ORDEN_COMPRA_FK">
-            <End EntitySet="ORDEN_COMPRA" Role="ORDEN_COMPRA" />
-            <End EntitySet="RECEPCION_PRODUCTO" Role="RECEPCION_PRODUCTO" />
+            <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
           </AssociationSet>
           <AssociationSet Name="RECEPCION_PRODUCTO_EMPLEADO_FK" Association="Self.RECEPCION_PRODUCTO_EMPLEADO_FK">
-            <End EntitySet="EMPLEADO" Role="EMPLEADO" />
-            <End EntitySet="RECEPCION_PRODUCTO" Role="RECEPCION_PRODUCTO" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
           </AssociationSet>
           <AssociationSet Name="RP_PROVEEDOR_FK" Association="Self.RP_PROVEEDOR_FK">
-            <End EntitySet="PROVEEDOR" Role="PROVEEDOR" />
-            <End EntitySet="RUBRO_PROVEEDOR" Role="RUBRO_PROVEEDOR" />
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="RUBRO_PROVEEDOR" EntitySet="RUBRO_PROVEEDOR" />
           </AssociationSet>
           <AssociationSet Name="RP_RUBRO_FK" Association="Self.RP_RUBRO_FK">
-            <End EntitySet="RUBRO" Role="RUBRO" />
-            <End EntitySet="RUBRO_PROVEEDOR" Role="RUBRO_PROVEEDOR" />
+            <End Role="RUBRO" EntitySet="RUBRO" />
+            <End Role="RUBRO_PROVEEDOR" EntitySet="RUBRO_PROVEEDOR" />
           </AssociationSet>
           <AssociationSet Name="USUARIO_TIPO_USUARIO_FK" Association="Self.USUARIO_TIPO_USUARIO_FK">
-            <End EntitySet="TIPO_USUARIO" Role="TIPO_USUARIO" />
-            <End EntitySet="USUARIO" Role="USUARIO" />
+            <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
