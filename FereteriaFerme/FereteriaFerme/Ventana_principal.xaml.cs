@@ -73,5 +73,33 @@ namespace FerreteriaFerme
             lim.Show();
             this.Hide();
         }
+
+        private void Btn_lista_cliente_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_cliente lic = new Lista_cliente();
+            lic.Show();
+            this.Hide();
+        }
+
+        private void Btn_lista_empresa_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_empresa lie = new Lista_empresa();
+            lie.Show();
+            this.Hide();
+        }
+
+        private void Btn_lista_boleta_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_boleta lib = new Lista_boleta();
+            lib.Show();
+            this.Hide();
+        }
+
+        private void Btn_lista_factura_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_factura lif = new Lista_factura();
+            lif.Show();
+            this.Hide();
+        }
     }
 }

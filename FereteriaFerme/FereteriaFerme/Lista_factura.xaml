@@ -1,0 +1,25 @@
+﻿<Window x:Class="FerreteriaFerme.Lista_factura"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Lista_factura" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dtg_factura" HorizontalAlignment="Left" Height="289" Margin="53,27,0,0" VerticalAlignment="Top" Width="700" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_FACTURA}" />
+                <DataGridTextColumn Header="Fecha" Binding="{Binding Path=FECHA_FACTURA, StringFormat=dd/MM/yyyy}" />
+                <DataGridTextColumn Header="Neto" Binding="{Binding Path=NETO_FACTURA}" />
+                <DataGridTextColumn Header="Iva" Binding="{Binding Path=IVA_FACTURA}" />
+                <DataGridTextColumn Header="Total" Binding="{Binding Path=TOTAL_FACTURA}" />
+                <DataGridTextColumn Header="Compra" Binding="{Binding Path=ID_COMPRA}" />
+                <DataGridTextColumn Header="Empresa" Binding="{Binding Path=NombreEmpresa}" />
+                <DataGridTextColumn Header="Medio de pago" Binding="{Binding Path=DescripcionMedio}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="53,362,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+
+    </Grid>
+</Window>

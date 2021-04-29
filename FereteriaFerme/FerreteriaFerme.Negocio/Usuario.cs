@@ -76,6 +76,9 @@ namespace FerreteriaFerme.Negocio
                 /* Se copian las propiedades de datos al negocio */
                 CommonBC.Syncronize(usu, this);
 
+                /* Carga descripción de los Tipos */
+                LeerNombreProveedor();
+
                 return true;
             }
             catch (Exception ex)
@@ -176,6 +179,7 @@ namespace FerreteriaFerme.Negocio
 
                 Usuario negocio = new Usuario();
                 CommonBC.Syncronize(dato, negocio);
+                negocio.LeerNombreProveedor();
 
 
                 listadoEmpresa.Add(negocio);
