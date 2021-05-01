@@ -9,7 +9,7 @@ namespace FerreteriaFerme.Negocio
     public class Empresa
     {
         //Campos
-        private short _ID_EMPRESA;
+        private short? _ID_EMPRESA;
         private string _RAZON_SOCIAL;
         private string _RUT_EMPRESA;
         private short _ID_TIPO;
@@ -19,7 +19,7 @@ namespace FerreteriaFerme.Negocio
         private string _nombreCliente;
 
         //Propiedades
-        public short ID_EMPRESA { get; set; }
+        public short? ID_EMPRESA { get; set; }
         public string RAZON_SOCIAL { get; set; }
         public string RUT_EMPRESA { get; set; }
         public short ID_TIPO { get; set; }

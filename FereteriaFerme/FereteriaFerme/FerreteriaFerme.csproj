@@ -73,6 +73,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Agregar_direccion.xaml.cs">
+      <DependentUpon>Agregar_direccion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_direccion_empresa.xaml.cs">
+      <DependentUpon>Agregar_direccion_empresa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Agregar_empleado.xaml.cs">
       <DependentUpon>Agregar_empleado.xaml</DependentUpon>
     </Compile>
@@ -91,6 +97,12 @@
     <Compile Include="Lista_detalle_orden.xaml.cs">
       <DependentUpon>Lista_detalle_orden.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lista_direccion.xaml.cs">
+      <DependentUpon>Lista_direccion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_direccion_empresa.xaml.cs">
+      <DependentUpon>Lista_direccion_empresa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lista_empleado.xaml.cs">
       <DependentUpon>Lista_empleado.xaml</DependentUpon>
     </Compile>
@@ -106,8 +118,20 @@
     <Compile Include="Lista_Proveedor.xaml.cs">
       <DependentUpon>Lista_Proveedor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modificar_cliente.xaml.cs">
+      <DependentUpon>Modificar_cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_direccion.xaml.cs">
+      <DependentUpon>Modificar_direccion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_direccion_empresa.xaml.cs">
+      <DependentUpon>Modificar_direccion_empresa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modificar_empleado.xaml.cs">
       <DependentUpon>Modificar_empleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_empresa.xaml.cs">
+      <DependentUpon>Modificar_empresa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modificar_producto.xaml.cs">
       <DependentUpon>Modificar_producto.xaml</DependentUpon>
@@ -118,9 +142,20 @@
     <Compile Include="Modificar_usuario.xaml.cs">
       <DependentUpon>Modificar_usuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modificar_usuario_cliente.xaml.cs">
+      <DependentUpon>Modificar_usuario_cliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventana_principal.xaml.cs">
       <DependentUpon>Ventana_principal.xaml</DependentUpon>
     </Compile>
+    <Page Include="Agregar_direccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Agregar_direccion_empresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Agregar_empleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +177,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lista_detalle_orden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_direccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_direccion_empresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,7 +220,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modificar_cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_direccion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_direccion_empresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modificar_empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_empresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +249,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modificar_usuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_usuario_cliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

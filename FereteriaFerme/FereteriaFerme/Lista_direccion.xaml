@@ -1,37 +1,36 @@
-﻿<Window x:Class="FerreteriaFerme.Lista_empresa"
+﻿<Window x:Class="FerreteriaFerme.Lista_direccion"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_empresa" Height="450" Width="800">
+        Title="Lista_direccion" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtg_empresas" HorizontalAlignment="Left" Height="255" Margin="52,46,0,0" VerticalAlignment="Top" Width="698" AutoGenerateColumns="False">
+        <DataGrid x:Name="dtg_direccion" HorizontalAlignment="Left" Height="264" Margin="47,41,0,0" VerticalAlignment="Top" Width="681" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_EMPRESA}" />
-                <DataGridTextColumn Header="Razon social" Binding="{Binding Path=RAZON_SOCIAL}" />
-                <DataGridTextColumn Header="Rut" Binding="{Binding Path=RUT_EMPRESA}" />
-                <DataGridTextColumn Header="Tipo" Binding="{Binding Path=DescripcionTipo}" />
-                <DataGridTextColumn Header="Correo" Binding="{Binding Path=CORREO_EMPRESA}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_DIRECCION}" />
+                <DataGridTextColumn Header="Dirección" Binding="{Binding Path=DIRECCION1}" />
+                <DataGridTextColumn Header="Comuna" Binding="{Binding Path=ID_COMUNA}" />
                 <DataGridTextColumn Header="Cliente" Binding="{Binding Path=NombreCliente}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btn_direccion" Click="Btn_direccion_Click">Direcciones</Button>
+                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click">Modificar</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click">Modificar empresa</Button>
+                            <Button x:Name="btn_eliminar" Click="Btn_eliminar_Click">Eliminar</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="59,364,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="47,359,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <Button x:Name="btn_nuevo" Content="Nueva Dirección" HorizontalAlignment="Left" Margin="328,359,0,0" VerticalAlignment="Top" Width="109" Click="Btn_nuevo_Click"/>
 
     </Grid>
 </Window>

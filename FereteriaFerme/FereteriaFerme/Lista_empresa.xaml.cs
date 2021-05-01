@@ -33,6 +33,24 @@ namespace FerreteriaFerme
             dtg_empresas.Items.Refresh();
         }
 
+        private void Btn_direccion_Click(object sender, RoutedEventArgs e)
+        {
+            Empresa fila = (Empresa)dtg_empresas.SelectedItem;
+            short? id = fila.ID_EMPRESA;
+            Lista_direccion_empresa ld = new Lista_direccion_empresa(id);
+            ld.Show();
+            this.Hide();
+        }
+
+        private void Btn_modificar_Click(object sender, RoutedEventArgs e)
+        {
+            Empresa fila = (Empresa)dtg_empresas.SelectedItem;
+            short? id = fila.ID_EMPRESA;
+            Modificar_empresa me = new Modificar_empresa(id);
+            me.Show();
+            this.Hide();
+        }
+
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
             Ventana_principal vp = new Ventana_principal();

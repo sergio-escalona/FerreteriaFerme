@@ -18,7 +18,7 @@ namespace FerreteriaFerme.Datos
         public string DIRECCION1 { get; set; }
         public short ID_COMUNA { get; set; }
         public string RUT_CLIENTE { get; set; }
-        public short ID_EMPRESA { get; set; }
+        public Nullable<short> ID_EMPRESA { get; set; }
     
         public virtual CLIENTE CLIENTE { get; set; }
         public virtual COMUNA COMUNA { get; set; }

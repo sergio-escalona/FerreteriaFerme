@@ -79,13 +79,9 @@
           <Property Name="CANTIDAD" Type="number" Precision="3" Scale="0" Nullable="false" />
           <Property Name="ID_COMPRA" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'FERME_PRUEBAS.DIRECCION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="DIRECCION">
           <Key>
             <PropertyRef Name="ID_DIRECCION" />
-            
-            
           </Key>
           <Property Name="ID_DIRECCION" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="DIRECCION" Type="varchar2" MaxLength="100" Nullable="false" />
@@ -699,6 +695,7 @@ advertencia 6002: La tabla o vista 'FERME_PRUEBAS.DIRECCION' no tiene definida n
           <EntitySet Name="COSTO_ENVIO" EntityType="Self.COSTO_ENVIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="DESPACHO" EntityType="Self.DESPACHO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="DETALLE_ORDEN" EntityType="Self.DETALLE_ORDEN" Schema="FERME_PRUEBAS" store:Type="Tables" />
+          <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="ESTADO_DESPACHO" EntityType="Self.ESTADO_DESPACHO" Schema="FERME_PRUEBAS" store:Type="Tables" />
@@ -720,15 +717,6 @@ advertencia 6002: La tabla o vista 'FERME_PRUEBAS.DIRECCION' no tiene definida n
           <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" store:Type="Tables" store:Schema="FERME_PRUEBAS">
-            <DefiningQuery>SELECT 
-"DIRECCION"."ID_DIRECCION" AS "ID_DIRECCION", 
-"DIRECCION"."DIRECCION" AS "DIRECCION", 
-"DIRECCION"."ID_COMUNA" AS "ID_COMUNA", 
-"DIRECCION"."RUT_CLIENTE" AS "RUT_CLIENTE", 
-"DIRECCION"."ID_EMPRESA" AS "ID_EMPRESA"
-FROM "FERME_PRUEBAS"."DIRECCION" "DIRECCION"</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="BOLETA_CLIENTE_FK" Association="Self.BOLETA_CLIENTE_FK">
             <End Role="CLIENTE" EntitySet="CLIENTE" />
             <End Role="BOLETA" EntitySet="BOLETA" />

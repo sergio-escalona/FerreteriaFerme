@@ -39,5 +39,32 @@ namespace FerreteriaFerme
             vp.Show();
             this.Hide();
         }
+
+        private void Btn_direccion_Click(object sender, RoutedEventArgs e)
+        {
+            Cliente fila = (Cliente)dtg_clientes.SelectedItem;
+            string rut = fila.RUT_CLIENTE.Trim();
+            Lista_direccion ld = new Lista_direccion(rut);
+            ld.Show();
+            this.Hide();
+        }
+
+        private void Btn_modificar_Click(object sender, RoutedEventArgs e)
+        {
+            Cliente fila = (Cliente)dtg_clientes.SelectedItem;
+            string rut = fila.RUT_CLIENTE.Trim();
+            Modificar_cliente mc = new Modificar_cliente(rut);
+            mc.Show();
+            this.Hide();
+        }
+
+        private void Btn_usuario_Click(object sender, RoutedEventArgs e)
+        {
+            Cliente fila = (Cliente)dtg_clientes.SelectedItem;
+            short id = fila.ID_USUARIO;
+            Modificar_usuario_cliente muc = new Modificar_usuario_cliente(id);
+            muc.Show();
+            this.Hide();
+        }
     }
 }
