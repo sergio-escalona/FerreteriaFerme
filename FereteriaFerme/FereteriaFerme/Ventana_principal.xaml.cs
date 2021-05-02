@@ -101,5 +101,19 @@ namespace FerreteriaFerme
             lif.Show();
             this.Hide();
         }
+
+        private void Btn_pedido_Click(object sender, RoutedEventArgs e)
+        {
+            Agregar_orden_proveedor aop = new Agregar_orden_proveedor();
+            aop.Show();
+            this.Hide();
+        }
+
+        private void Btn_lista_pedido_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_orden_proveedor lop = new Lista_orden_proveedor();
+            lop.Show();
+            this.Hide();
+        }
     }
 }

@@ -18,6 +18,8 @@
         <Button x:Name="btn_lista_empresa" Content="Lista Empresa" HorizontalAlignment="Left" Margin="355,253,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_empresa_Click"/>
         <Button x:Name="btn_lista_boleta" Content="Lista Boleta" HorizontalAlignment="Left" Margin="196,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_boleta_Click"/>
         <Button x:Name="btn_lista_factura" Content="Lista Factura" HorizontalAlignment="Left" Margin="355,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_factura_Click"/>
+        <Button x:Name="btn_pedido" Content="Realizar Pedido" HorizontalAlignment="Left" Margin="355,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_pedido_Click"/>
+        <Button x:Name="btn_lista_pedido" Content="Listar Pedido" HorizontalAlignment="Left" Margin="505,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_pedido_Click"/>
 
     </Grid>
 </Window>
