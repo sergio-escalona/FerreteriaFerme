@@ -115,5 +115,19 @@ namespace FerreteriaFerme
             lop.Show();
             this.Hide();
         }
+
+        private void Btn_agregar_recepcion_Click(object sender, RoutedEventArgs e)
+        {
+            Agregar_recepcion agr = new Agregar_recepcion();
+            agr.Show();
+            this.Hide();
+        }
+
+        private void Btn_lista_recepcion_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_Recepcion lir = new Lista_Recepcion();
+            lir.Show();
+            this.Hide();
+        }
     }
 }

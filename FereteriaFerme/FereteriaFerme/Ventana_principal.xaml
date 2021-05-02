@@ -20,6 +20,8 @@
         <Button x:Name="btn_lista_factura" Content="Lista Factura" HorizontalAlignment="Left" Margin="355,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_factura_Click"/>
         <Button x:Name="btn_pedido" Content="Realizar Pedido" HorizontalAlignment="Left" Margin="355,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_pedido_Click"/>
         <Button x:Name="btn_lista_pedido" Content="Listar Pedido" HorizontalAlignment="Left" Margin="505,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_pedido_Click"/>
+        <Button x:Name="btn_agregar_recepcion" Content="Agregar Recepción" HorizontalAlignment="Left" Margin="355,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_recepcion_Click"/>
+        <Button x:Name="btn_lista_recepcion" Content="Lista Recepción" HorizontalAlignment="Left" Margin="505,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_recepcion_Click"/>
 
     </Grid>
 </Window>

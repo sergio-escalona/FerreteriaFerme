@@ -21,6 +21,7 @@ namespace FerreteriaFerme.Negocio
         public string RUT_EMPLEADO { get; set; }
         public string NOMBRES_EMPLEADO { get; set; }
         public string APELLIDOS_EMPLEADO { get; set; }
+        public string NombreCompleto { get { return NOMBRES_EMPLEADO + " " + APELLIDOS_EMPLEADO; } }
         public short ID_CARGO { get; set; }
         public string DescripcionCargo { get { return _descripcionCargo; } }
         public short ID_USUARIO { get; set; }
