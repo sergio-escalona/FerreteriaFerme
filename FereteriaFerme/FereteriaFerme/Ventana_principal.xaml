@@ -22,6 +22,8 @@
         <Button x:Name="btn_lista_pedido" Content="Listar Pedido" HorizontalAlignment="Left" Margin="505,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_pedido_Click"/>
         <Button x:Name="btn_agregar_recepcion" Content="Agregar Recepción" HorizontalAlignment="Left" Margin="355,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_recepcion_Click"/>
         <Button x:Name="btn_lista_recepcion" Content="Lista Recepción" HorizontalAlignment="Left" Margin="505,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_recepcion_Click"/>
+        <Button x:Name="btn_agregar_despacho" Content="Agregar Despacho" HorizontalAlignment="Left" Margin="505,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_despacho_Click"/>
+        <Button x:Name="btn_listar_despacho" Content="Listar Despacho" HorizontalAlignment="Left" Margin="650,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listar_despacho_Click"/>
 
     </Grid>
 </Window>

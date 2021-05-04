@@ -11,7 +11,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_DIRECCION}" />
                 <DataGridTextColumn Header="Dirección" Binding="{Binding Path=DIRECCION1}" />
-                <DataGridTextColumn Header="Comuna" Binding="{Binding Path=ID_COMUNA}" />
+                <DataGridTextColumn Header="Comuna" Binding="{Binding Path=NombreComuna}" />
                 <DataGridTextColumn Header="Cliente" Binding="{Binding Path=NombreCliente}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

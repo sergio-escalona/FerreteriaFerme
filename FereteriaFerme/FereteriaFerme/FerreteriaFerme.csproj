@@ -73,6 +73,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Agregar_despacho.xaml.cs">
+      <DependentUpon>Agregar_despacho.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Agregar_direccion.xaml.cs">
       <DependentUpon>Agregar_direccion.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,9 @@
     </Compile>
     <Compile Include="Lista_cliente.xaml.cs">
       <DependentUpon>Lista_cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_despacho.xaml.cs">
+      <DependentUpon>Lista_despacho.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lista_detalle_orden.xaml.cs">
       <DependentUpon>Lista_detalle_orden.xaml</DependentUpon>
@@ -139,6 +145,9 @@
     <Compile Include="Modificar_cliente.xaml.cs">
       <DependentUpon>Modificar_cliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modificar_despacho.xaml.cs">
+      <DependentUpon>Modificar_despacho.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modificar_direccion.xaml.cs">
       <DependentUpon>Modificar_direccion.xaml</DependentUpon>
     </Compile>
@@ -169,6 +178,10 @@
     <Compile Include="Ventana_principal.xaml.cs">
       <DependentUpon>Ventana_principal.xaml</DependentUpon>
     </Compile>
+    <Page Include="Agregar_despacho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Agregar_direccion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +219,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lista_cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_despacho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,6 +283,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modificar_cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_despacho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

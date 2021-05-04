@@ -40,8 +40,8 @@ namespace FerreteriaFerme
         {
             Direccion fila = (Direccion)dtg_direccion.SelectedItem;
             int id = fila.ID_DIRECCION;
-            Modificar_direccion md = new Modificar_direccion(id);
-            md.Show();
+            Modificar_direccion_empresa mde = new Modificar_direccion_empresa(id);
+            mde.Show();
             this.Hide();
         }
 

@@ -129,5 +129,19 @@ namespace FerreteriaFerme
             lir.Show();
             this.Hide();
         }
+
+        private void Btn_agregar_despacho_Click(object sender, RoutedEventArgs e)
+        {
+            Agregar_despacho ad = new Agregar_despacho();
+            ad.Show();
+            this.Hide();
+        }
+
+        private void Btn_listar_despacho_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_despacho ld = new Lista_despacho();
+            ld.Show();
+            this.Hide();
+        }
     }
 }

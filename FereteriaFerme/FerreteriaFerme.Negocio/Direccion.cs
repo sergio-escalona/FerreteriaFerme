@@ -13,6 +13,7 @@ namespace FerreteriaFerme.Negocio
         private string _DIRECCION1;
         private short _ID_COMUNA;
         private string _nombreComuna;
+        private string _idRegion;
         private string _RUT_CLIENTE;
         private string _nombreCliente;
         private short? _ID_EMPRESA;
@@ -22,6 +23,7 @@ namespace FerreteriaFerme.Negocio
         public int ID_DIRECCION { get; set; }
         public string DIRECCION1 { get; set; }
         public short ID_COMUNA { get; set; }
+        public string IdRegion { get { return _idRegion; } }
         public string NombreComuna { get { return _nombreComuna; } }
         public string RUT_CLIENTE { get; set; }
         public string NombreCliente { get { return _nombreCliente; } }
@@ -87,6 +89,7 @@ namespace FerreteriaFerme.Negocio
                 LeerNombreComuna();
                 LeerDescripcionCliente();
                 LeerDescripcionEmpresa();
+                LeerDescripcionRegion();
 
                 return true;
             }
@@ -191,6 +194,7 @@ namespace FerreteriaFerme.Negocio
                 negocio.LeerNombreComuna();
                 negocio.LeerDescripcionCliente();
                 negocio.LeerDescripcionEmpresa();
+                negocio.LeerDescripcionRegion();
 
                 listadoEmpresa.Add(negocio);
             }
@@ -335,6 +339,21 @@ namespace FerreteriaFerme.Negocio
             else
             {
                 _nombreEmpresa = String.Empty;
+            }
+        }
+
+        //Mostrar empresa
+        public void LeerDescripcionRegion()
+        {
+            Comuna co = new Comuna() { ID_COMUNA = ID_COMUNA };
+
+            if (co.Read())
+            {
+                _idRegion = co.ID_REGION;
+            }
+            else
+            {
+                _idRegion = String.Empty;
             }
         }
     }
