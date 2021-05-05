@@ -63,23 +63,32 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Recepcion_Producto rpr = new Recepcion_Producto()
+            if (cb_empleado.Text != String.Empty && cb_orden.Text != String.Empty && cb_estado.Text != String.Empty)
             {
-                ID_RECEPCION = 0,
-                ID_ESTADO = (int)cb_estado.SelectedValue,
-                RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
-                ID_COMPRA = (decimal)cb_orden.SelectedValue
-            };
+                Recepcion_Producto rpr = new Recepcion_Producto()
+                {
+                    ID_RECEPCION = 0,
+                    ID_ESTADO = (int)cb_estado.SelectedValue,
+                    RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
+                    ID_COMPRA = (decimal)cb_orden.SelectedValue
+                };
 
-            if (rpr.Create())
-            {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                MessageBoxButton.OK, MessageBoxImage.Information);
+                if (rpr.Create())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Recpeción asignada", "Éxito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se asigno recepción", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
                 MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

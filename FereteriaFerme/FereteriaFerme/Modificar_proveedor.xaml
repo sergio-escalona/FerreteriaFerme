@@ -12,7 +12,7 @@
         <Label Content="Rut" HorizontalAlignment="Left" Margin="55,93,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="142,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Celular" HorizontalAlignment="Left" Margin="55,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.259,-1.378"/>
-        <TextBox x:Name="txt_celular" HorizontalAlignment="Left" Height="23" Margin="142,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_celular" HorizontalAlignment="Left" Height="23" Margin="142,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_celular_Validacion"/>
         <Label Content="Correo" HorizontalAlignment="Left" Margin="55,186,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txt_correo" HorizontalAlignment="Left" Height="23" Margin="142,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="103,275,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click"/>

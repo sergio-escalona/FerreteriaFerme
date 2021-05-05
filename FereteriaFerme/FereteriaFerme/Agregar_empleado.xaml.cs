@@ -53,38 +53,48 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            int espacio = txt_apellido.Text.IndexOf(' ');
-            Usuario usr = new Usuario()
+            if (txt_rut.Text != String.Empty && txt_nombre.Text != String.Empty && txt_apellido.Text != String.Empty &&
+                    cb_cargo.Text != String.Empty && cb_tipo.Text != String.Empty)
             {
-                ID_USUARIO = 0,
-                NOMBRE_USUARIO = txt_nombre.Text.Substring(0,3)+"."+txt_apellido.Text.Substring(0, espacio),
-                CONTRASENA = txt_rut.Text,
-                ID_TIPOUSU = (short)cb_tipo.SelectedValue
-            };
-
-            if (usr.Create())
-            {
-                Empleado emp = new Empleado()
+                int espacio = txt_apellido.Text.IndexOf(' ');
+                Usuario usr = new Usuario()
                 {
-                    RUT_EMPLEADO = txt_rut.Text,
-                    NOMBRES_EMPLEADO = txt_nombre.Text,
-                    APELLIDOS_EMPLEADO = txt_apellido.Text,
-                    ID_CARGO = (short)cb_cargo.SelectedValue,
-                    ID_USUARIO = usr.ReadNombre(txt_nombre.Text.Substring(0, 3) + "." + txt_apellido.Text.Substring(0, espacio))[0].ID_USUARIO
+                    ID_USUARIO = 0,
+                    NOMBRE_USUARIO = txt_nombre.Text.Substring(0, 3) + "." + txt_apellido.Text.Substring(0, espacio),
+                    CONTRASENA = txt_rut.Text,
+                    ID_TIPOUSU = (short)cb_tipo.SelectedValue
                 };
 
-                if (emp.Create())
+                if (usr.Create())
                 {
-                    MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    Empleado emp = new Empleado()
+                    {
+                        RUT_EMPLEADO = txt_rut.Text,
+                        NOMBRES_EMPLEADO = txt_nombre.Text,
+                        APELLIDOS_EMPLEADO = txt_apellido.Text,
+                        ID_CARGO = (short)cb_cargo.SelectedValue,
+                        ID_USUARIO = usr.ReadNombre(txt_nombre.Text.Substring(0, 3) + "." + txt_apellido.Text.Substring(0, espacio))[0].ID_USUARIO
+                    };
 
-                else
-                {
-                    MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    if (emp.Create())
+                    {
+                        MessageBoxResult exito = MessageBox.Show("Se agregó el empleado", "Éxito",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+
+                    else
+                    {
+                        MessageBoxResult mal = MessageBox.Show("No se agregó el empleado", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }                    
                 }
             }
+
+            else
+            {
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
+            }                                          
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)

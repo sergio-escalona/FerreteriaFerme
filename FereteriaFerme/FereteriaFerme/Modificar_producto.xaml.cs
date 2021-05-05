@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FereteriaFerme;
+using System.Text.RegularExpressions;
 
 namespace FerreteriaFerme
 {
@@ -98,49 +99,60 @@ namespace FerreteriaFerme
         //Guardar cambios
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Producto pro = new Producto()
+            if (txt_nombre.Text != String.Empty && cb_proveedor.Text != String.Empty && cb_familia.Text != String.Empty &&
+                cb_tipo.Text != String.Empty && txt_descripcion.Text != String.Empty && txt_clp.Text != String.Empty &&
+                txt_usd.Text != String.Empty && txt_stock.Text != String.Empty)
             {
-                ID_PRODUCTO = id
-            };
-
-            if (pro.Read())
-            {
-                if (rb_si.IsChecked == true)
+                Producto pro = new Producto()
                 {
-                    vencimiento = DateTime.Parse(dp_vencimiento.Text);
-                }
-
-                else
-                {
-                    vencimiento = null;
-                }
-
-                Producto prd = new Producto()
-                {
-                    ID_PRODUCTO = id,
-                    NOMBRE_PRODUCTO = txt_nombre.Text,
-                    ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
-                    ID_FAMILIA = (short)cb_familia.SelectedValue,
-                    FECHA_VENCIMIENTO = vencimiento,
-                    ID_TIPO = (short)cb_tipo.SelectedValue,
-                    DESCRIPCION = txt_descripcion.Text,
-                    PRECIO_CLP = int.Parse(txt_clp.Text),
-                    PRECIO_USD = int.Parse(txt_usd.Text),
-                    STOCK = short.Parse(txt_stock.Text),
-                    FOTO = getJPGFromImageControl(img_producto.Source as BitmapImage)
+                    ID_PRODUCTO = id
                 };
 
-                if (prd.Update())
+                if (pro.Read())
                 {
-                    MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    if (rb_si.IsChecked == true)
+                    {
+                        vencimiento = DateTime.Parse(dp_vencimiento.Text);
+                    }
 
-                else
-                {
-                    MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    else
+                    {
+                        vencimiento = null;
+                    }
+
+                    Producto prd = new Producto()
+                    {
+                        ID_PRODUCTO = id,
+                        NOMBRE_PRODUCTO = txt_nombre.Text,
+                        ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
+                        ID_FAMILIA = (short)cb_familia.SelectedValue,
+                        FECHA_VENCIMIENTO = vencimiento,
+                        ID_TIPO = (short)cb_tipo.SelectedValue,
+                        DESCRIPCION = txt_descripcion.Text,
+                        PRECIO_CLP = int.Parse(txt_clp.Text),
+                        PRECIO_USD = int.Parse(txt_usd.Text),
+                        STOCK = short.Parse(txt_stock.Text),
+                        FOTO = getJPGFromImageControl(img_producto.Source as BitmapImage)
+                    };
+
+                    if (prd.Update())
+                    {
+                        MessageBoxResult exito = MessageBox.Show("Se modificó producto", "Éxito",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+
+                    else
+                    {
+                        MessageBoxResult mal = MessageBox.Show("No se pudo modificar producto", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
+            }
+
+            else
+            {
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -205,6 +217,24 @@ namespace FerreteriaFerme
             MainWindow lp = new MainWindow();
             lp.Show();
             this.Hide();
+        }
+
+        private void Txt_clp_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Txt_usd_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Txt_stock_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

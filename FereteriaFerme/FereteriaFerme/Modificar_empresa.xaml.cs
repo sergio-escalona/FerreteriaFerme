@@ -59,34 +59,44 @@ namespace FerreteriaFerme
 
         private void Btn_agregar_Click(object sender, RoutedEventArgs e)
         {
-            Empresa emp_viejo = new Empresa()
+            if (txt_rut.Text != String.Empty && txt_razon.Text != String.Empty && cb_tipo.Text != String.Empty && 
+                txt_correo.Text != String.Empty)
             {
-                ID_EMPRESA = id
-            };
-
-            if (emp_viejo.Read())
-            {
-                Empresa emp = new Empresa()
+                Empresa emp_viejo = new Empresa()
                 {
-                    ID_EMPRESA = id,
-                    RAZON_SOCIAL = txt_razon.Text,
-                    RUT_EMPRESA = txt_rut.Text,
-                    ID_TIPO = (short)cb_tipo.SelectedValue,
-                    CORREO_EMPRESA = txt_correo.Text,
-                    RUT_CLIENTE = emp_viejo.RUT_CLIENTE
+                    ID_EMPRESA = id
                 };
 
-                if (emp.Update())
+                if (emp_viejo.Read())
                 {
-                    MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    Empresa emp = new Empresa()
+                    {
+                        ID_EMPRESA = id,
+                        RAZON_SOCIAL = txt_razon.Text,
+                        RUT_EMPRESA = txt_rut.Text,
+                        ID_TIPO = (short)cb_tipo.SelectedValue,
+                        CORREO_EMPRESA = txt_correo.Text,
+                        RUT_CLIENTE = emp_viejo.RUT_CLIENTE
+                    };
 
-                else
-                {
-                    MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    if (emp.Update())
+                    {
+                        MessageBoxResult exito = MessageBox.Show("Se modificó empresa", "Éxito",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+
+                    else
+                    {
+                        MessageBoxResult mal = MessageBox.Show("No se pudo modificar empresa", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
+            }
+
+            else
+            {
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

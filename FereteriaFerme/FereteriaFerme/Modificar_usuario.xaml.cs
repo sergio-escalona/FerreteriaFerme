@@ -57,33 +57,43 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txt_contrasena1.Password == txt_contrasena2.Password)
+            if (txt_usuario.Text != String.Empty && txt_contrasena1.Password != String.Empty && 
+                txt_contrasena2.Password != String.Empty && cb_tipo.Text != String.Empty)
             {
-                Usuario usu = new Usuario()
+                if (txt_contrasena1.Password == txt_contrasena2.Password)
                 {
-                    ID_USUARIO = id,
-                    NOMBRE_USUARIO = txt_usuario.Text,
-                    CONTRASENA = txt_contrasena1.Password,
-                    ID_TIPOUSU = (short)cb_tipo.SelectedValue
-                };
+                    Usuario usu = new Usuario()
+                    {
+                        ID_USUARIO = id,
+                        NOMBRE_USUARIO = txt_usuario.Text,
+                        CONTRASENA = txt_contrasena1.Password,
+                        ID_TIPOUSU = (short)cb_tipo.SelectedValue
+                    };
 
-                if (usu.Update())
-                {
-                    MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (usu.Update())
+                    {
+                        MessageBoxResult exito = MessageBox.Show("Se modifico usuario empleado", "Éxito",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+
+                    else
+                    {
+                        MessageBoxResult mal = MessageBox.Show("No se pudo modificar usuario empleado", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
 
                 else
                 {
-                    MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBoxResult mal = MessageBox.Show("Contraseñas no coinciden", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("Contraseñas no coinciden", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             
         }

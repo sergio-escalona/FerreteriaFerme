@@ -44,42 +44,52 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txt_contrasena1.Password == txt_contrasena2.Password)
+            if (txt_usuario.Text != String.Empty && txt_contrasena1.Password != String.Empty &&
+                txt_contrasena2.Password != String.Empty)
             {
-                Usuario usu_viejo = new Usuario()
+                if (txt_contrasena1.Password == txt_contrasena2.Password)
                 {
-                    ID_USUARIO = id
-                };
-
-                if (usu_viejo.Read())
-                {
-                    Usuario usu = new Usuario()
+                    Usuario usu_viejo = new Usuario()
                     {
-                        ID_USUARIO = id,
-                        NOMBRE_USUARIO = txt_usuario.Text,
-                        CONTRASENA = txt_contrasena1.Password,
-                        ID_TIPOUSU = usu_viejo.ID_TIPOUSU
+                        ID_USUARIO = id
                     };
 
-                    if (usu.Update())
+                    if (usu_viejo.Read())
                     {
-                        MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                        MessageBoxButton.OK, MessageBoxImage.Information);
+                        Usuario usu = new Usuario()
+                        {
+                            ID_USUARIO = id,
+                            NOMBRE_USUARIO = txt_usuario.Text,
+                            CONTRASENA = txt_contrasena1.Password,
+                            ID_TIPOUSU = usu_viejo.ID_TIPOUSU
+                        };
+
+                        if (usu.Update())
+                        {
+                            MessageBoxResult exito = MessageBox.Show("Se modifico usuario cliente", "Éxito",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+
+                        else
+                        {
+                            MessageBoxResult mal = MessageBox.Show("No se pudo modificar usuario cliente", "Error",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                        }
                     }
 
-                    else
-                    {
-                        MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                        MessageBoxButton.OK, MessageBoxImage.Warning);
-                    }
                 }
-                                
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("Contraseñas no coinciden", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("Contraseñas no coinciden", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

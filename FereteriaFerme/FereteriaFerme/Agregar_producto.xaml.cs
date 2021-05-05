@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -94,40 +95,60 @@ namespace FerreteriaFerme
         //Guardar producto
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            if (rb_si.IsChecked == true)
+            if (txt_nombre.Text != String.Empty && cb_proveedor.Text != String.Empty && cb_familia.Text != String.Empty &&
+                cb_tipo.Text != String.Empty && txt_descripcion.Text != String.Empty && txt_clp.Text != String.Empty &&
+                txt_usd.Text != String.Empty && txt_stock.Text != String.Empty && ((BitmapImage)img_producto.Source).UriSource != null)
             {
-                vencimiento = DateTime.Parse(dp_vencimiento.Text);
+                if (rb_si.IsChecked == true)
+                {
+                    if (dp_vencimiento.Text != String.Empty)
+                    {
+                        vencimiento = DateTime.Parse(dp_vencimiento.Text);
+                    }
+
+                    else
+                    {
+                        MessageBoxResult mal = MessageBox.Show("Ingrese fecha de vencimiento", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+
+                else
+                {
+                    vencimiento = null;
+                }
+
+                Producto pro = new Producto()
+                {
+                    ID_PRODUCTO = Concatenar((short)cb_proveedor.SelectedValue, (short)cb_familia.SelectedValue, vencimiento, (short)cb_tipo.SelectedValue),
+                    NOMBRE_PRODUCTO = txt_nombre.Text,
+                    ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
+                    ID_FAMILIA = (short)cb_familia.SelectedValue,
+                    FECHA_VENCIMIENTO = vencimiento,
+                    ID_TIPO = (short)cb_tipo.SelectedValue,
+                    DESCRIPCION = txt_descripcion.Text,
+                    PRECIO_CLP = int.Parse(txt_clp.Text),
+                    PRECIO_USD = int.Parse(txt_usd.Text),
+                    STOCK = short.Parse(txt_stock.Text),
+                    FOTO = getJPGFromImageControl(img_producto.Source as BitmapImage)
+                };
+
+                if (pro.Create())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Se guardo producto", "Éxito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se guardo producto", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                vencimiento = null;
-            }
-
-            Producto pro = new Producto()
-            {
-                ID_PRODUCTO = Concatenar((short)cb_proveedor.SelectedValue, (short)cb_familia.SelectedValue, vencimiento, (short)cb_tipo.SelectedValue),
-                NOMBRE_PRODUCTO = txt_nombre.Text,
-                ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
-                ID_FAMILIA = (short)cb_familia.SelectedValue,
-                FECHA_VENCIMIENTO = vencimiento,
-                ID_TIPO = (short)cb_tipo.SelectedValue,
-                DESCRIPCION = txt_descripcion.Text,
-                PRECIO_CLP = int.Parse(txt_clp.Text),
-                PRECIO_USD = int.Parse(txt_usd.Text),
-                STOCK = short.Parse(txt_stock.Text),
-                FOTO = getJPGFromImageControl(img_producto.Source as BitmapImage)
-            };
-
-            if (pro.Create())
-            {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-
-            else
-            {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
                 MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -174,6 +195,24 @@ namespace FerreteriaFerme
             Ventana_principal vp = new Ventana_principal();
             vp.Show();
             this.Hide();
+        }
+
+        private void Txt_clp_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Txt_usd_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Txt_stock_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

@@ -86,24 +86,33 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Recepcion_Producto rep = new Recepcion_Producto()
+            if (cb_empleado.Text != String.Empty && cb_orden.Text != String.Empty && cb_estado.Text != String.Empty)
             {
-                ID_RECEPCION = id,
-                ID_ESTADO = (int)cb_estado.SelectedValue,
-                RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
-                ID_COMPRA = (decimal)cb_orden.SelectedValue
-            };
+                Recepcion_Producto rep = new Recepcion_Producto()
+                {
+                    ID_RECEPCION = id,
+                    ID_ESTADO = (int)cb_estado.SelectedValue,
+                    RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
+                    ID_COMPRA = (decimal)cb_orden.SelectedValue
+                };
 
-            if (rep.Update())
-            {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
+                if (rep.Update())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Recpeción modicada", "Éxito",
                     MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se pudo modificar recepción", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

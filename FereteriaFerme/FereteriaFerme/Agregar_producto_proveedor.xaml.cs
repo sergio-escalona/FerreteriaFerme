@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -44,24 +45,33 @@ namespace FerreteriaFerme
 
         private void Btn_agregar_Click(object sender, RoutedEventArgs e)
         {
-            Producto_Proveedor prp = new Producto_Proveedor()
+            if (txt_producto.Text != String.Empty && txt_cantidad.Text != String.Empty && txt_precio.Text != String.Empty)
             {
-                ID_PRODUCTO = 0,
-                NOMBRE_PRODUCTO = txt_producto.Text,
-                CANTIDAD = short.Parse(txt_cantidad.Text),
-                PRECIO_UNITARIO = int.Parse(txt_precio.Text),
-                ID_COMPRA = id
-            };
+                Producto_Proveedor prp = new Producto_Proveedor()
+                {
+                    ID_PRODUCTO = 0,
+                    NOMBRE_PRODUCTO = txt_producto.Text,
+                    CANTIDAD = short.Parse(txt_cantidad.Text),
+                    PRECIO_UNITARIO = int.Parse(txt_precio.Text),
+                    ID_COMPRA = id
+                };
 
-            if (prp.Create())
-            {
-                MostrarProducto();
-                LimpiarDatos();
+                if (prp.Create())
+                {
+                    MostrarProducto();
+                    LimpiarDatos();
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se guardo el producto", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -94,6 +104,18 @@ namespace FerreteriaFerme
             Agregar_orden_proveedor aop = new Agregar_orden_proveedor();
             aop.Show();
             this.Hide();
+        }
+
+        private void Txt_cantidad_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Txt_precio_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

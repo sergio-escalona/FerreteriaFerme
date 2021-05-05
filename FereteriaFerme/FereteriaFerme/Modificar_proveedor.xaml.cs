@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,25 +33,35 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Proveedor pro = new Proveedor()
+            if (txt_nombre.Text != String.Empty && txt_rut.Text != String.Empty && txt_celular.Text != String.Empty &&
+                txt_correo.Text != String.Empty)
             {
-                ID_PROVEEDOR = id,
-                NOMBRE_PROVEEDOR = txt_nombre.Text,
-                RUT_PROVEEDOR = txt_rut.Text,
-                CELULAR = long.Parse(txt_celular.Text),
-                CORREO = txt_correo.Text
-            };
+                Proveedor pro = new Proveedor()
+                {
+                    ID_PROVEEDOR = id,
+                    NOMBRE_PROVEEDOR = txt_nombre.Text,
+                    RUT_PROVEEDOR = txt_rut.Text,
+                    CELULAR = long.Parse(txt_celular.Text),
+                    CORREO = txt_correo.Text
+                };
 
-            if (pro.Update())
-            {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                if (pro.Update())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Se modificó proveedor", "Éxito",
+                     MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se guardo proveedor", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -76,5 +87,12 @@ namespace FerreteriaFerme
             lp.Show();
             this.Hide();
         }
+
+        private void Txt_celular_Validacion(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        
     }
 }

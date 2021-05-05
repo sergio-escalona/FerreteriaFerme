@@ -76,23 +76,32 @@ namespace FerreteriaFerme
 
         private void Btn_agregar_Click(object sender, RoutedEventArgs e)
         {
-            Direccion dir = new Direccion()
+            if (txt_direccion.Text != String.Empty && cb_region.Text != String.Empty && cb_comuna.Text != String.Empty)
             {
-                ID_DIRECCION = id,
-                DIRECCION1 = txt_direccion.Text,
-                ID_COMUNA = (short)cb_comuna.SelectedValue,
-                RUT_CLIENTE = rut
-            };
+                Direccion dir = new Direccion()
+                {
+                    ID_DIRECCION = id,
+                    DIRECCION1 = txt_direccion.Text,
+                    ID_COMUNA = (short)cb_comuna.SelectedValue,
+                    RUT_CLIENTE = rut
+                };
 
-            if (dir.Update())
-            {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                if (dir.Update())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Se modificó la dirección de cliente", "Éxito",
+                     MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se pudo modificar la dirección", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

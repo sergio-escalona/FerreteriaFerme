@@ -47,33 +47,44 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Cliente cli_viejo = new Cliente()
+            if (txt_rut.Text != String.Empty && txt_nombre.Text != String.Empty && txt_apellido.Text != String.Empty && 
+                txt_correo.Text != String.Empty)
             {
-                RUT_CLIENTE = rut
-            };
-
-            if (cli_viejo.Read())
-            {
-                Cliente cli = new Cliente()
+                Cliente cli_viejo = new Cliente()
                 {
-                    RUT_CLIENTE = txt_rut.Text,
-                    NOMBRES = txt_nombre.Text,
-                    APELLIDOS = txt_apellido.Text,
-                    ID_USUARIO = cli_viejo.ID_USUARIO,
-                    CORREO_CLIENTE = txt_correo.Text
+                    RUT_CLIENTE = rut
                 };
 
-                if (cli.Update())
+                if (cli_viejo.Read())
                 {
-                    MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    Cliente cli = new Cliente()
+                    {
+                        RUT_CLIENTE = txt_rut.Text,
+                        NOMBRES = txt_nombre.Text,
+                        APELLIDOS = txt_apellido.Text,
+                        ID_USUARIO = cli_viejo.ID_USUARIO,
+                        CORREO_CLIENTE = txt_correo.Text
+                    };
 
-                else
-                {
-                    MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    if (cli.Update())
+                    {
+                        MessageBoxResult exito = MessageBox.Show("Cliente modificado", "Éxito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+
+                    else
+                    {
+                        MessageBoxResult mal = MessageBox.Show("No se modifico el cliente", "mala",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
+            
+            }
+
+            else
+            {
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

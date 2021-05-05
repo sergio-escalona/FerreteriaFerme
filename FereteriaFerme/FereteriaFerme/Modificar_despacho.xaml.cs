@@ -99,37 +99,47 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            DateTime? fecha_entrega;
-
-            if ((short)cb_estado.SelectedValue == 4)
+            if (cb_compra.Text != String.Empty && cb_producto.Text != String.Empty && cb_empleado.Text != String.Empty &&
+                cb_estado.Text != String.Empty)
             {
-                fecha_entrega = DateTime.Now;
-            }
+                DateTime? fecha_entrega;
 
-            else
-            {
-                fecha_entrega = null;
-            }
+                if ((short)cb_estado.SelectedValue == 4)
+                {
+                    fecha_entrega = DateTime.Now;
+                }
 
-            Despacho des = new Despacho()
-            {
-                ID_DESPACHO = id,
-                ID_DETALLE = (decimal)cb_producto.SelectedValue,
-                ID_ESTADO = (short)cb_estado.SelectedValue,
-                RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
-                FECHA_ENVIO = DateTime.Now,
-                FECHA_RECEPCION = fecha_entrega                
-            };
+                else
+                {
+                    fecha_entrega = null;
+                }
 
-            if (des.Update())
-            {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
+                Despacho des = new Despacho()
+                {
+                    ID_DESPACHO = id,
+                    ID_DETALLE = (decimal)cb_producto.SelectedValue,
+                    ID_ESTADO = (short)cb_estado.SelectedValue,
+                    RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
+                    FECHA_ENVIO = DateTime.Now,
+                    FECHA_RECEPCION = fecha_entrega
+                };
+
+                if (des.Update())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Se modificó la orden de despacho", "Éxito",
                     MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se modificó el despacho", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

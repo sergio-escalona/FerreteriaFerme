@@ -59,33 +59,43 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Empleado emp_viejo = new Empleado()
+            if (txt_rut.Text != String.Empty && txt_nombre.Text != String.Empty && txt_apellido.Text != String.Empty &&
+                    cb_cargo.Text != String.Empty)
             {
-                RUT_EMPLEADO = rut
-            };
-
-            if (emp_viejo.Read())
-            {
-                Empleado emp = new Empleado()
+                Empleado emp_viejo = new Empleado()
                 {
-                    RUT_EMPLEADO = txt_rut.Text,
-                    NOMBRES_EMPLEADO = txt_nombre.Text,
-                    APELLIDOS_EMPLEADO = txt_apellido.Text,
-                    ID_CARGO = (short)cb_cargo.SelectedValue,
-                    ID_USUARIO = emp_viejo.ID_USUARIO
+                    RUT_EMPLEADO = rut
                 };
 
-                if (emp.Update())
+                if (emp_viejo.Read())
                 {
-                    MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    Empleado emp = new Empleado()
+                    {
+                        RUT_EMPLEADO = txt_rut.Text,
+                        NOMBRES_EMPLEADO = txt_nombre.Text,
+                        APELLIDOS_EMPLEADO = txt_apellido.Text,
+                        ID_CARGO = (short)cb_cargo.SelectedValue,
+                        ID_USUARIO = emp_viejo.ID_USUARIO
+                    };
 
-                else
-                {
-                    MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    if (emp.Update())
+                    {
+                        MessageBoxResult exito = MessageBox.Show("Se modificó el empleado", "Éxito",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+
+                    else
+                    {
+                        MessageBoxResult mal = MessageBox.Show("No se pudo modificar el empleado", "Error",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                 }
+            }
+
+            else
+            {
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

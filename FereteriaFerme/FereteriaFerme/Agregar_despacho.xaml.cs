@@ -49,7 +49,7 @@ namespace FerreteriaFerme
                 cb_producto.DisplayMemberPath = "NombreProducto";
                 cb_producto.SelectedValuePath = "ID_DETALLE";
 
-                cb_producto.SelectedIndex = 0;
+                cb_producto.SelectedIndex = -1;
             }
             catch (Exception ex) { }
         }
@@ -83,25 +83,35 @@ namespace FerreteriaFerme
 
         private void Btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Despacho des = new Despacho()
+            if (cb_compra.Text != String.Empty && cb_producto.Text != String.Empty && cb_empleado.Text != String.Empty && 
+                cb_estado.Text != String.Empty)
             {
-                ID_DESPACHO = 0,
-                ID_DETALLE = (decimal)cb_producto.SelectedValue,
-                ID_ESTADO = (short)cb_estado.SelectedValue,
-                RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
-                FECHA_ENVIO = DateTime.Now
-            };
+                Despacho des = new Despacho()
+                {
+                    ID_DESPACHO = 0,
+                    ID_DETALLE = (decimal)cb_producto.SelectedValue,
+                    ID_ESTADO = (short)cb_estado.SelectedValue,
+                    RUT_EMPLEADO = cb_empleado.SelectedValue.ToString().Trim(),
+                    FECHA_ENVIO = DateTime.Now
+                };
 
-            if (des.Create())
-            {
-                MessageBoxResult exito = MessageBox.Show("Se guardo", "bkn",
-                MessageBoxButton.OK, MessageBoxImage.Information);
+                if (des.Create())
+                {
+                    MessageBoxResult exito = MessageBox.Show("Se creo la orden de despacho", "Éxito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se guardo el despacho", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se guardo", "mala",
-                MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

@@ -39,26 +39,35 @@ namespace FerreteriaFerme
 
         private void Btn_crear_Click(object sender, RoutedEventArgs e)
         {
-            Compra_Proveedor cop = new Compra_Proveedor()
+            if (cb_proveedor.Text != String.Empty)
             {
-                ID_COMPRA = 0,
-                FECHA_COMPRA = DateTime.Now,
-                ID_PROVEEDOR = (short)cb_proveedor.SelectedValue
-            };
+                Compra_Proveedor cop = new Compra_Proveedor()
+                {
+                    ID_COMPRA = 0,
+                    FECHA_COMPRA = DateTime.Now,
+                    ID_PROVEEDOR = (short)cb_proveedor.SelectedValue
+                };
 
-            if (cop.Create())
-            {
-                Compra_Proveedor cp = new Compra_Proveedor();
-                int id = cp.ReadAll().Max(x => x.ID_COMPRA);
-                Agregar_producto_proveedor app = new Agregar_producto_proveedor(id);
-                app.Show();
-                this.Hide();
+                if (cop.Create())
+                {
+                    Compra_Proveedor cp = new Compra_Proveedor();
+                    int id = cp.ReadAll().Max(x => x.ID_COMPRA);
+                    Agregar_producto_proveedor app = new Agregar_producto_proveedor(id);
+                    app.Show();
+                    this.Hide();
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("No se crear pudo crear orden", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
 
             else
             {
-                MessageBoxResult mal = MessageBox.Show("No se crear pudo crear orden", "mala",
-                MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxResult mal = MessageBox.Show("Debe seleccionar proveedor", "Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
