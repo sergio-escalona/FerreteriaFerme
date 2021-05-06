@@ -6,24 +6,99 @@
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
         Title="Ventana_principal" Height="450" Width="800">
+    <Window.Resources>
+        <Color x:Key="ColorPrincipal">#FF007BFF</Color>
+    </Window.Resources>
     <Grid>
-        <Button x:Name="btn_agregarProducto" Content="Agregar Producto" HorizontalAlignment="Left" Margin="37,29,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProducto_Click"/>
-        <Button x:Name="btn_listarProducto" Content="Listar Producto" HorizontalAlignment="Left" Margin="196,29,0,0" VerticalAlignment="Top" Width="117" Height="36" RenderTransformOrigin="-2.613,-2.007" Click="Btn_listarProducto_Click"/>
-        <Button x:Name="btn_agregarProveedor" Content="Agregar Proveedor" HorizontalAlignment="Left" Margin="37,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProveedor_Click"/>
-        <Button x:Name="btn_listarProveedor" Content="Listar Proveedor" HorizontalAlignment="Left" Margin="196,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listarProveedor_Click"/>
-        <Button x:Name="btn_listar_orden" Content="Lista Orden Compras" HorizontalAlignment="Left" Margin="196,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listar_orden_Click"/>
-        <Button x:Name="btn_agregar_empleado" Content="Agregar Empleado" HorizontalAlignment="Left" Margin="37,193,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_empleado_Click"/>
-        <Button x:Name="btn_lista_empleado" Content="Lista Empleados" HorizontalAlignment="Left" Margin="196,193,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_empleado_Click"/>
-        <Button x:Name="btn_lista_cliente" Content="Lista Cliente" HorizontalAlignment="Left" Margin="196,253,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_cliente_Click"/>
-        <Button x:Name="btn_lista_empresa" Content="Lista Empresa" HorizontalAlignment="Left" Margin="355,253,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_empresa_Click"/>
-        <Button x:Name="btn_lista_boleta" Content="Lista Boleta" HorizontalAlignment="Left" Margin="196,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_boleta_Click"/>
-        <Button x:Name="btn_lista_factura" Content="Lista Factura" HorizontalAlignment="Left" Margin="355,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_factura_Click"/>
-        <Button x:Name="btn_pedido" Content="Realizar Pedido" HorizontalAlignment="Left" Margin="355,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_pedido_Click"/>
-        <Button x:Name="btn_lista_pedido" Content="Listar Pedido" HorizontalAlignment="Left" Margin="505,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_pedido_Click"/>
-        <Button x:Name="btn_agregar_recepcion" Content="Agregar Recepción" HorizontalAlignment="Left" Margin="355,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_recepcion_Click"/>
-        <Button x:Name="btn_lista_recepcion" Content="Lista Recepción" HorizontalAlignment="Left" Margin="505,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_recepcion_Click"/>
-        <Button x:Name="btn_agregar_despacho" Content="Agregar Despacho" HorizontalAlignment="Left" Margin="505,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_despacho_Click"/>
-        <Button x:Name="btn_listar_despacho" Content="Listar Despacho" HorizontalAlignment="Left" Margin="650,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listar_despacho_Click"/>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF007BFF"/>
+        </Grid.Background>
+        <Button x:Name="btn_agregarProducto" Content="Agregar Producto" HorizontalAlignment="Left" Margin="37,29,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProducto_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_listarProducto" Content="Listar Producto" HorizontalAlignment="Left" Margin="196,29,0,0" VerticalAlignment="Top" Width="117" Height="36" RenderTransformOrigin="-2.613,-2.007" Click="Btn_listarProducto_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_agregarProveedor" Content="Agregar Proveedor" HorizontalAlignment="Left" Margin="37,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregarProveedor_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_listarProveedor" Content="Listar Proveedor" HorizontalAlignment="Left" Margin="196,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listarProveedor_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_listar_orden" Content="Lista Orden Compras" HorizontalAlignment="Left" Margin="196,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listar_orden_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_agregar_empleado" Content="Agregar Empleado" HorizontalAlignment="Left" Margin="37,193,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_empleado_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_lista_empleado" Content="Lista Empleados" HorizontalAlignment="Left" Margin="196,193,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_empleado_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_lista_cliente" Content="Lista Cliente" HorizontalAlignment="Left" Margin="196,253,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_cliente_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_lista_empresa" Content="Lista Empresa" HorizontalAlignment="Left" Margin="355,253,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_empresa_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_lista_boleta" Content="Lista Boleta" HorizontalAlignment="Left" Margin="196,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_boleta_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_lista_factura" Content="Lista Factura" HorizontalAlignment="Left" Margin="355,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_factura_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_pedido" Content="Realizar Pedido" HorizontalAlignment="Left" Margin="355,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_pedido_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_lista_pedido" Content="Listar Pedido" HorizontalAlignment="Left" Margin="505,88,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_pedido_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_agregar_recepcion" Content="Agregar Recepción" HorizontalAlignment="Left" Margin="355,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_recepcion_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_lista_recepcion" Content="Lista Recepción" HorizontalAlignment="Left" Margin="505,139,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_lista_recepcion_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_agregar_despacho" Content="Agregar Despacho" HorizontalAlignment="Left" Margin="505,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_agregar_despacho_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_listar_despacho" Content="Listar Despacho" HorizontalAlignment="Left" Margin="650,306,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="Btn_listar_despacho_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Image Margin="625,0,0,355" Source="Image1.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

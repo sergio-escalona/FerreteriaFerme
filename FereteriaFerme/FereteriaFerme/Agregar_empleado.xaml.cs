@@ -80,6 +80,7 @@ namespace FerreteriaFerme
                     {
                         MessageBoxResult exito = MessageBox.Show("Se agregó el empleado", "Éxito",
                         MessageBoxButton.OK, MessageBoxImage.Information);
+                        LimpiarDatos();
                     }
 
                     else
@@ -102,6 +103,15 @@ namespace FerreteriaFerme
             Ventana_principal vp = new Ventana_principal();
             vp.Show();
             this.Hide();
+        }
+
+        private void LimpiarDatos()
+        {
+            txt_rut.Text = String.Empty;
+            txt_nombre.Text = String.Empty;
+            txt_apellido.Text = String.Empty;
+            cb_cargo.Text = String.Empty;
+            cb_tipo.Text = String.Empty;
         }
     }
 }

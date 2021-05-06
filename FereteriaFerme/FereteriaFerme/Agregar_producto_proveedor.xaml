@@ -7,14 +7,36 @@
         mc:Ignorable="d"
         Title="Agregar_producto_proveedor" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
         <Label Content="Producto" HorizontalAlignment="Left" Margin="41,92,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_producto" HorizontalAlignment="Left" Height="23" Margin="140,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_producto" HorizontalAlignment="Left" Height="23" Margin="140,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Cantidad" HorizontalAlignment="Left" Margin="41,143,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_cantidad" HorizontalAlignment="Left" Height="23" Margin="140,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_cantidad_Validacion"/>
+        <TextBox x:Name="txt_cantidad" HorizontalAlignment="Left" Height="23" Margin="140,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_cantidad_Validacion">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Precio unitario" HorizontalAlignment="Left" Margin="41,191,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_precio" HorizontalAlignment="Left" Height="23" Margin="140,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_precio_Validacion"/>
-        <Button x:Name="btn_agregar" Content="Agregar" HorizontalAlignment="Left" Margin="102,289,0,0" VerticalAlignment="Top" Width="75" Click="Btn_agregar_Click"/>
-        <DataGrid x:Name="dtg_producto" HorizontalAlignment="Left" Height="268" Margin="320,53,0,0" VerticalAlignment="Top" Width="450" AutoGenerateColumns="False">
+        <TextBox x:Name="txt_precio" HorizontalAlignment="Left" Height="23" Margin="140,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_precio_Validacion">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button x:Name="btn_agregar" Content="Agregar" HorizontalAlignment="Left" Margin="102,289,0,0" VerticalAlignment="Top" Width="75" Click="Btn_agregar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <DataGrid x:Name="dtg_producto" HorizontalAlignment="Left" Height="268" Margin="320,53,0,0" VerticalAlignment="Top" Width="450" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_PRODUCTO}" />
                 <DataGridTextColumn Header="Producto" Binding="{Binding Path=NOMBRE_PRODUCTO}" />
@@ -29,7 +51,11 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="41,374,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="41,374,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

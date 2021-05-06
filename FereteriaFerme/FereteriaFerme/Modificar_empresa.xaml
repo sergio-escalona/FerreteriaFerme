@@ -7,16 +7,43 @@
         mc:Ignorable="d"
         Title="Modificar_empresa" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
         <Label Content="Rut" HorizontalAlignment="Left" Margin="250,91,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="338,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="338,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Razon Social" HorizontalAlignment="Left" Margin="250,147,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_razon" HorizontalAlignment="Left" Height="23" Margin="338,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
-        <ComboBox x:Name="cb_tipo" HorizontalAlignment="Left" Margin="338,197,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_razon" HorizontalAlignment="Left" Height="23" Margin="338,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <ComboBox x:Name="cb_tipo" HorizontalAlignment="Left" Margin="338,197,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         <Label Content="Tipo Empresa" HorizontalAlignment="Left" Margin="250,193,0,0" VerticalAlignment="Top"/>
         <Label Content="Correo" HorizontalAlignment="Left" Margin="250,243,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_correo" HorizontalAlignment="Left" Height="23" Margin="338,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
-        <Button x:Name="btn_agregar" Content="Guardar" HorizontalAlignment="Left" Margin="338,324,0,0" VerticalAlignment="Top" Width="75" Click="Btn_agregar_Click"/>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="72,346,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <TextBox x:Name="txt_correo" HorizontalAlignment="Left" Height="23" Margin="338,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button x:Name="btn_agregar" Content="Guardar" HorizontalAlignment="Left" Margin="338,324,0,0" VerticalAlignment="Top" Width="75" Click="Btn_agregar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="72,346,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

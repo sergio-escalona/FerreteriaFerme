@@ -7,16 +7,47 @@
         mc:Ignorable="d"
         Title="Modificar_empleado" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
         <Label Content="Nombres" HorizontalAlignment="Left" Margin="147,133,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="238,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383"/>
+        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="238,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Apellidos" HorizontalAlignment="Left" Margin="147,180,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_apellido" HorizontalAlignment="Left" Height="23" Margin="238,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383"/>
+        <TextBox x:Name="txt_apellido" HorizontalAlignment="Left" Height="23" Margin="238,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="383">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Rut" HorizontalAlignment="Left" Margin="147,91,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="238,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" IsEnabled="False"/>
+        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="238,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" IsEnabled="False">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="{DynamicResource Bordes}" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Cargo" HorizontalAlignment="Left" Margin="147,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.117,0.23"/>
-        <ComboBox x:Name="cb_cargo" HorizontalAlignment="Left" Margin="238,235,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="335,339,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click"/>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="28,372,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <ComboBox x:Name="cb_cargo" HorizontalAlignment="Left" Margin="238,235,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="335,339,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="28,372,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

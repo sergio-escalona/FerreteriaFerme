@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:FereteriaFerme"
              StartupUri="Ventana_principal.xaml">
     <Application.Resources>
-         
+
+        <Color x:Key="ColorPrincipal">#FF007BFF</Color>
+        <Color x:Key="Bordes">Black</Color>
+
     </Application.Resources>
 </Application>

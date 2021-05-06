@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="Lista_factura" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtg_factura" HorizontalAlignment="Left" Height="289" Margin="53,27,0,0" VerticalAlignment="Top" Width="700" AutoGenerateColumns="False">
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
+        <DataGrid x:Name="dtg_factura" HorizontalAlignment="Left" Height="289" Margin="53,27,0,0" VerticalAlignment="Top" Width="700" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_FACTURA}" />
                 <DataGridTextColumn Header="Fecha" Binding="{Binding Path=FECHA_FACTURA, StringFormat=dd/MM/yyyy}" />
@@ -19,7 +25,11 @@
                 <DataGridTextColumn Header="Medio de pago" Binding="{Binding Path=DescripcionMedio}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="53,362,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="53,362,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

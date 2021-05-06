@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="67,50,0,0" VerticalAlignment="Top" Width="670" AutoGenerateColumns="False">
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
+        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="64,22,0,0" VerticalAlignment="Top" Width="670" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_PRODUCTO}" />
@@ -42,9 +48,13 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
-            
+
         </DataGrid>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="22,378,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,-0.143" Click="Btn_volver_Click"/>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="22,378,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.373,-0.143" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

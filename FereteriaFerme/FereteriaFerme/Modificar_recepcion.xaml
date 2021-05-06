@@ -7,15 +7,41 @@
         mc:Ignorable="d"
         Title="Modificar_recepcion" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
         <Label Content="Empleado" HorizontalAlignment="Left" Margin="11,15,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_empleado" HorizontalAlignment="Left" Margin="145,19,0,0" VerticalAlignment="Top" Width="324" IsEnabled="False"/>
+        <ComboBox x:Name="cb_empleado" HorizontalAlignment="Left" Margin="145,19,0,0" VerticalAlignment="Top" Width="324" IsEnabled="False">
+            <ComboBox.Background>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.Background>
+        </ComboBox>
         <Label Content="Orden" HorizontalAlignment="Left" Margin="11,63,0,0" VerticalAlignment="Top" Width="106"/>
-        <ComboBox x:Name="cb_orden" HorizontalAlignment="Left" Margin="145,67,0,0" VerticalAlignment="Top" Width="162" IsEnabled="False"/>
+        <ComboBox x:Name="cb_orden" HorizontalAlignment="Left" Margin="145,67,0,0" VerticalAlignment="Top" Width="162" IsEnabled="False">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         <Label Content="Estado de la recepcion" HorizontalAlignment="Left" Margin="11,115,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_estado" HorizontalAlignment="Left" Margin="145,119,0,0" VerticalAlignment="Top" Width="162"/>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="26,174,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click"/>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="44,368,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <ComboBox x:Name="cb_estado" HorizontalAlignment="Left" Margin="145,119,0,0" VerticalAlignment="Top" Width="162">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="26,174,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="44,368,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
         <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="153" Margin="182,174,0,0" VerticalAlignment="Top" Width="579" AutoGenerateColumns="False">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_DETALLE}" />
                 <DataGridTextColumn Header="Producto" Binding="{Binding Path=NombreProducto}" />

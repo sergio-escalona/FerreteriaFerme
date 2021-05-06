@@ -137,6 +137,7 @@ namespace FerreteriaFerme
                 {
                     MessageBoxResult exito = MessageBox.Show("Se guardo producto", "Éxito",
                     MessageBoxButton.OK, MessageBoxImage.Information);
+                    LimpiarDatos();
                 }
 
                 else
@@ -213,6 +214,21 @@ namespace FerreteriaFerme
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void LimpiarDatos()
+        {
+            txt_nombre.Text = String.Empty;
+            cb_proveedor.Text = String.Empty;
+            cb_familia.Text = String.Empty;
+            rb_no.IsChecked = true;
+            dp_vencimiento.Text = String.Empty;
+            cb_tipo.Text = String.Empty;
+            txt_descripcion.Text = String.Empty;
+            txt_clp.Text = String.Empty;
+            txt_usd.Text = String.Empty;
+            txt_stock.Text = String.Empty;
+            ((BitmapImage)img_producto.Source).UriSource = null;
         }
     }
 }

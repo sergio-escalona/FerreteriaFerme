@@ -7,14 +7,37 @@
         mc:Ignorable="d"
         Title="Modificar_usuario_cliente" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
         <Label Content="Nombre Usuario" HorizontalAlignment="Left" Margin="229,108,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_usuario" HorizontalAlignment="Left" Height="23" Margin="368,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_usuario" HorizontalAlignment="Left" Height="23" Margin="368,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="229,151,0,0" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="txt_contrasena1" HorizontalAlignment="Left" Margin="368,151,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="txt_contrasena1" HorizontalAlignment="Left" Margin="368,151,0,0" VerticalAlignment="Top" Width="120">
+            <PasswordBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </PasswordBox.BorderBrush>
+        </PasswordBox>
         <Label Content="Repetir contraseña" HorizontalAlignment="Left" Margin="229,194,0,0" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="txt_contrasena2" HorizontalAlignment="Left" Margin="368,200,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="328,323,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click"/>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="41,367,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <PasswordBox x:Name="txt_contrasena2" HorizontalAlignment="Left" Margin="368,200,0,0" VerticalAlignment="Top" Width="120">
+            <PasswordBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </PasswordBox.BorderBrush>
+        </PasswordBox>
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="328,323,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="41,367,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

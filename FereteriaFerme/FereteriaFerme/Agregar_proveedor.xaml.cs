@@ -43,7 +43,8 @@ namespace FerreteriaFerme
                 if (pro.Create())
                 {
                     MessageBoxResult exito = MessageBox.Show("Se guardo proveedor", "Éxito",
-                     MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    LimpiarDatos();
                 }
 
                 else
@@ -56,7 +57,7 @@ namespace FerreteriaFerme
             else
             {
                 MessageBoxResult mal = MessageBox.Show("Debe llenar todos los campos", "Error",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -71,6 +72,14 @@ namespace FerreteriaFerme
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void LimpiarDatos()
+        {
+            txt_nombre.Text = String.Empty;
+            txt_rut.Text = String.Empty;
+            txt_celular.Text = String.Empty;
+            txt_correo.Text = String.Empty;
         }
     }
 }

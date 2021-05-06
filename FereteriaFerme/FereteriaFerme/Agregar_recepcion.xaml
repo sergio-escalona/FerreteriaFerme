@@ -7,14 +7,37 @@
         mc:Ignorable="d"
         Title="Agregar_recepcion" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
         <Label Content="Asignar Empleado" HorizontalAlignment="Left" Margin="172,137,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_empleado" HorizontalAlignment="Left" Margin="306,141,0,0" VerticalAlignment="Top" Width="324"/>
+        <ComboBox x:Name="cb_empleado" HorizontalAlignment="Left" Margin="306,141,0,0" VerticalAlignment="Top" Width="324">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         <Label Content="Asignar Orden" HorizontalAlignment="Left" Margin="172,185,0,0" VerticalAlignment="Top" Width="106"/>
-        <ComboBox x:Name="cb_orden" HorizontalAlignment="Left" Margin="306,189,0,0" VerticalAlignment="Top" Width="162"/>
+        <ComboBox x:Name="cb_orden" HorizontalAlignment="Left" Margin="306,189,0,0" VerticalAlignment="Top" Width="162">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
         <Label Content="Estado de la recepcion" HorizontalAlignment="Left" Margin="172,237,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_estado" HorizontalAlignment="Left" Margin="306,241,0,0" VerticalAlignment="Top" Width="162" IsEnabled="False"/>
-        <Button x:Name="btn_guardar" Content="Asignar" HorizontalAlignment="Left" Margin="306,312,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click"/>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="44,368,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <ComboBox x:Name="cb_estado" HorizontalAlignment="Left" Margin="306,241,0,0" VerticalAlignment="Top" Width="162" IsEnabled="False">
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
+        <Button x:Name="btn_guardar" Content="Asignar" HorizontalAlignment="Left" Margin="306,312,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="44,368,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>

@@ -7,16 +7,43 @@
         mc:Ignorable="d"
         Title="Modificar_cliente" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
         <Label Content="Nombres" HorizontalAlignment="Left" Margin="160,125,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="269,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="356"/>
+        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="269,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="356">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Apellidos" HorizontalAlignment="Left" Margin="160,173,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_apellido" HorizontalAlignment="Left" Height="23" Margin="269,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="356"/>
+        <TextBox x:Name="txt_apellido" HorizontalAlignment="Left" Height="23" Margin="269,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="356">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Correo" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_correo" HorizontalAlignment="Left" Height="23" Margin="269,227,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="298"/>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="336,328,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click"/>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="57,358,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click"/>
+        <TextBox x:Name="txt_correo" HorizontalAlignment="Left" Height="23" Margin="269,227,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="298">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="336,328,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="57,358,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
         <Label Content="Rut" HorizontalAlignment="Left" Margin="168,84,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="269,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" IsEnabled="False"/>
+        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="269,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" IsEnabled="False">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
 
     </Grid>
 </Window>
