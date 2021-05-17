@@ -100,6 +100,9 @@
     <Compile Include="Agregar_recepcion.xaml.cs">
       <DependentUpon>Agregar_recepcion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Inicio_bodeguero.xaml.cs">
+      <DependentUpon>Inicio_bodeguero.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lista_boleta.xaml.cs">
       <DependentUpon>Lista_boleta.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,9 @@
     </Compile>
     <Compile Include="Lista_Recepcion.xaml.cs">
       <DependentUpon>Lista_Recepcion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modificar_cliente.xaml.cs">
       <DependentUpon>Modificar_cliente.xaml</DependentUpon>
@@ -214,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Inicio_bodeguero.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lista_boleta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -279,6 +289,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lista_Recepcion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

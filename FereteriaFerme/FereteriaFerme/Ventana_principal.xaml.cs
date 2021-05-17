@@ -143,5 +143,12 @@ namespace FerreteriaFerme
             ld.Show();
             this.Hide();
         }
+
+        private void Btn_volver_Click(object sender, RoutedEventArgs e)
+        {
+            Login log = new Login();
+            log.Show();
+            this.Hide();
+        }
     }
 }

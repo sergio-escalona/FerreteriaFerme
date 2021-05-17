@@ -99,6 +99,11 @@
             </Button.BorderBrush>
         </Button>
         <Image Margin="625,0,0,355" Source="Image1.png" Stretch="Fill"/>
+        <Button x:Name="btn_volver" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="37,372,0,0" VerticalAlignment="Top" Width="85" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Window>
