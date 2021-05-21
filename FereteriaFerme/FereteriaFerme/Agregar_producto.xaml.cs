@@ -193,8 +193,8 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Ventana_principal vp = new Ventana_principal();
-            vp.Show();
+            Bodeguero_producto bp = new Bodeguero_producto();
+            bp.Show();
             this.Hide();
         }
 

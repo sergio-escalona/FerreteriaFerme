@@ -22,13 +22,34 @@ namespace FerreteriaFerme
         public Inicio_bodeguero()
         {
             InitializeComponent();
-            tb_usuario.Text=Login.rut;
+            tb_nombre.Text = Login.rut;
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
             Login log = new Login();
             log.Show();
+            this.Hide();
+        }
+
+        private void Btn_producto_Click(object sender, RoutedEventArgs e)
+        {
+            Bodeguero_producto bp = new Bodeguero_producto();
+            bp.Show();
+            this.Hide();
+        }
+
+        private void Btn_pedido_Click(object sender, RoutedEventArgs e)
+        {
+            Bodeguero_pedido bp = new Bodeguero_pedido();
+            bp.Show();
+            this.Hide();
+        }
+
+        private void Btn_recepción_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_Recepcion lr = new Lista_Recepcion();
+            lr.Show();
             this.Hide();
         }
     }

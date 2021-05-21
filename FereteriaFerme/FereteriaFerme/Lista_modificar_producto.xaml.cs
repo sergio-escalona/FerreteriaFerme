@@ -16,36 +16,36 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Lista_Recepcion.xaml
+    /// Lógica de interacción para Lista_modificar_producto.xaml
     /// </summary>
-    public partial class Lista_Recepcion : Window
+    public partial class Lista_modificar_producto : Window
     {
-        public Lista_Recepcion()
+        public Lista_modificar_producto()
         {
             InitializeComponent();
-            MostrarRecepcion();
+            MostrarProducto();
         }
 
-        private void MostrarRecepcion()
+        private void MostrarProducto()
         {
-            Recepcion_Producto rep = new Recepcion_Producto();
-            dtg_recepcion.ItemsSource = rep.ReadAll();
-            dtg_recepcion.Items.Refresh();
+            Producto pro = new Producto();
+            dtg_productos.ItemsSource = pro.ReadAll();
+            dtg_productos.Items.Refresh();
         }
 
         private void Btn_modificar_Click(object sender, RoutedEventArgs e)
         {
-            Recepcion_Producto fila = (Recepcion_Producto)dtg_recepcion.SelectedItem;
-            int id = fila.ID_RECEPCION;
-            Modificar_recepcion mor = new Modificar_recepcion(id);
-            mor.Show();
+            Producto fila = (Producto)dtg_productos.SelectedItem;
+            long id = fila.ID_PRODUCTO;
+            Modificar_producto mp = new Modificar_producto(id);
+            mp.Show();
             this.Hide();
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Inicio_bodeguero ib = new Inicio_bodeguero();
-            ib.Show();
+            Bodeguero_producto bp = new Bodeguero_producto();
+            bp.Show();
             this.Hide();
         }
     }

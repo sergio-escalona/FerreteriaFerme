@@ -337,5 +337,24 @@ namespace FerreteriaFerme.Negocio
                 _descripcionTipo = String.Empty;
             }
         }
+
+        //Listar stock critico
+        public List<Producto> Stock()
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.PRODUCTO> listaDatos =
+                    bbdd.PRODUCTO.Where(b => b.STOCK <= 20).ToList<Datos.PRODUCTO>();
+
+                List<Producto> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Producto>();
+            }
+        }
     }
 }

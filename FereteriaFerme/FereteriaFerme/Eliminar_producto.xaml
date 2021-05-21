@@ -1,0 +1,51 @@
+﻿<Window x:Class="FerreteriaFerme.Eliminar_producto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Eliminar_producto" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF007BFF"/>
+        </Grid.Background>
+        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="10,22,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="16" FontWeight="Bold">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_PRODUCTO}" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding NOMBRE_PRODUCTO}" />
+                <DataGridTextColumn Header="Proveedor" Binding="{Binding NombreProveedor}" />
+                <DataGridTextColumn Header="Familia" Binding="{Binding DescripcionFamilia}" />
+                <DataGridTextColumn Header="Vencimiento" Binding="{Binding FECHA_VENCIMIENTO, StringFormat=dd/MM/yyyy}" />
+                <DataGridTextColumn Header="Tipo" Binding="{Binding DescripcionTipo}" />
+                <DataGridTextColumn Header="Precio CLP" Binding="{Binding PRECIO_CLP}" />
+                <DataGridTextColumn Header="Stock" Binding="{Binding STOCK}" />
+                <DataGridTemplateColumn Header="Foto" Width="50" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding FOTO}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_eliminar" Click="Btn_eliminar_Click" Content="Eliminar"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="22,378,0,0" VerticalAlignment="Top" Width="177" RenderTransformOrigin="0.373,-0.143" Click="Btn_volver_Click" FontSize="20" FontWeight="Bold">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+
+    </Grid>
+</Window>

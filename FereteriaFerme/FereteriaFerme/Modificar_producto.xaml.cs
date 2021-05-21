@@ -214,8 +214,8 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow lp = new MainWindow();
-            lp.Show();
+            Lista_modificar_producto lmp = new Lista_modificar_producto();
+            lmp.Show();
             this.Hide();
         }
 

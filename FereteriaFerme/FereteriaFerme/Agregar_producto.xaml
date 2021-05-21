@@ -10,94 +10,63 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <Image x:Name="img_producto" HorizontalAlignment="Left" Height="153" Margin="10,10,0,0" VerticalAlignment="Top" Width="153"/>
-        <Button x:Name="btn_foto" Content="Buscar Foto" HorizontalAlignment="Left" Margin="38,168,0,0" VerticalAlignment="Top" Width="75" Click="Btn_foto_Click">
+        <Image x:Name="img_producto" HorizontalAlignment="Left" Height="153" Margin="625,94,0,0" VerticalAlignment="Top" Width="153"/>
+        <Button x:Name="btn_foto" Content="CARGAR FOTO" HorizontalAlignment="Left" Margin="625,252,0,0" VerticalAlignment="Top" Width="153" Click="Btn_foto_Click" FontSize="20" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="190,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.385,-0.218"/>
-        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="259,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" RenderTransformOrigin="0.344,-3.686" BorderBrush="Black"/>
-        <Label Content="Proveedor" HorizontalAlignment="Left" Margin="190,45,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_proveedor" HorizontalAlignment="Left" Margin="259,49,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="20,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.385,-0.218" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="31" Margin="133,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" RenderTransformOrigin="0.344,-3.686" BorderBrush="Black" FontSize="20"/>
+        <Label Content="Proveedor" HorizontalAlignment="Left" Margin="20,95,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_proveedor" HorizontalAlignment="Left" Margin="133,103,0,0" VerticalAlignment="Top" Width="149" FontSize="20">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <Label Content="Familia" HorizontalAlignment="Left" Margin="190,76,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_familia" HorizontalAlignment="Left" Margin="259,80,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Familia" HorizontalAlignment="Left" Margin="337,99,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_familia" HorizontalAlignment="Left" Margin="430,103,0,0" VerticalAlignment="Top" Width="168" FontSize="20">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <Label Content="Fecha de vencimiento" HorizontalAlignment="Left" Margin="190,110,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dp_vencimiento" HorizontalAlignment="Left" Margin="416,110,0,0" VerticalAlignment="Top" IsEnabled="False" BorderBrush="Black"/>
-        <Label Content="Tipo de producto" HorizontalAlignment="Left" Margin="190,141,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_tipo" HorizontalAlignment="Left" Margin="297,141,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Fecha de vencimiento" HorizontalAlignment="Left" Margin="20,131,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <DatePicker x:Name="dp_vencimiento" HorizontalAlignment="Left" Margin="369,141,0,0" VerticalAlignment="Top" IsEnabled="False" BorderBrush="Black" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Tipo de producto" HorizontalAlignment="Left" Margin="20,173,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_tipo" HorizontalAlignment="Left" Margin="202,177,0,0" VerticalAlignment="Top" Width="165" FontSize="20">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <Label Content="Descripción" HorizontalAlignment="Left" Margin="190,172,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_descripcion" HorizontalAlignment="Left" Height="69" Margin="267,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308">
-            <TextBox.BorderBrush>
-                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
-                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
-                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
-                    <GradientStop Color="{DynamicResource Bordes}" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBox.BorderBrush>
-        </TextBox>
-        <Label Content="Precio CLP" HorizontalAlignment="Left" Margin="190,275,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_clp" HorizontalAlignment="Left" Height="23" Margin="267,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_clp_Validacion">
-            <TextBox.BorderBrush>
-                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
-                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
-                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
-                    <GradientStop Color="{DynamicResource Bordes}" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBox.BorderBrush>
-        </TextBox>
-        <Label Content="Precio USD" HorizontalAlignment="Left" Margin="190,306,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_usd" HorizontalAlignment="Left" Height="23" Margin="267,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_usd_Validacion">
-            <TextBox.BorderBrush>
-                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
-                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
-                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
-                    <GradientStop Color="{DynamicResource Bordes}" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBox.BorderBrush>
-        </TextBox>
-        <Label Content="Stock" HorizontalAlignment="Left" Margin="190,337,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.109,0.161"/>
-        <TextBox x:Name="txt_stock" HorizontalAlignment="Left" Height="23" Margin="267,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_stock_Validacion">
-            <TextBox.BorderBrush>
-                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
-                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
-                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
-                    <GradientStop Color="{DynamicResource Bordes}" Offset="1"/>
-                </LinearGradientBrush>
-            </TextBox.BorderBrush>
-        </TextBox>
-        <RadioButton x:Name="rb_si" Content="Si" HorizontalAlignment="Left" Margin="320,115,0,0" VerticalAlignment="Top" GroupName="Vencimiento" Checked="Rb_si_Checked">
+        <Label Content="Descripción" HorizontalAlignment="Left" Margin="20,210,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="txt_descripcion" HorizontalAlignment="Left" Height="53" Margin="145,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="453" FontSize="20" BorderBrush="Black"/>
+        <Label Content="Precio CLP" HorizontalAlignment="Left" Margin="19,282,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="txt_clp" HorizontalAlignment="Left" Height="31" Margin="133,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_clp_Validacion" BorderBrush="Black" FontSize="20"/>
+        <Label Content="Precio USD" HorizontalAlignment="Left" Margin="252,282,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="txt_usd" HorizontalAlignment="Left" Height="31" Margin="372,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_usd_Validacion" BorderBrush="Black" FontSize="20"/>
+        <Label Content="Stock" HorizontalAlignment="Left" Margin="19,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.109,0.161" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="txt_stock" HorizontalAlignment="Left" Height="31" Margin="133,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_stock_Validacion" FontSize="20" BorderBrush="Black"/>
+        <RadioButton x:Name="rb_si" Content="Si" HorizontalAlignment="Left" Margin="249,136,0,0" VerticalAlignment="Top" GroupName="Vencimiento" Checked="Rb_si_Checked" FontSize="20" FontWeight="Bold">
             <RadioButton.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </RadioButton.BorderBrush>
         </RadioButton>
-        <RadioButton x:Name="rb_no" Content="No" HorizontalAlignment="Left" Margin="362,115,0,0" VerticalAlignment="Top" GroupName="Vencimiento" IsChecked="True" Checked="Rb_no_Checked">
+        <RadioButton x:Name="rb_no" Content="No" HorizontalAlignment="Left" Margin="303,136,0,0" VerticalAlignment="Top" GroupName="Vencimiento" IsChecked="True" Checked="Rb_no_Checked" FontSize="20" FontWeight="Bold">
             <RadioButton.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </RadioButton.BorderBrush>
         </RadioButton>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="500,337,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click">
+        <Button x:Name="btn_guardar" Content="GUARDAR" HorizontalAlignment="Left" Margin="455,373,0,0" VerticalAlignment="Top" Width="143" Click="Btn_guardar_Click" FontSize="20" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="38,357,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+        <Button x:Name="btn_volver" Content="VOLVER" HorizontalAlignment="Left" Margin="217,373,0,0" VerticalAlignment="Top" Width="130" Click="Btn_volver_Click" FontSize="20" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <Label Content="FICHA DE PRODUCTO" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -10,7 +10,7 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_recepcion" HorizontalAlignment="Left" Height="279" Margin="43,31,0,0" VerticalAlignment="Top" Width="702" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True">
+        <DataGrid x:Name="dtg_recepcion" HorizontalAlignment="Left" Height="279" Margin="43,77,0,0" VerticalAlignment="Top" Width="702" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="20" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
@@ -28,11 +28,12 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="43,361,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="43,377,0,0" VerticalAlignment="Top" Width="169" Click="Btn_volver_Click" FontSize="20" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="238,10,0,0" TextWrapping="Wrap" Text="RECEPCIÓN DE PRODUCTOS" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>
