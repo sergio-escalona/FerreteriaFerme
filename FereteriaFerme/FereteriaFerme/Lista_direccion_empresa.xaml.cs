@@ -77,8 +77,8 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Lista_empresa lie = new Lista_empresa();
-            lie.Show();
+            Listado_modificar_empresa lme = new Listado_modificar_empresa();
+            lme.Show();
             this.Hide();
         }
     }

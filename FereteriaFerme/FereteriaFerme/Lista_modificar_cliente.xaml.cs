@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Lista_cliente.xaml
+    /// Lógica de interacción para Lista_modificar_cliente.xaml
     /// </summary>
-    public partial class Lista_cliente : Window
+    public partial class Lista_modificar_cliente : Window
     {
-        public Lista_cliente()
+        public Lista_modificar_cliente()
         {
             InitializeComponent();
             MostrarCliente();
@@ -31,13 +31,6 @@ namespace FerreteriaFerme
             Cliente cli = new Cliente();
             dtg_clientes.ItemsSource = cli.ReadAll();
             dtg_clientes.Items.Refresh();
-        }
-
-        private void Btn_volver_Click(object sender, RoutedEventArgs e)
-        {
-            Administrador_cli_emp ace = new Administrador_cli_emp();
-            ace.Show();
-            this.Hide();
         }
 
         private void Btn_direccion_Click(object sender, RoutedEventArgs e)
@@ -64,6 +57,13 @@ namespace FerreteriaFerme
             short id = fila.ID_USUARIO;
             Modificar_usuario_cliente muc = new Modificar_usuario_cliente(id);
             muc.Show();
+            this.Hide();
+        }
+
+        private void Btn_volver_Click(object sender, RoutedEventArgs e)
+        {
+            Administrador_cli_emp ace = new Administrador_cli_emp();
+            ace.Show();
             this.Hide();
         }
     }

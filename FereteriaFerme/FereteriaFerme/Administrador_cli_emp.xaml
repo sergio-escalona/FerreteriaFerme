@@ -1,0 +1,46 @@
+﻿<Window x:Class="FerreteriaFerme.Administrador_cli_emp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Administrador_cli_emp" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
+        <Button x:Name="btn_listar" Content="LISTAR" HorizontalAlignment="Left" Margin="116,126,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_listar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="1." HorizontalAlignment="Left" Margin="75,122,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="2." HorizontalAlignment="Left" Margin="75,184,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="REGISTRO CLIENTES" HorizontalAlignment="Left" Margin="64,48,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="3." HorizontalAlignment="Left" Margin="487,122,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btn_volver" Content="VOLVER A INICIO" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_modificar" Content="MODIFICAR" HorizontalAlignment="Left" Margin="116,188,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_modificar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="4." HorizontalAlignment="Left" Margin="487,184,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btn_listar_emp" Content="LISTAR" HorizontalAlignment="Left" Margin="528,126,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_listar_emp_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="REGISTRO EMPRESAS" HorizontalAlignment="Left" Margin="476,48,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btn_modificar_emp" Content="MODIFICAR" HorizontalAlignment="Left" Margin="528,188,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_modificar_emp_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+
+    </Grid>
+</Window>

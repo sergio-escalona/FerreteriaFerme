@@ -10,34 +10,35 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <Label Content="Direccion" HorizontalAlignment="Left" Margin="169,115,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_direccion" HorizontalAlignment="Left" Height="23" Margin="265,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="466">
+        <Label Content="Direccion" HorizontalAlignment="Left" Margin="126,115,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name="txt_direccion" HorizontalAlignment="Left" Height="37" Margin="250,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="466" FontSize="20">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <Label Content="Región" HorizontalAlignment="Left" Margin="169,156,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_region" HorizontalAlignment="Left" Margin="265,160,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="Cb_region_SelectionChanged">
+        <Label Content="Región" HorizontalAlignment="Left" Margin="126,156,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_region" HorizontalAlignment="Left" Margin="250,165,0,0" VerticalAlignment="Top" Width="276" SelectionChanged="Cb_region_SelectionChanged" FontSize="20">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <Label Content="Comuna" HorizontalAlignment="Left" Margin="169,199,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_comuna" HorizontalAlignment="Left" Margin="265,203,0,0" VerticalAlignment="Top" Width="197">
+        <Label Content="Comuna" HorizontalAlignment="Left" Margin="126,199,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_comuna" HorizontalAlignment="Left" Margin="250,208,0,0" VerticalAlignment="Top" Width="276" FontSize="20">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <Button x:Name="btn_agregar" Content="Guardar" HorizontalAlignment="Left" Margin="342,341,0,0" VerticalAlignment="Top" Width="75" Click="Btn_agregar_Click">
+        <Button x:Name="btn_agregar" Content="Guardar" HorizontalAlignment="Left" Margin="307,303,0,0" VerticalAlignment="Top" Width="166" Click="Btn_agregar_Click" FontSize="24" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="39,370,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="39,370,0,0" VerticalAlignment="Top" Width="142" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <Label Content="DIRECCIÓN EMPRESA" HorizontalAlignment="Left" Margin="268,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

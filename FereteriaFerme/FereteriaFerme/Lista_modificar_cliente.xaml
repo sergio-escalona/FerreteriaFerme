@@ -1,0 +1,54 @@
+﻿<Window x:Class="FerreteriaFerme.Lista_modificar_cliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Lista_modificar_cliente" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
+        <DataGrid x:Name="dtg_clientes" HorizontalAlignment="Left" Height="272" Margin="10,67,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_CLIENTE}" />
+                <DataGridTextColumn Header="Nombres" Binding="{Binding NOMBRES}" />
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding APELLIDOS}" />
+                <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" />
+                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO_CLIENTE}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_direccion" Click="Btn_direccion_Click" Content="Direcciones"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click" Content="Modificar cliente"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_usuario" Click="Btn_usuario_Click" Content="Modificar usuario"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="185" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="MODIFICAR CLIENTES" HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

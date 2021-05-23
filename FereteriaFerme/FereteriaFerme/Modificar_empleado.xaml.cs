@@ -101,8 +101,8 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Lista_empleado lie = new Lista_empleado();
-            lie.Show();
+            Lista_modificar_empleado lme = new Lista_modificar_empleado();
+            lme.Show();
             this.Hide();
         }
     }

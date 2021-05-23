@@ -27,12 +27,44 @@ namespace FerreteriaFerme
 
         private void Btn_cliente_Click(object sender, RoutedEventArgs e)
         {
-
+            Administrador_cli_emp ace = new Administrador_cli_emp();
+            ace.Show();
+            this.Hide();
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
+            Login log = new Login();
+            log.Show();
+            this.Hide();
+        }
 
+        private void Btn_proveedor_Click(object sender, RoutedEventArgs e)
+        {
+            Administrador_proveedor ap = new Administrador_proveedor();
+            ap.Show();
+            this.Hide();
+        }
+
+        private void Btn_empleado_Click(object sender, RoutedEventArgs e)
+        {
+            Administrador_empleado ae = new Administrador_empleado();
+            ae.Show();
+            this.Hide();
+        }
+
+        private void Btn_comprobante_Click(object sender, RoutedEventArgs e)
+        {
+            Administrador_comprobante ac = new Administrador_comprobante();
+            ac.Show();
+            this.Hide();
+        }
+
+        private void Btn_auditoria_Click(object sender, RoutedEventArgs e)
+        {
+            Administrador_auditoria aa = new Administrador_auditoria();
+            aa.Show();
+            this.Hide();
         }
     }
 }

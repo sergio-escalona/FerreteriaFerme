@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Lista_Proveedor.xaml
+    /// Lógica de interacción para Eliminar_proveedor.xaml
     /// </summary>
-    public partial class Lista_Proveedor : Window
+    public partial class Eliminar_proveedor : Window
     {
-        public Lista_Proveedor()
+        public Eliminar_proveedor()
         {
             InitializeComponent();
             MostrarProveedor();
@@ -31,15 +31,6 @@ namespace FerreteriaFerme
             Proveedor pro = new Proveedor();
             dtg_proveedor.ItemsSource = pro.ReadAll();
             dtg_proveedor.Items.Refresh();
-        }
-
-        private void Btn_modificar_Click(object sender, RoutedEventArgs e)
-        {
-            Proveedor fila = (Proveedor)dtg_proveedor.SelectedItem;
-            short id = fila.ID_PROVEEDOR;
-            Modificar_proveedor mp = new Modificar_proveedor(id);
-            mp.Show();
-            this.Hide();
         }
 
         private void Btn_eliminar_Click(object sender, RoutedEventArgs e)
@@ -60,7 +51,7 @@ namespace FerreteriaFerme
                 if (pro.Delete())
                 {
                     MostrarProveedor();
-                    MessageBoxResult exito = MessageBox.Show("Proveedor eliminado", "Exito", 
+                    MessageBoxResult exito = MessageBox.Show("Proveedor eliminado", "Exito",
                         MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }

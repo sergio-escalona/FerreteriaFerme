@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Lista_empleado.xaml
+    /// Lógica de interacción para Eliminar_empleado.xaml
     /// </summary>
-    public partial class Lista_empleado : Window
+    public partial class Eliminar_empleado : Window
     {
-        public Lista_empleado()
+        public Eliminar_empleado()
         {
             InitializeComponent();
             MostrarEmpleado();
@@ -31,24 +31,6 @@ namespace FerreteriaFerme
             Empleado emp = new Empleado();
             dtg_empleados.ItemsSource = emp.ReadAll();
             dtg_empleados.Items.Refresh();
-        }
-
-        private void Btn_modificar_empleado_Click(object sender, RoutedEventArgs e)
-        {
-            Empleado fila = (Empleado)dtg_empleados.SelectedItem;
-            string rut = fila.RUT_EMPLEADO.Trim();
-            Modificar_empleado me = new Modificar_empleado(rut);
-            me.Show();
-            this.Hide();
-        }
-
-        private void Btn_modificar_usuario_Click(object sender, RoutedEventArgs e)
-        {
-            Empleado fila = (Empleado)dtg_empleados.SelectedItem;
-            short id = fila.ID_USUARIO;
-            Modificar_usuario mu = new Modificar_usuario(id);
-            mu.Show();
-            this.Hide();
         }
 
         private void Btn_eliminar_Click(object sender, RoutedEventArgs e)
@@ -79,7 +61,7 @@ namespace FerreteriaFerme
                         MostrarEmpleado();
                         MessageBoxResult exito = MessageBox.Show("Empleado y usuario eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
-                                        
+
                 }
             }
         }

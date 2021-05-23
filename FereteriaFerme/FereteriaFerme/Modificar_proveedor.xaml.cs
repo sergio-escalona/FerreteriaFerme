@@ -83,8 +83,8 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Lista_Proveedor lp = new Lista_Proveedor();
-            lp.Show();
+            Lista_modificar_proveedor lmp = new Lista_modificar_proveedor();
+            lmp.Show();
             this.Hide();
         }
 
@@ -93,6 +93,5 @@ namespace FerreteriaFerme
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-        
     }
 }

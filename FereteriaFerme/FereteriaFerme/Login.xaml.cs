@@ -47,8 +47,8 @@ namespace FerreteriaFerme
 
                         if (usr.ID_TIPOUSU == 1)
                         {
-                            Ventana_principal vp = new Ventana_principal();
-                            vp.Show();
+                            Inicio_administrador ia = new Inicio_administrador();
+                            ia.Show();
                             this.Hide();
                         }
 

@@ -1,0 +1,40 @@
+﻿<Window x:Class="FerreteriaFerme.Lista_modificar_proveedor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Lista_modificar_proveedor" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
+        <DataGrid x:Name="dtg_proveedor" HorizontalAlignment="Left" Height="273" Margin="69,72,0,0" VerticalAlignment="Top" Width="657" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_PROVEEDOR}" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding NOMBRE_PROVEEDOR}" />
+                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_PROVEEDOR}" />
+                <DataGridTextColumn Header="Celular" Binding="{Binding CELULAR}" />
+                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click" Content="Modificar"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="155" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="MODIFICAR PROVEEDOR" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

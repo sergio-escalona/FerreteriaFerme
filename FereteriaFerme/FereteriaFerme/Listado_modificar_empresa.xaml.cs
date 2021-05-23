@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Lista_empresa.xaml
+    /// Lógica de interacción para Listado_modificar_empresa.xaml
     /// </summary>
-    public partial class Lista_empresa : Window
+    public partial class Listado_modificar_empresa : Window
     {
-        public Lista_empresa()
+        public Listado_modificar_empresa()
         {
             InitializeComponent();
             MostrarEmpresa();

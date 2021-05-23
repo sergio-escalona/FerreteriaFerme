@@ -10,7 +10,7 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_direccion" HorizontalAlignment="Left" Height="264" Margin="47,41,0,0" VerticalAlignment="Top" Width="681" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True">
+        <DataGrid x:Name="dtg_direccion" HorizontalAlignment="Left" Height="264" Margin="10,73,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
@@ -35,16 +35,17 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="47,359,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="143" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="btn_nuevo" Content="Nueva Dirección" HorizontalAlignment="Left" Margin="328,359,0,0" VerticalAlignment="Top" Width="109" Click="Btn_nuevo_Click">
+        <Button x:Name="btn_nuevo" Content="AGREGAR NUEVA DIRECCIÓN" HorizontalAlignment="Left" Margin="226,359,0,0" VerticalAlignment="Top" Width="352" Click="Btn_nuevo_Click" FontSize="24" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <Label Content="DIRECCIÓN CLIENTE" HorizontalAlignment="Left" Margin="266,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

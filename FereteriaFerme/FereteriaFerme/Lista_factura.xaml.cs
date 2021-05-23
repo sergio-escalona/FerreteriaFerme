@@ -35,8 +35,8 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Ventana_principal vp = new Ventana_principal();
-            vp.Show();
+            Administrador_comprobante ac = new Administrador_comprobante();
+            ac.Show();
             this.Hide();
         }
     }

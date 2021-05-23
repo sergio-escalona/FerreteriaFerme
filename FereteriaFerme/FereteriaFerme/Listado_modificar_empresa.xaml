@@ -1,11 +1,11 @@
-﻿<Window x:Class="FerreteriaFerme.Lista_empresa"
+﻿<Window x:Class="FerreteriaFerme.Listado_modificar_empresa"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_empresa" Height="450" Width="800">
+        Title="Listado_modificar_empresa" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
@@ -15,13 +15,26 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_EMPRESA}" />
-                <DataGridTextColumn Header="Razon social" Binding="{Binding Path=RAZON_SOCIAL}" />
-                <DataGridTextColumn Header="Rut" Binding="{Binding Path=RUT_EMPRESA}" />
-                <DataGridTextColumn Header="Tipo" Binding="{Binding Path=DescripcionTipo}" />
-                <DataGridTextColumn Header="Correo" Binding="{Binding Path=CORREO_EMPRESA}" />
-                <DataGridTextColumn Header="Cliente" Binding="{Binding Path=NombreCliente}" />
-                
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_EMPRESA}" />
+                <DataGridTextColumn Header="Razon social" Binding="{Binding RAZON_SOCIAL}" />
+                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_EMPRESA}" />
+                <DataGridTextColumn Header="Tipo" Binding="{Binding DescripcionTipo}" />
+                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO_EMPRESA}" />
+                <DataGridTextColumn Header="Cliente" Binding="{Binding NombreCliente}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_direccion" Click="Btn_direccion_Click" Content="Direcciones"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click" Content="Modificar empresa"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="164" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">

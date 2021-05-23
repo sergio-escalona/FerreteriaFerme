@@ -1,0 +1,53 @@
+﻿<Window x:Class="FerreteriaFerme.Administrador_proveedor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Administrador_proveedor" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF007BFF"/>
+        </Grid.Background>
+        <Button x:Name="btn_agregar" Content="REGISTRAR" HorizontalAlignment="Left" Margin="294,82,0,0" VerticalAlignment="Top" Width="211" FontSize="24" FontWeight="Bold" Click="Btn_agregar_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_listar" Content="LISTAR" HorizontalAlignment="Left" Margin="294,146,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_listar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="1." HorizontalAlignment="Left" Margin="253,84,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="2." HorizontalAlignment="Left" Margin="253,146,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="REGISTRO PROVEEDORES" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="3." HorizontalAlignment="Left" Margin="253,203,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btn_volver" Content="VOLVER A INICIO" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_volver_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_modificar" Content="MODIFICAR" HorizontalAlignment="Left" Margin="294,203,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_modificar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="4." HorizontalAlignment="Left" Margin="253,254,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btn_eliminar" Content="ELIMINAR" HorizontalAlignment="Left" Margin="294,258,0,0" VerticalAlignment="Top" Width="211" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_eliminar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+
+    </Grid>
+</Window>

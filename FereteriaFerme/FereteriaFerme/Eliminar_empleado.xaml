@@ -1,11 +1,11 @@
-﻿<Window x:Class="FerreteriaFerme.Lista_empleado"
+﻿<Window x:Class="FerreteriaFerme.Eliminar_empleado"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_empleado" Height="450" Width="800">
+        Title="Eliminar_empleado" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
@@ -15,12 +15,18 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Rut" Binding="{Binding Path=RUT_EMPLEADO}" />
-                <DataGridTextColumn Header="Nombres" Binding="{Binding Path=NOMBRES_EMPLEADO}" />
-                <DataGridTextColumn Header="Apellidos" Binding="{Binding Path=APELLIDOS_EMPLEADO}" />
-                <DataGridTextColumn Header="Cargo" Binding="{Binding Path=DescripcionCargo}" />
-                <DataGridTextColumn Header="Usuario" Binding="{Binding Path=NombreUsuario}" />
-                
+                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_EMPLEADO}" />
+                <DataGridTextColumn Header="Nombres" Binding="{Binding NOMBRES_EMPLEADO}" />
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding APELLIDOS_EMPLEADO}" />
+                <DataGridTextColumn Header="Cargo" Binding="{Binding DescripcionCargo}" />
+                <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_eliminar" Click="Btn_eliminar_Click" Content="Eliminar"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="171" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">
@@ -28,7 +34,7 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Label Content="LISTADO EMPLEADOS" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="ELIMINAR EMPLEADO" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

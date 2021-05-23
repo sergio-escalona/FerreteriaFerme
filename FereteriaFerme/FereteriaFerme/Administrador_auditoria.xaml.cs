@@ -1,5 +1,4 @@
-﻿using FerreteriaFerme.Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,27 +15,26 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Lista_boleta.xaml
+    /// Lógica de interacción para Administrador_auditoria.xaml
     /// </summary>
-    public partial class Lista_boleta : Window
+    public partial class Administrador_auditoria : Window
     {
-        public Lista_boleta()
+        public Administrador_auditoria()
         {
             InitializeComponent();
-            MostrarBoleta();
         }
 
-        private void MostrarBoleta()
+        private void Btn_carro_Click(object sender, RoutedEventArgs e)
         {
-            Boleta bol = new Boleta();
-            dtg_boleta.ItemsSource = bol.ReadAll();
-            dtg_boleta.Items.Refresh();
+            Lista_orden_compra loc = new Lista_orden_compra();
+            loc.Show();
+            this.Hide();
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Administrador_comprobante ac = new Administrador_comprobante();
-            ac.Show();
+            Inicio_administrador ia = new Inicio_administrador();
+            ia.Show();
             this.Hide();
         }
     }

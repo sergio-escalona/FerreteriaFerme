@@ -73,6 +73,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Administrador_auditoria.xaml.cs">
+      <DependentUpon>Administrador_auditoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador_cli_emp.xaml.cs">
+      <DependentUpon>Administrador_cli_emp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador_comprobante.xaml.cs">
+      <DependentUpon>Administrador_comprobante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador_empleado.xaml.cs">
+      <DependentUpon>Administrador_empleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador_proveedor.xaml.cs">
+      <DependentUpon>Administrador_proveedor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Agregar_despacho.xaml.cs">
       <DependentUpon>Agregar_despacho.xaml</DependentUpon>
     </Compile>
@@ -106,8 +121,14 @@
     <Compile Include="Bodeguero_producto.xaml.cs">
       <DependentUpon>Bodeguero_producto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Eliminar_empleado.xaml.cs">
+      <DependentUpon>Eliminar_empleado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Eliminar_producto.xaml.cs">
       <DependentUpon>Eliminar_producto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_proveedor.xaml.cs">
+      <DependentUpon>Eliminar_proveedor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Inicio_administrador.xaml.cs">
       <DependentUpon>Inicio_administrador.xaml</DependentUpon>
@@ -117,6 +138,9 @@
     </Compile>
     <Compile Include="Inicio_otros.xaml.cs">
       <DependentUpon>Inicio_otros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Listado_modificar_empresa.xaml.cs">
+      <DependentUpon>Listado_modificar_empresa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lista_boleta.xaml.cs">
       <DependentUpon>Lista_boleta.xaml</DependentUpon>
@@ -145,8 +169,17 @@
     <Compile Include="Lista_factura.xaml.cs">
       <DependentUpon>Lista_factura.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lista_modificar_cliente.xaml.cs">
+      <DependentUpon>Lista_modificar_cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_modificar_empleado.xaml.cs">
+      <DependentUpon>Lista_modificar_empleado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lista_modificar_producto.xaml.cs">
       <DependentUpon>Lista_modificar_producto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lista_modificar_proveedor.xaml.cs">
+      <DependentUpon>Lista_modificar_proveedor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lista_orden_compra.xaml.cs">
       <DependentUpon>Lista_orden_compra.xaml</DependentUpon>
@@ -202,6 +235,26 @@
     <Compile Include="Ventana_principal.xaml.cs">
       <DependentUpon>Ventana_principal.xaml</DependentUpon>
     </Compile>
+    <Page Include="Administrador_auditoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrador_cli_emp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrador_comprobante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrador_empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administrador_proveedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Agregar_despacho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,7 +299,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Eliminar_empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Eliminar_producto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Eliminar_proveedor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,6 +320,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Inicio_otros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Listado_modificar_empresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -298,7 +363,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Lista_modificar_cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_modificar_empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lista_modificar_producto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_modificar_proveedor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
