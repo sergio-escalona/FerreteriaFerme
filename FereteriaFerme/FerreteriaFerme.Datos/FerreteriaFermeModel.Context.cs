@@ -36,8 +36,10 @@ namespace FerreteriaFerme.Datos
         public DbSet<DIRECCION> DIRECCION { get; set; }
         public DbSet<EMPLEADO> EMPLEADO { get; set; }
         public DbSet<EMPRESA> EMPRESA { get; set; }
+        public DbSet<ESTADO_COMPRA> ESTADO_COMPRA { get; set; }
         public DbSet<ESTADO_DESPACHO> ESTADO_DESPACHO { get; set; }
         public DbSet<ESTADO_RECEPCION> ESTADO_RECEPCION { get; set; }
+        public DbSet<ESTADO_USUARIO> ESTADO_USUARIO { get; set; }
         public DbSet<FACTURA> FACTURA { get; set; }
         public DbSet<FAMILIA_PRODUCTO> FAMILIA_PRODUCTO { get; set; }
         public DbSet<MEDIO_PAGO> MEDIO_PAGO { get; set; }

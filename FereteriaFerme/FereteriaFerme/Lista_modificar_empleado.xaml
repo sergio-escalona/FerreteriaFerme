@@ -10,16 +10,11 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="49,57,0,0" VerticalAlignment="Top" Width="697" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="10,57,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_EMPLEADO}" />
-                <DataGridTextColumn Header="Nombres" Binding="{Binding NOMBRES_EMPLEADO}" />
-                <DataGridTextColumn Header="Apellidos" Binding="{Binding APELLIDOS_EMPLEADO}" />
-                <DataGridTextColumn Header="Cargo" Binding="{Binding DescripcionCargo}" />
-                <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -34,6 +29,12 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_EMPLEADO}" />
+                <DataGridTextColumn Header="Nombres" Binding="{Binding NOMBRES_EMPLEADO}" />
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding APELLIDOS_EMPLEADO}" />
+                <DataGridTextColumn Header="Cargo" Binding="{Binding DescripcionCargo}" />
+                <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" />
+                
 
             </DataGrid.Columns>
         </DataGrid>

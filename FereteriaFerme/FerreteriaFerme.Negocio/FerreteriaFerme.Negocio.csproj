@@ -60,8 +60,10 @@
     <Compile Include="Direccion.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Empresa.cs" />
+    <Compile Include="Estado_Compra.cs" />
     <Compile Include="Estado_Despacho.cs" />
     <Compile Include="Estado_Recepcion.cs" />
+    <Compile Include="Estado_Usuario.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="Familia_Producto.cs" />
     <Compile Include="Medio_Pago.cs" />
@@ -81,14 +83,14 @@
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FerreteriaFerme.Datos\FerreteriaFerme.Datos.csproj">
-      <Project>{f4b86b9b-6763-4d37-872d-dc704ec13b4d}</Project>
-      <Name>FerreteriaFerme.Datos</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FerreteriaFerme.Datos\FerreteriaFerme.Datos.csproj">
+      <Project>{2182454f-697a-430e-8b68-04cfaebe5463}</Project>
+      <Name>FerreteriaFerme.Datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

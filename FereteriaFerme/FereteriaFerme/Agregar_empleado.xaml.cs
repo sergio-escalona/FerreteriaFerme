@@ -62,7 +62,8 @@ namespace FerreteriaFerme
                     ID_USUARIO = 0,
                     NOMBRE_USUARIO = txt_nombre.Text.Substring(0, 3) + "." + txt_apellido.Text.Substring(0, espacio),
                     CONTRASENA = txt_rut.Text,
-                    ID_TIPOUSU = (short)cb_tipo.SelectedValue
+                    ID_TIPOUSU = (short)cb_tipo.SelectedValue,
+                    ID_ESTADO = 2
                 };
 
                 if (usr.Create())

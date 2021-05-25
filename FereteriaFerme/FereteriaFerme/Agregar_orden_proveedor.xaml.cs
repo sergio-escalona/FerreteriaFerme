@@ -45,7 +45,8 @@ namespace FerreteriaFerme
                 {
                     ID_COMPRA = 0,
                     FECHA_COMPRA = DateTime.Now,
-                    ID_PROVEEDOR = (short)cb_proveedor.SelectedValue
+                    ID_PROVEEDOR = (short)cb_proveedor.SelectedValue,
+                    ID_ESTADO = 1
                 };
 
                 if (cop.Create())

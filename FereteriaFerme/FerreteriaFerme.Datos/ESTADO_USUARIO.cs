@@ -12,20 +12,16 @@ namespace FerreteriaFerme.Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class COMPRA_PROVEEDOR
+    public partial class ESTADO_USUARIO
     {
-        public COMPRA_PROVEEDOR()
+        public ESTADO_USUARIO()
         {
-            this.PRODUCTO_PROVEEDOR = new HashSet<PRODUCTO_PROVEEDOR>();
+            this.USUARIO = new HashSet<USUARIO>();
         }
     
-        public int ID_COMPRA { get; set; }
-        public System.DateTime FECHA_COMPRA { get; set; }
-        public short ID_PROVEEDOR { get; set; }
-        public int ID_ESTADO { get; set; }
+        public short ID_ESTADO { get; set; }
+        public string ESTADO { get; set; }
     
-        public virtual ESTADO_COMPRA ESTADO_COMPRA { get; set; }
-        public virtual PROVEEDOR PROVEEDOR { get; set; }
-        public virtual ICollection<PRODUCTO_PROVEEDOR> PRODUCTO_PROVEEDOR { get; set; }
+        public virtual ICollection<USUARIO> USUARIO { get; set; }
     }
 }

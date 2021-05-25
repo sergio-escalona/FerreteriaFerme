@@ -28,7 +28,7 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </PasswordBox.BorderBrush>
         </PasswordBox>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="307,293,0,0" VerticalAlignment="Top" Width="176" Click="Btn_guardar_Click" FontSize="24" FontWeight="Bold">
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="308,306,0,0" VerticalAlignment="Top" Width="176" Click="Btn_guardar_Click" FontSize="24" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>

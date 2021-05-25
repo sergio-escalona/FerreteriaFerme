@@ -10,17 +10,17 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_proveedor" HorizontalAlignment="Left" Height="273" Margin="58,66,0,0" VerticalAlignment="Top" Width="657" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_proveedor" HorizontalAlignment="Left" Height="273" Margin="10,66,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_PROVEEDOR}" />
+                <DataGridTextColumn Header="N° Proveedor" Binding="{Binding Path=ID_PROVEEDOR}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Path=NOMBRE_PROVEEDOR}" />
                 <DataGridTextColumn Header="Rut" Binding="{Binding Path=RUT_PROVEEDOR}" />
                 <DataGridTextColumn Header="Celular" Binding="{Binding Path=CELULAR}" />
                 <DataGridTextColumn Header="Correo" Binding="{Binding Path=CORREO}" />
-                
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="149" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">

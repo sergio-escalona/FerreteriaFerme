@@ -18,6 +18,7 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_COMPRA}" />
                 <DataGridTextColumn Header="Fecha" Binding="{Binding Path=FECHA_COMPRA, StringFormat=dd/MM/yyyy}" />
                 <DataGridTextColumn Header="Proveedor" Binding="{Binding Path=DescripcionProveedor}" />
+                <DataGridTextColumn Header="Estado" Binding="{Binding Path=DescripcionEstado}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

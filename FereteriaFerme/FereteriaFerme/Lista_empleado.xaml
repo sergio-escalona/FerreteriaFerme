@@ -10,7 +10,7 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="49,57,0,0" VerticalAlignment="Top" Width="697" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="10,57,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
@@ -20,7 +20,7 @@
                 <DataGridTextColumn Header="Apellidos" Binding="{Binding Path=APELLIDOS_EMPLEADO}" />
                 <DataGridTextColumn Header="Cargo" Binding="{Binding Path=DescripcionCargo}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding Path=NombreUsuario}" />
-                
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="171" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">

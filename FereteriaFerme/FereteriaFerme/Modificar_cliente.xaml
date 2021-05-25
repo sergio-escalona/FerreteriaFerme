@@ -28,7 +28,7 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="308,318,0,0" VerticalAlignment="Top" Width="177" Click="Btn_guardar_Click" FontSize="24" FontWeight="Bold">
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="299,311,0,0" VerticalAlignment="Top" Width="177" Click="Btn_guardar_Click" FontSize="24" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4B86B9B-6763-4D37-872D-DC704EC13B4D}</ProjectGuid>
+    <ProjectGuid>{2182454F-697A-430E-8B68-04CFAEBE5463}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FerreteriaFerme.Datos</RootNamespace>
@@ -81,10 +81,16 @@
     <Compile Include="EMPRESA.cs">
       <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ESTADO_COMPRA.cs">
+      <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ESTADO_DESPACHO.cs">
       <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ESTADO_RECEPCION.cs">
+      <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESTADO_USUARIO.cs">
       <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FACTURA.cs">
@@ -107,11 +113,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FerreteriaFermeModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="FerreteriaFermeModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MEDIO_PAGO.cs">
       <DependentUpon>FerreteriaFermeModel.tt</DependentUpon>
@@ -158,13 +159,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <EntityDeploy Include="FerreteriaFermeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FerreteriaFermeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="FerreteriaFermeModel.edmx.diagram">
       <DependentUpon>FerreteriaFermeModel.edmx</DependentUpon>
     </None>
@@ -173,13 +172,13 @@
   <ItemGroup>
     <Content Include="FerreteriaFermeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FerreteriaFermeModel.Context.cs</LastGenOutput>
       <DependentUpon>FerreteriaFermeModel.edmx</DependentUpon>
+      <LastGenOutput>FerreteriaFermeModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="FerreteriaFermeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FerreteriaFermeModel.edmx</DependentUpon>
-      <LastGenOutput>FerreteriaFermeModel1.cs</LastGenOutput>
+      <LastGenOutput>FerreteriaFermeModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

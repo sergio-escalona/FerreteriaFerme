@@ -6,39 +6,26 @@ using System.Threading.Tasks;
 
 namespace FerreteriaFerme.Negocio
 {
-    public class Usuario
+    class Estado_Usuario
     {
         //Campos
-        private short _ID_USUARIO;
-        private string _NOMBRE_USUARIO;
-        private string _CONTRASENA;
-        private short _ID_TIPOUSU;
-        private string _descripcionTipo;
         private short _ID_ESTADO;
-        private string _descripcionEstado;
+        private string _ESTADO;
 
         //Propiedades
-        public short ID_USUARIO { get; set; }
-        public string NOMBRE_USUARIO { get; set; }
-        public string CONTRASENA { get; set; }
-        public short ID_TIPOUSU { get; set; }
-        public string DescripcionTipo { get { return _descripcionTipo; } }
         public short ID_ESTADO { get; set; }
-        public string DescripcionEstado { get { return _descripcionEstado; } }
+        public string ESTADO { get; set; }
 
-        public Usuario()
+        public Estado_Usuario()
         {
             this.init();
         }
-
+        
         //Constructor
         private void init()
         {
-            ID_USUARIO = 0;
-            NOMBRE_USUARIO = string.Empty;
-            CONTRASENA = string.Empty;
-            ID_TIPOUSU = 0;
             ID_ESTADO = 0;
+            ESTADO = string.Empty;
         }
 
         //Agregar
@@ -46,20 +33,20 @@ namespace FerreteriaFerme.Negocio
         {
             Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
 
-            Datos.USUARIO usu = new Datos.USUARIO();
+            Datos.ESTADO_USUARIO esu = new Datos.ESTADO_USUARIO();
 
             try
             {
-                CommonBC.Syncronize(this, usu);
+                CommonBC.Syncronize(this, esu);
 
-                bbdd.USUARIO.Add(usu);
+                bbdd.ESTADO_USUARIO.Add(esu);
                 bbdd.SaveChanges();
 
                 return true;
             }
             catch (Exception ex)
             {
-                bbdd.USUARIO.Remove(usu);
+                bbdd.ESTADO_USUARIO.Remove(esu);
                 return false;
             }
 
@@ -76,13 +63,10 @@ namespace FerreteriaFerme.Negocio
             try
             {
                 /* Se obtiene el primer registro coincidente con el id */
-                Datos.USUARIO usu = bbdd.USUARIO.First(e => e.ID_USUARIO == ID_USUARIO);
+                Datos.ESTADO_USUARIO esu = bbdd.ESTADO_USUARIO.First(e => e.ID_ESTADO == ID_ESTADO);
 
                 /* Se copian las propiedades de datos al negocio */
-                CommonBC.Syncronize(usu, this);
-
-                /* Carga descripción de los Tipos */
-                LeerNombreProveedor();
+                CommonBC.Syncronize(esu, this);
 
                 return true;
             }
@@ -103,10 +87,10 @@ namespace FerreteriaFerme.Negocio
             try
             {
                 /* Se obtiene el primer registro coincidente con el id */
-                Datos.USUARIO usu = bbdd.USUARIO.First(e => e.ID_USUARIO == ID_USUARIO);
+                Datos.ESTADO_USUARIO esu = bbdd.ESTADO_USUARIO.First(e => e.ID_ESTADO == ID_ESTADO);
 
                 /* Se copian las propiedades del negocio a los datos */
-                CommonBC.Syncronize(this, usu);
+                CommonBC.Syncronize(this, esu);
 
                 bbdd.SaveChanges();
 
@@ -129,10 +113,10 @@ namespace FerreteriaFerme.Negocio
             try
             {
                 /* Se obtiene el primer registro coincidente con el id */
-                Datos.USUARIO usu = bbdd.USUARIO.First(e => e.ID_USUARIO == ID_USUARIO);
+                Datos.ESTADO_USUARIO esu = bbdd.ESTADO_USUARIO.First(e => e.ID_ESTADO == ID_ESTADO);
 
                 /* Se elimina el registro del EDM */
-                bbdd.USUARIO.Remove(usu);
+                bbdd.ESTADO_USUARIO.Remove(esu);
 
                 bbdd.SaveChanges();
 
@@ -149,24 +133,24 @@ namespace FerreteriaFerme.Negocio
         /// Lee todos los registros de cargo
         /// </summary>
         /// <returns></returns>
-        public List<Usuario> ReadAll()
+        public List<Estado_Usuario> ReadAll()
         {
             Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
 
             try
             {
                 /* Se obtiene todos los registro desde la tabla */
-                List<Datos.USUARIO> listadoDatos = bbdd.USUARIO.ToList<Datos.USUARIO>();
+                List<Datos.ESTADO_USUARIO> listadoDatos = bbdd.ESTADO_USUARIO.ToList<Datos.ESTADO_USUARIO>();
 
                 /* Se convierte el listado de datos en un listado de negocio */
-                List<Usuario> listadoNegocio = GenerarListado(listadoDatos);
+                List<Estado_Usuario> listadoNegocio = GenerarListado(listadoDatos);
 
                 /* Se retorna la lista */
                 return listadoNegocio;
             }
             catch (Exception ex)
             {
-                return new List<Usuario>();
+                return new List<Estado_Usuario>();
             }
         }
 
@@ -175,75 +159,20 @@ namespace FerreteriaFerme.Negocio
         /// </summary>
         /// <param name="listadoDatos"></param>
         /// <returns></returns>
-        private List<Usuario> GenerarListado(List<Datos.USUARIO> listadoDatos)
+        private List<Estado_Usuario> GenerarListado(List<Datos.ESTADO_USUARIO> listadoDatos)
         {
-            List<Usuario> listadoEmpresa = new List<Usuario>();
+            List<Estado_Usuario> listadoEmpresa = new List<Estado_Usuario>();
 
-            foreach (Datos.USUARIO dato in listadoDatos)
+            foreach (Datos.ESTADO_USUARIO dato in listadoDatos)
             {
 
-                Usuario negocio = new Usuario();
+                Estado_Usuario negocio = new Estado_Usuario();
                 CommonBC.Syncronize(dato, negocio);
-                negocio.LeerNombreProveedor();
-
 
                 listadoEmpresa.Add(negocio);
             }
 
             return listadoEmpresa;
-        }
-
-        //Listar productos
-        public List<Usuario> ReadNombre(string nombre)
-        {
-            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
-
-            try
-            {
-                List<Datos.USUARIO> listaDatos =
-                    bbdd.USUARIO.Where(b => b.NOMBRE_USUARIO == nombre).ToList<Datos.USUARIO>();
-
-                List<Usuario> listaNegocio = GenerarListado(listaDatos);
-                return listaNegocio;
-            }
-            catch (Exception ex)
-            {
-                return new List<Usuario>();
-            }
-        }
-
-        //Buscar proveedor
-        public List<Usuario> ReadTipo(short idTipo)
-        {
-            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
-
-            try
-            {
-                List<Datos.USUARIO> listaDatos =
-                    bbdd.USUARIO.Where(b => b.ID_TIPOUSU == idTipo).ToList<Datos.USUARIO>();
-
-                List<Usuario> listaNegocio = GenerarListado(listaDatos);
-                return listaNegocio;
-            }
-            catch (Exception ex)
-            {
-                return new List<Usuario>();
-            }
-        }
-
-        //Mostrar Proveedor
-        public void LeerNombreProveedor()
-        {
-            Tipo_Usuario tu = new Tipo_Usuario() { ID_TIPOUSU = ID_TIPOUSU };
-
-            if (tu.Read())
-            {
-                _descripcionTipo = tu.NOMBRE;
-            }
-            else
-            {
-                _descripcionTipo = String.Empty;
-            }
         }
     }
 }

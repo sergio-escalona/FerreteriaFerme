@@ -28,7 +28,7 @@ namespace FerreteriaFerme.Datos
         public string DESCRIPCION { get; set; }
         public int PRECIO_CLP { get; set; }
         public int PRECIO_USD { get; set; }
-        public short STOCK { get; set; }
+        public int STOCK { get; set; }
         public byte[] FOTO { get; set; }
     
         public virtual ICollection<DETALLE_ORDEN> DETALLE_ORDEN { get; set; }

@@ -22,7 +22,7 @@ namespace FerreteriaFerme.Negocio
         private string _DESCRIPCION;
         private int _PRECIO_CLP;
         private int _PRECIO_USD;
-        private short _STOCK;
+        private int _STOCK;
         private byte[] _FOTO;
 
         //Propiedades
@@ -38,7 +38,7 @@ namespace FerreteriaFerme.Negocio
         public string DESCRIPCION { get; set; }
         public int PRECIO_CLP { get; set; }
         public int PRECIO_USD { get; set; }
-        public short STOCK { get; set; }
+        public int STOCK { get; set; }
         public byte[] FOTO { get; set; }
 
         public Producto()

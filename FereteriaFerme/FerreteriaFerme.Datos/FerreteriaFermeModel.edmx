@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="18.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BOLETA">
           <Key>
             <PropertyRef Name="ID_BOLETA" />
@@ -42,6 +42,7 @@
           <Property Name="ID_COMPRA" Type="number" Precision="10" Scale="0" Nullable="false" />
           <Property Name="FECHA_COMPRA" Type="date" Nullable="false" />
           <Property Name="ID_PROVEEDOR" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="number" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="COMUNA">
           <Key>
@@ -110,6 +111,13 @@
           <Property Name="CORREO_EMPRESA" Type="varchar2" MaxLength="50" Nullable="false" />
           <Property Name="RUT_CLIENTE" Type="varchar2" MaxLength="10" />
         </EntityType>
+        <EntityType Name="ESTADO_COMPRA">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="ESTADO_DESPACHO">
           <Key>
             <PropertyRef Name="ID_ESTADO" />
@@ -122,6 +130,13 @@
             <PropertyRef Name="ID_ESTADO" />
           </Key>
           <Property Name="ID_ESTADO" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTADO_USUARIO">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="number" Precision="2" Scale="0" Nullable="false" />
           <Property Name="ESTADO" Type="varchar2" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="FACTURA">
@@ -276,7 +291,8 @@
           <Property Name="ID_USUARIO" Type="number" Precision="5" Scale="0" Nullable="false" />
           <Property Name="NOMBRE_USUARIO" Type="varchar2" MaxLength="30" Nullable="false" />
           <Property Name="CONTRASENA" Type="varchar2" MaxLength="64" Nullable="false" />
-          <Property Name="ID_TIPOUSU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_TIPOUSU" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="number" Precision="2" Scale="0" Nullable="false" />
         </EntityType>
         <Association Name="BOLETA_CLIENTE_FK">
           <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
@@ -323,6 +339,18 @@
             </Principal>
             <Dependent Role="CLIENTE">
               <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COMPRA_PROVEEDOR_EST_COM_FK">
+          <End Role="ESTADO_COMPRA" Type="Self.ESTADO_COMPRA" Multiplicity="1" />
+          <End Role="COMPRA_PROVEEDOR" Type="Self.COMPRA_PROVEEDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_COMPRA">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="COMPRA_PROVEEDOR">
+              <PropertyRef Name="ID_ESTADO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -674,6 +702,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="USUARIO_ESTADO_USUARIO_FK">
+          <End Role="ESTADO_USUARIO" Type="Self.ESTADO_USUARIO" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_USUARIO">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ID_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="USUARIO_TIPO_USUARIO_FK">
           <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
           <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
@@ -687,36 +727,38 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="BOLETA" EntityType="Self.BOLETA" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="CARGO" EntityType="Self.CARGO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="COMPRA_PROVEEDOR" EntityType="Self.COMPRA_PROVEEDOR" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="COMUNA" EntityType="Self.COMUNA" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="COSTO_ENVIO" EntityType="Self.COSTO_ENVIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="DESPACHO" EntityType="Self.DESPACHO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="DETALLE_ORDEN" EntityType="Self.DETALLE_ORDEN" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="ESTADO_DESPACHO" EntityType="Self.ESTADO_DESPACHO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="ESTADO_RECEPCION" EntityType="Self.ESTADO_RECEPCION" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="FAMILIA_PRODUCTO" EntityType="Self.FAMILIA_PRODUCTO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="MEDIO_PAGO" EntityType="Self.MEDIO_PAGO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="ORDEN_COMPRA" EntityType="Self.ORDEN_COMPRA" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="PRODUCTO_PROVEEDOR" EntityType="Self.PRODUCTO_PROVEEDOR" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="RECEPCION_PRODUCTO" EntityType="Self.RECEPCION_PRODUCTO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="REGION" EntityType="Self.REGION" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="RESUMEN_PRODUCTOS" EntityType="Self.RESUMEN_PRODUCTOS" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="RUBRO" EntityType="Self.RUBRO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="RUBRO_PROVEEDOR" EntityType="Self.RUBRO_PROVEEDOR" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="TIPO_COMPRA" EntityType="Self.TIPO_COMPRA" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="TIPO_EMPRESA" EntityType="Self.TIPO_EMPRESA" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
-          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="FERME_PRUEBAS" store:Type="Tables" />
+          <EntitySet Name="BOLETA" EntityType="Self.BOLETA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="CARGO" EntityType="Self.CARGO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="COMPRA_PROVEEDOR" EntityType="Self.COMPRA_PROVEEDOR" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="COMUNA" EntityType="Self.COMUNA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="COSTO_ENVIO" EntityType="Self.COSTO_ENVIO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="DESPACHO" EntityType="Self.DESPACHO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="DETALLE_ORDEN" EntityType="Self.DETALLE_ORDEN" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="ESTADO_COMPRA" EntityType="Self.ESTADO_COMPRA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="ESTADO_DESPACHO" EntityType="Self.ESTADO_DESPACHO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="ESTADO_RECEPCION" EntityType="Self.ESTADO_RECEPCION" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="ESTADO_USUARIO" EntityType="Self.ESTADO_USUARIO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="FAMILIA_PRODUCTO" EntityType="Self.FAMILIA_PRODUCTO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="MEDIO_PAGO" EntityType="Self.MEDIO_PAGO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="ORDEN_COMPRA" EntityType="Self.ORDEN_COMPRA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="PRODUCTO_PROVEEDOR" EntityType="Self.PRODUCTO_PROVEEDOR" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="RECEPCION_PRODUCTO" EntityType="Self.RECEPCION_PRODUCTO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="REGION" EntityType="Self.REGION" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="RESUMEN_PRODUCTOS" EntityType="Self.RESUMEN_PRODUCTOS" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="RUBRO" EntityType="Self.RUBRO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="RUBRO_PROVEEDOR" EntityType="Self.RUBRO_PROVEEDOR" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="TIPO_COMPRA" EntityType="Self.TIPO_COMPRA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="TIPO_EMPRESA" EntityType="Self.TIPO_EMPRESA" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="FERME_PRUEBAS2" store:Type="Tables" />
           <AssociationSet Name="BOLETA_CLIENTE_FK" Association="Self.BOLETA_CLIENTE_FK">
             <End Role="CLIENTE" EntitySet="CLIENTE" />
             <End Role="BOLETA" EntitySet="BOLETA" />
@@ -732,6 +774,10 @@
           <AssociationSet Name="CLIENTE_USUARIO_FK" Association="Self.CLIENTE_USUARIO_FK">
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="COMPRA_PROVEEDOR_EST_COM_FK" Association="Self.COMPRA_PROVEEDOR_EST_COM_FK">
+            <End Role="ESTADO_COMPRA" EntitySet="ESTADO_COMPRA" />
+            <End Role="COMPRA_PROVEEDOR" EntitySet="COMPRA_PROVEEDOR" />
           </AssociationSet>
           <AssociationSet Name="COMPRA_PROVEEDOR_PROVEEDOR_FK" Association="Self.COMPRA_PROVEEDOR_PROVEEDOR_FK">
             <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
@@ -849,12 +895,17 @@
             <End Role="RUBRO" EntitySet="RUBRO" />
             <End Role="RUBRO_PROVEEDOR" EntitySet="RUBRO_PROVEEDOR" />
           </AssociationSet>
+          <AssociationSet Name="USUARIO_ESTADO_USUARIO_FK" Association="Self.USUARIO_ESTADO_USUARIO_FK">
+            <End Role="ESTADO_USUARIO" EntitySet="ESTADO_USUARIO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
           <AssociationSet Name="USUARIO_TIPO_USUARIO_FK" Association="Self.USUARIO_TIPO_USUARIO_FK">
             <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
             <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -903,6 +954,8 @@
           <Property Name="ID_COMPRA" Type="Int32" Nullable="false" />
           <Property Name="FECHA_COMPRA" Type="DateTime" Nullable="false" />
           <Property Name="ID_PROVEEDOR" Type="Int16" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ESTADO_COMPRA" Relationship="Self.COMPRA_PROVEEDOR_EST_COM_FK" FromRole="COMPRA_PROVEEDOR" ToRole="ESTADO_COMPRA" />
           <NavigationProperty Name="PROVEEDOR" Relationship="Self.COMPRA_PROVEEDOR_PROVEEDOR_FK" FromRole="COMPRA_PROVEEDOR" ToRole="PROVEEDOR" />
           <NavigationProperty Name="PRODUCTO_PROVEEDOR" Relationship="Self.PRODUCTO_PROV_COMPRA_PROV_FK" FromRole="COMPRA_PROVEEDOR" ToRole="PRODUCTO_PROVEEDOR" />
         </EntityType>
@@ -958,8 +1011,8 @@
           <Property Name="ID_DIRECCION" Type="Int32" Nullable="false" />
           <Property Name="DIRECCION1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ID_COMUNA" Type="Int16" Nullable="false" />
-          <Property Name="RUT_CLIENTE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ID_EMPRESA" Type="Int16" Nullable="false" />
+          <Property Name="RUT_CLIENTE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ID_EMPRESA" Type="Int16" />
           <NavigationProperty Name="CLIENTE" Relationship="Self.DIRECCION_CLIENTE_FK" FromRole="DIRECCION" ToRole="CLIENTE" />
           <NavigationProperty Name="COMUNA" Relationship="Self.DIRECCION_COMUNA_FK" FromRole="DIRECCION" ToRole="COMUNA" />
           <NavigationProperty Name="EMPRESA" Relationship="Self.DIRECCION_EMPRESA_FK" FromRole="DIRECCION" ToRole="EMPRESA" />
@@ -994,6 +1047,14 @@
           <NavigationProperty Name="TIPO_EMPRESA" Relationship="Self.EMPRESA_TIPO_EMPRESA_FK" FromRole="EMPRESA" ToRole="TIPO_EMPRESA" />
           <NavigationProperty Name="FACTURA" Relationship="Self.FACTURA_EMPRESA_FK" FromRole="EMPRESA" ToRole="FACTURA" />
         </EntityType>
+        <EntityType Name="ESTADO_COMPRA">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="COMPRA_PROVEEDOR" Relationship="Self.COMPRA_PROVEEDOR_EST_COM_FK" FromRole="ESTADO_COMPRA" ToRole="COMPRA_PROVEEDOR" />
+        </EntityType>
         <EntityType Name="ESTADO_DESPACHO">
           <Key>
             <PropertyRef Name="ID_ESTADO" />
@@ -1009,6 +1070,14 @@
           <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
           <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="RECEPCION_PRODUCTO" Relationship="Self.RECEPCION_PRO_EST_RECEPCION_FK" FromRole="ESTADO_RECEPCION" ToRole="RECEPCION_PRODUCTO" />
+        </EntityType>
+        <EntityType Name="ESTADO_USUARIO">
+          <Key>
+            <PropertyRef Name="ID_ESTADO" />
+          </Key>
+          <Property Name="ID_ESTADO" Type="Int16" Nullable="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_ESTADO_USUARIO_FK" FromRole="ESTADO_USUARIO" ToRole="USUARIO" />
         </EntityType>
         <EntityType Name="FACTURA">
           <Key>
@@ -1071,15 +1140,15 @@
           <Property Name="ID_FAMILIA" Type="Int16" Nullable="false" />
           <Property Name="FECHA_VENCIMIENTO" Type="DateTime" />
           <Property Name="ID_TIPO" Type="Int16" Nullable="false" />
-          <Property Name="DESCRIPCION" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PRECIO_CLP" Type="Int32" Nullable="false" />
           <Property Name="PRECIO_USD" Type="Int32" Nullable="false" />
-          <Property Name="STOCK" Type="Int16" Nullable="false" />
+          <Property Name="STOCK" Type="Int32" Nullable="false" />
+          <Property Name="FOTO" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <NavigationProperty Name="DETALLE_ORDEN" Relationship="Self.DETALLE_ORDEN_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="DETALLE_ORDEN" />
           <NavigationProperty Name="FAMILIA_PRODUCTO" Relationship="Self.PRODUCTO_FAMILIA_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="FAMILIA_PRODUCTO" />
           <NavigationProperty Name="PROVEEDOR" Relationship="Self.PRODUCTO_PROVEEDOR_FK" FromRole="PRODUCTO" ToRole="PROVEEDOR" />
           <NavigationProperty Name="TIPO_PRODUCTO" Relationship="Self.PRODUCTO_TIPO_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="TIPO_PRODUCTO" />
-          <Property Name="FOTO" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="PRODUCTO_PROVEEDOR">
           <Key>
@@ -1185,8 +1254,10 @@
           <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CONTRASENA" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ID_TIPOUSU" Type="Int16" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="Int16" Nullable="false" />
           <NavigationProperty Name="CLIENTE" Relationship="Self.CLIENTE_USUARIO_FK" FromRole="USUARIO" ToRole="CLIENTE" />
           <NavigationProperty Name="EMPLEADO" Relationship="Self.EMPLEADO_USUARIO_FK" FromRole="USUARIO" ToRole="EMPLEADO" />
+          <NavigationProperty Name="ESTADO_USUARIO" Relationship="Self.USUARIO_ESTADO_USUARIO_FK" FromRole="USUARIO" ToRole="ESTADO_USUARIO" />
           <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.USUARIO_TIPO_USUARIO_FK" FromRole="USUARIO" ToRole="TIPO_USUARIO" />
         </EntityType>
         <Association Name="BOLETA_CLIENTE_FK">
@@ -1250,7 +1321,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DIRECCION_CLIENTE_FK">
-          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
           <End Role="DIRECCION" Type="Self.DIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CLIENTE">
@@ -1270,6 +1341,18 @@
             </Principal>
             <Dependent Role="EMPRESA">
               <PropertyRef Name="RUT_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COMPRA_PROVEEDOR_EST_COM_FK">
+          <End Role="ESTADO_COMPRA" Type="Self.ESTADO_COMPRA" Multiplicity="1" />
+          <End Role="COMPRA_PROVEEDOR" Type="Self.COMPRA_PROVEEDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_COMPRA">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="COMPRA_PROVEEDOR">
+              <PropertyRef Name="ID_ESTADO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1394,7 +1477,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="DIRECCION_EMPRESA_FK">
-          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+          <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="0..1" />
           <End Role="DIRECCION" Type="Self.DIRECCION" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EMPRESA">
@@ -1473,6 +1556,18 @@
               <PropertyRef Name="ID_ESTADO" />
             </Principal>
             <Dependent Role="RECEPCION_PRODUCTO">
+              <PropertyRef Name="ID_ESTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_ESTADO_USUARIO_FK">
+          <End Role="ESTADO_USUARIO" Type="Self.ESTADO_USUARIO" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_USUARIO">
+              <PropertyRef Name="ID_ESTADO" />
+            </Principal>
+            <Dependent Role="USUARIO">
               <PropertyRef Name="ID_ESTADO" />
             </Dependent>
           </ReferentialConstraint>
@@ -1589,8 +1684,10 @@
           <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" />
           <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
           <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" />
+          <EntitySet Name="ESTADO_COMPRA" EntityType="Self.ESTADO_COMPRA" />
           <EntitySet Name="ESTADO_DESPACHO" EntityType="Self.ESTADO_DESPACHO" />
           <EntitySet Name="ESTADO_RECEPCION" EntityType="Self.ESTADO_RECEPCION" />
+          <EntitySet Name="ESTADO_USUARIO" EntityType="Self.ESTADO_USUARIO" />
           <EntitySet Name="FACTURA" EntityType="Self.FACTURA" />
           <EntitySet Name="FAMILIA_PRODUCTO" EntityType="Self.FAMILIA_PRODUCTO" />
           <EntitySet Name="MEDIO_PAGO" EntityType="Self.MEDIO_PAGO" />
@@ -1634,6 +1731,10 @@
           <AssociationSet Name="EMPRESA_CLIENTE_FK" Association="Self.EMPRESA_CLIENTE_FK">
             <End Role="CLIENTE" EntitySet="CLIENTE" />
             <End Role="EMPRESA" EntitySet="EMPRESA" />
+          </AssociationSet>
+          <AssociationSet Name="COMPRA_PROVEEDOR_EST_COM_FK" Association="Self.COMPRA_PROVEEDOR_EST_COM_FK">
+            <End Role="ESTADO_COMPRA" EntitySet="ESTADO_COMPRA" />
+            <End Role="COMPRA_PROVEEDOR" EntitySet="COMPRA_PROVEEDOR" />
           </AssociationSet>
           <AssociationSet Name="COMPRA_PROVEEDOR_PROVEEDOR_FK" Association="Self.COMPRA_PROVEEDOR_PROVEEDOR_FK">
             <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
@@ -1702,6 +1803,10 @@
           <AssociationSet Name="RECEPCION_PRO_EST_RECEPCION_FK" Association="Self.RECEPCION_PRO_EST_RECEPCION_FK">
             <End Role="ESTADO_RECEPCION" EntitySet="ESTADO_RECEPCION" />
             <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_ESTADO_USUARIO_FK" Association="Self.USUARIO_ESTADO_USUARIO_FK">
+            <End Role="ESTADO_USUARIO" EntitySet="ESTADO_USUARIO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
           <AssociationSet Name="FACTURA_MEDIO_PAGO_FK" Association="Self.FACTURA_MEDIO_PAGO_FK">
             <End Role="MEDIO_PAGO" EntitySet="MEDIO_PAGO" />
@@ -1785,6 +1890,7 @@
                 <ScalarProperty Name="ID_COMPRA" ColumnName="ID_COMPRA" />
                 <ScalarProperty Name="FECHA_COMPRA" ColumnName="FECHA_COMPRA" />
                 <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1862,6 +1968,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ESTADO_COMPRA">
+            <EntityTypeMapping TypeName="Model.ESTADO_COMPRA">
+              <MappingFragment StoreEntitySet="ESTADO_COMPRA">
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ESTADO_DESPACHO">
             <EntityTypeMapping TypeName="Model.ESTADO_DESPACHO">
               <MappingFragment StoreEntitySet="ESTADO_DESPACHO">
@@ -1873,6 +1987,14 @@
           <EntitySetMapping Name="ESTADO_RECEPCION">
             <EntityTypeMapping TypeName="Model.ESTADO_RECEPCION">
               <MappingFragment StoreEntitySet="ESTADO_RECEPCION">
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTADO_USUARIO">
+            <EntityTypeMapping TypeName="Model.ESTADO_USUARIO">
+              <MappingFragment StoreEntitySet="ESTADO_USUARIO">
                 <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
                 <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
               </MappingFragment>
@@ -1923,17 +2045,17 @@
           <EntitySetMapping Name="PRODUCTO">
             <EntityTypeMapping TypeName="Model.PRODUCTO">
               <MappingFragment StoreEntitySet="PRODUCTO">
-                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
                 <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
                 <ScalarProperty Name="NOMBRE_PRODUCTO" ColumnName="NOMBRE_PRODUCTO" />
                 <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
                 <ScalarProperty Name="ID_FAMILIA" ColumnName="ID_FAMILIA" />
                 <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
                 <ScalarProperty Name="ID_TIPO" ColumnName="ID_TIPO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
                 <ScalarProperty Name="PRECIO_CLP" ColumnName="PRECIO_CLP" />
                 <ScalarProperty Name="PRECIO_USD" ColumnName="PRECIO_USD" />
                 <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2037,6 +2159,7 @@
                 <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
                 <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
                 <ScalarProperty Name="ID_TIPOUSU" ColumnName="ID_TIPOUSU" />
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

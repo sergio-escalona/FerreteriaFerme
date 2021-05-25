@@ -13,12 +13,16 @@ namespace FerreteriaFerme.Negocio
         private System.DateTime _FECHA_COMPRA;
         private short _ID_PROVEEDOR;
         private String _descripcionProveedor;
+        private int _ID_ESTADO;
+        private string _descripcionEstado;
 
         //Propiedades
         public int ID_COMPRA { get; set; }
         public System.DateTime FECHA_COMPRA { get; set; }
         public short ID_PROVEEDOR { get; set; }
         public String DescripcionProveedor { get { return _descripcionProveedor; } }
+        public int ID_ESTADO { get; set; }
+        public string DescripcionEstado { get { return _descripcionEstado; } }
 
         public Compra_Proveedor()
         {
@@ -31,6 +35,7 @@ namespace FerreteriaFerme.Negocio
             ID_COMPRA = 0;
             FECHA_COMPRA = DateTime.MinValue;
             ID_PROVEEDOR = 0;
+            ID_ESTADO = 0;
         }
 
         //Agregar
@@ -75,6 +80,7 @@ namespace FerreteriaFerme.Negocio
 
                 /* Carga descripción de los Tipos */
                 LeerNombreProveedor();
+                LeerNombreEstado();
 
                 return true;
             }
@@ -177,6 +183,7 @@ namespace FerreteriaFerme.Negocio
                 Compra_Proveedor negocio = new Compra_Proveedor();
                 CommonBC.Syncronize(dato, negocio);
                 negocio.LeerNombreProveedor();
+                negocio.LeerNombreEstado();
 
                 listadoEmpresa.Add(negocio);
             }
@@ -215,6 +222,21 @@ namespace FerreteriaFerme.Negocio
             else
             {
                 _descripcionProveedor = String.Empty;
+            }
+        }
+
+        //Mostrar proveedor
+        public void LeerNombreEstado()
+        {
+            Estado_Compra ec = new Estado_Compra() { ID_ESTADO = ID_ESTADO };
+
+            if (ec.Read())
+            {
+                _descripcionEstado = ec.ESTADO;
+            }
+            else
+            {
+                _descripcionEstado = String.Empty;
             }
         }
     }
