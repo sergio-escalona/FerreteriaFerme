@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_empleado" Height="450" Width="800">
+        Title="Lista_empleado" Height="450" Width="1200">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="10,57,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="10,57,0,0" VerticalAlignment="Top" Width="1172" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>

@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_direccion" Height="450" Width="800">
+        Title="Lista_direccion" Height="450" Width="1200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="31*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_direccion" HorizontalAlignment="Left" Height="264" Margin="10,73,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_direccion" HorizontalAlignment="Left" Height="264" Margin="10,73,0,0" VerticalAlignment="Top" Width="1172" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_DIRECCION}" />
-                <DataGridTextColumn Header="Dirección" Binding="{Binding Path=DIRECCION1}" />
-                <DataGridTextColumn Header="Comuna" Binding="{Binding Path=NombreComuna}" />
-                <DataGridTextColumn Header="Cliente" Binding="{Binding Path=NombreCliente}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -33,6 +33,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Dirección" Binding="{Binding Path=DIRECCION1}" />
+                <DataGridTextColumn Header="Comuna" Binding="{Binding Path=NombreComuna}" />
+                <DataGridTextColumn Header="Cliente" Binding="{Binding Path=NombreCliente}" />
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="143" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">

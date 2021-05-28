@@ -29,7 +29,7 @@ namespace FerreteriaFerme
         private void MostrarDespacho()
         {
             Despacho des = new Despacho();
-            dtg_despacho.ItemsSource = des.ReadAll();
+            dtg_despacho.ItemsSource = des.ReadRutPendientes(Login.rut);
             dtg_despacho.Items.Refresh();
         }
 

@@ -5,20 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_Recepcion" Height="450" Width="800">
+        Title="Lista_Recepcion" Height="450" Width="1000">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_recepcion" HorizontalAlignment="Left" Height="279" Margin="43,77,0,0" VerticalAlignment="Top" Width="702" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="20" FontWeight="Bold">
+        <DataGrid x:Name="dtg_recepcion" HorizontalAlignment="Left" Height="279" Margin="10,77,0,0" VerticalAlignment="Top" Width="972" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="20" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID_RECEPCION}" />
-                <DataGridTextColumn Header="Estado" Binding="{Binding Path=DescripcionEstado}" />
-                <DataGridTextColumn Header="Empleado" Binding="{Binding Path=NombreEmpleado}" />
-                <DataGridTextColumn Header="ID COMPRA" Binding="{Binding Path=ID_COMPRA}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -26,6 +22,11 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="N° Recepción" Binding="{Binding Path=ID_RECEPCION}" />
+                <DataGridTextColumn Header="Estado" Binding="{Binding Path=DescripcionEstado}" />
+                <DataGridTextColumn Header="Empleado" Binding="{Binding Path=NombreEmpleado}" />
+                <DataGridTextColumn Header="N° COMPRA" Binding="{Binding Path=ID_COMPRA}" />
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="43,377,0,0" VerticalAlignment="Top" Width="169" Click="Btn_volver_Click" FontSize="20" FontWeight="Bold">

@@ -5,21 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_modificar_cliente" Height="450" Width="800">
+        Title="Lista_modificar_cliente" Height="450" Width="1400">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_clientes" HorizontalAlignment="Left" Height="272" Margin="10,67,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_clientes" HorizontalAlignment="Left" Height="272" Margin="10,67,0,0" VerticalAlignment="Top" Width="1372" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_CLIENTE}" />
-                <DataGridTextColumn Header="Nombres" Binding="{Binding NOMBRES}" />
-                <DataGridTextColumn Header="Apellidos" Binding="{Binding APELLIDOS}" />
-                <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" />
-                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO_CLIENTE}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -41,6 +36,12 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_CLIENTE}" />
+                <DataGridTextColumn Header="Nombres" Binding="{Binding NOMBRES}" />
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding APELLIDOS}" />
+                <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" />
+                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO_CLIENTE}" />
+                
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="185" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">

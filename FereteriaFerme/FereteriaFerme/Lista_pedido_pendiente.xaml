@@ -1,16 +1,16 @@
-﻿<Window x:Class="FerreteriaFerme.Lista_modificar_proveedor"
+﻿<Window x:Class="FerreteriaFerme.Lista_pedido_pendiente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_modificar_proveedor" Height="450" Width="1200">
+        Title="Lista_pedido_pendiente" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_proveedor" HorizontalAlignment="Left" Height="273" Margin="10,72,0,0" VerticalAlignment="Top" Width="1172" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_orden" HorizontalAlignment="Left" Height="262" Margin="54,76,0,0" VerticalAlignment="Top" Width="686" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="20" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
@@ -22,20 +22,19 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="N° Proveedor" Binding="{Binding ID_PROVEEDOR}" />
-                <DataGridTextColumn Header="Nombre" Binding="{Binding NOMBRE_PROVEEDOR}" />
-                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_PROVEEDOR}" />
-                <DataGridTextColumn Header="Celular" Binding="{Binding CELULAR}" />
-                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_COMPRA}" />
+                <DataGridTextColumn Header="Fecha" Binding="{Binding FECHA_COMPRA, StringFormat=dd/MM/yyyy}" />
+                <DataGridTextColumn Header="Proveedor" Binding="{Binding DescripcionProveedor}" />
+                <DataGridTextColumn Header="Estado" Binding="{Binding DescripcionEstado}" />
                 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="155" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="54,366,0,0" VerticalAlignment="Top" Width="160" Click="Btn_volver_Click" FontSize="20" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Label Content="MODIFICAR PROVEEDOR" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="LISTADO DE PEDIDOS" HorizontalAlignment="Left" Margin="281,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -5,17 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Lista_modificar_producto" Height="450" Width="800">
+        Title="Lista_modificar_producto" Height="450" Width="1200">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="10,22,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="16" FontWeight="Bold">
+        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="10,64,0,0" VerticalAlignment="Top" Width="1172" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="16" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
 
             <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click" Content="Modificar"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID_PRODUCTO}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding NOMBRE_PRODUCTO}" />
                 <DataGridTextColumn Header="Proveedor" Binding="{Binding NombreProveedor}" />
@@ -31,13 +38,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="btn_modificar" Click="Btn_modificar_Click" Content="Modificar"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                
             </DataGrid.Columns>
 
         </DataGrid>
@@ -46,6 +47,7 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <Label Content="MODIFICAR PRODUCTO" HorizontalAlignment="Left" Margin="460,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

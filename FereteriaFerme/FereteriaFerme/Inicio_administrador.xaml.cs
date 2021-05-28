@@ -22,7 +22,7 @@ namespace FerreteriaFerme
         public Inicio_administrador()
         {
             InitializeComponent();
-            tb_nombre.Text = Login.rut;
+            tb_nombre.Text = Login.nombre;
         }
 
         private void Btn_cliente_Click(object sender, RoutedEventArgs e)

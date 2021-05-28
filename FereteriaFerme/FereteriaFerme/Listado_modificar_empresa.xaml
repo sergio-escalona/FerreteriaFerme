@@ -5,22 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Listado_modificar_empresa" Height="450" Width="800">
+        Title="Listado_modificar_empresa" Height="450" Width="1400">
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_empresas" HorizontalAlignment="Left" Height="266" Margin="10,69,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_empresas" HorizontalAlignment="Left" Height="266" Margin="10,69,0,0" VerticalAlignment="Top" Width="1372" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID_EMPRESA}" />
-                <DataGridTextColumn Header="Razon social" Binding="{Binding RAZON_SOCIAL}" />
-                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_EMPRESA}" />
-                <DataGridTextColumn Header="Tipo" Binding="{Binding DescripcionTipo}" />
-                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO_EMPRESA}" />
-                <DataGridTextColumn Header="Cliente" Binding="{Binding NombreCliente}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -35,6 +29,12 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Razon social" Binding="{Binding RAZON_SOCIAL}" />
+                <DataGridTextColumn Header="Rut" Binding="{Binding RUT_EMPRESA}" />
+                <DataGridTextColumn Header="Tipo" Binding="{Binding DescripcionTipo}" />
+                <DataGridTextColumn Header="Correo" Binding="{Binding CORREO_EMPRESA}" />
+                <DataGridTextColumn Header="Cliente" Binding="{Binding NombreCliente}" />
+                
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="164" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">

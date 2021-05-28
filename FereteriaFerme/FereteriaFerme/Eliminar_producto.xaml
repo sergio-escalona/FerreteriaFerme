@@ -5,17 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Eliminar_producto" Height="450" Width="800">
+        Title="Eliminar_producto" Height="450" Width="1200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="659*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <SolidColorBrush Color="#FF007BFF"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="10,22,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="16" FontWeight="Bold">
+        <DataGrid x:Name="dtg_productos" HorizontalAlignment="Left" Height="308" Margin="10,52,0,0" VerticalAlignment="Top" Width="1172" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
 
             <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btn_eliminar" Click="Btn_eliminar_Click" Content="Eliminar"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID_PRODUCTO}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding NOMBRE_PRODUCTO}" />
                 <DataGridTextColumn Header="Proveedor" Binding="{Binding NombreProveedor}" />
@@ -31,13 +42,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="btn_eliminar" Click="Btn_eliminar_Click" Content="Eliminar"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
 
         </DataGrid>
@@ -46,6 +51,7 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <Label Content="ELIMINAR PRODUCTO" HorizontalAlignment="Left" Margin="460,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

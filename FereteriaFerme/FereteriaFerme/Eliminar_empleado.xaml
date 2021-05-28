@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FerreteriaFerme"
         mc:Ignorable="d"
-        Title="Eliminar_empleado" Height="450" Width="800">
+        Title="Eliminar_empleado" Height="450" Width="1200">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="23*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="10,57,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold">
+        <DataGrid x:Name="dtg_empleados" HorizontalAlignment="Left" Height="297" Margin="10,57,0,0" VerticalAlignment="Top" Width="1172" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>
@@ -27,7 +31,7 @@
                 <DataGridTextColumn Header="Apellidos" Binding="{Binding APELLIDOS_EMPLEADO}" />
                 <DataGridTextColumn Header="Cargo" Binding="{Binding DescripcionCargo}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding NombreUsuario}" />
-                
+
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="171" Click="Btn_volver_Click" FontSize="24" FontWeight="Bold">
@@ -35,7 +39,7 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Label Content="ELIMINAR EMPLEADO" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="ELIMINAR EMPLEADO" HorizontalAlignment="Left" Margin="460,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -90,8 +90,8 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Lista_cliente lic = new Lista_cliente();
-            lic.Show();
+            Lista_modificar_cliente lmc = new Lista_modificar_cliente();
+            lmc.Show();
             this.Hide();
         }
     }

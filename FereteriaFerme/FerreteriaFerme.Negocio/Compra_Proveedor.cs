@@ -239,5 +239,24 @@ namespace FerreteriaFerme.Negocio
                 _descripcionEstado = String.Empty;
             }
         }
+
+        //Buscar proveedor
+        public List<Compra_Proveedor> ReadCompraPendiente()
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.COMPRA_PROVEEDOR> listaDatos =
+                    bbdd.COMPRA_PROVEEDOR.Where(b => b.ID_ESTADO != 3).ToList<Datos.COMPRA_PROVEEDOR>();
+
+                List<Compra_Proveedor> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Compra_Proveedor>();
+            }
+        }
     }
 }

@@ -221,5 +221,23 @@ namespace FerreteriaFerme.Negocio
                 _nombreEmpleado = String.Empty;
             }
         }
+
+        public List<Recepcion_Producto> ReadRutSinTerminar(string rut)
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.RECEPCION_PRODUCTO> listaDatos =
+                    bbdd.RECEPCION_PRODUCTO.Where(b => b.RUT_EMPLEADO == rut).Where(c => c.ID_ESTADO != 2).ToList<Datos.RECEPCION_PRODUCTO>();
+
+                List<Recepcion_Producto> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Recepcion_Producto>();
+            }
+        }
     }
 }

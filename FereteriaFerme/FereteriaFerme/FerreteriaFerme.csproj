@@ -136,6 +136,9 @@
     <Compile Include="Inicio_bodeguero.xaml.cs">
       <DependentUpon>Inicio_bodeguero.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Inicio_despachador.xaml.cs">
+      <DependentUpon>Inicio_despachador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inicio_otros.xaml.cs">
       <DependentUpon>Inicio_otros.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,9 @@
     <Compile Include="Lista_orden_proveedor.xaml.cs">
       <DependentUpon>Lista_orden_proveedor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lista_pedido_pendiente.xaml.cs">
+      <DependentUpon>Lista_pedido_pendiente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lista_producto_proveedor.xaml.cs">
       <DependentUpon>Lista_producto_proveedor.xaml</DependentUpon>
     </Compile>
@@ -216,6 +222,9 @@
     </Compile>
     <Compile Include="Modificar_empresa.xaml.cs">
       <DependentUpon>Modificar_empresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar_orden_proveedor.xaml.cs">
+      <DependentUpon>Modificar_orden_proveedor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modificar_producto.xaml.cs">
       <DependentUpon>Modificar_producto.xaml</DependentUpon>
@@ -319,6 +328,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Inicio_despachador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inicio_otros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -387,6 +400,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Lista_pedido_pendiente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lista_producto.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -436,6 +453,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modificar_empresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modificar_orden_proveedor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

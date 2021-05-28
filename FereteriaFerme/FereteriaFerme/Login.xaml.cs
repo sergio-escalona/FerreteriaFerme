@@ -26,6 +26,7 @@ namespace FerreteriaFerme
         }
 
         public static string rut;
+        public static string nombre;
 
         private void Btn_ingresar_Click(object sender, RoutedEventArgs e)
         {
@@ -43,7 +44,10 @@ namespace FerreteriaFerme
                 {
                     if (usr.NOMBRE_USUARIO==txt_usuario.Text && usr.CONTRASENA==txt_contraseña.Password)
                     {
-                        rut = usr.NOMBRE_USUARIO;
+                        nombre = usr.NOMBRE_USUARIO;
+
+                        Empleado emp = new Empleado();
+                        rut = emp.ReadUsuario(usr.ID_USUARIO).First().RUT_EMPLEADO;
 
                         if (usr.ID_TIPOUSU == 1)
                         {
@@ -54,14 +58,22 @@ namespace FerreteriaFerme
 
                         else if (usr.ID_TIPOUSU == 2)
                         {
-                            MessageBoxResult mal = MessageBox.Show("bienvenido vendedor", "Error",
-                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                            Inicio_otros io = new Inicio_otros();
+                            io.Show();
+                            this.Hide();
                         }
 
                         else if (usr.ID_TIPOUSU == 3)
                         {                            
                             Inicio_bodeguero ib = new Inicio_bodeguero();
                             ib.Show();
+                            this.Hide();
+                        }
+
+                        else if  (usr.ID_TIPOUSU == 5)
+                        {
+                            Inicio_despachador ind = new Inicio_despachador();
+                            ind.Show();
                             this.Hide();
                         }
 

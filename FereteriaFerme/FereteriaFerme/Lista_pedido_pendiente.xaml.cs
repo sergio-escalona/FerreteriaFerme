@@ -16,37 +16,38 @@ using System.Windows.Shapes;
 namespace FerreteriaFerme
 {
     /// <summary>
-    /// Lógica de interacción para Lista_Recepcion.xaml
+    /// Lógica de interacción para Lista_pedido_pendiente.xaml
     /// </summary>
-    public partial class Lista_Recepcion : Window
+    public partial class Lista_pedido_pendiente : Window
     {
-        public Lista_Recepcion()
+        public Lista_pedido_pendiente()
         {
             InitializeComponent();
-            MostrarRecepcion();
+            MostrarOrden();
         }
 
-        private void MostrarRecepcion()
+        private void MostrarOrden()
         {
-            Recepcion_Producto rep = new Recepcion_Producto();
-            dtg_recepcion.ItemsSource = rep.ReadRutSinTerminar(Login.rut);
-            dtg_recepcion.Items.Refresh();
+            Compra_Proveedor cp = new Compra_Proveedor();
+            dtg_orden.ItemsSource = cp.ReadCompraPendiente();
+            dtg_orden.Items.Refresh();
         }
 
         private void Btn_modificar_Click(object sender, RoutedEventArgs e)
         {
-            Recepcion_Producto fila = (Recepcion_Producto)dtg_recepcion.SelectedItem;
-            int id = fila.ID_RECEPCION;
-            Modificar_recepcion mor = new Modificar_recepcion(id);
-            mor.Show();
+            Compra_Proveedor fila = (Compra_Proveedor)dtg_orden.SelectedItem;
+            int id = fila.ID_COMPRA;
+            Modificar_orden_proveedor mop = new Modificar_orden_proveedor(id);
+            mop.Show();
             this.Hide();
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
-            Inicio_bodeguero ib = new Inicio_bodeguero();
-            ib.Show();
+            Bodeguero_pedido bp = new Bodeguero_pedido();
+            bp.Show();
             this.Hide();
         }
+
     }
 }

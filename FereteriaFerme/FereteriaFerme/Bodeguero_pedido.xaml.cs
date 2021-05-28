@@ -47,7 +47,9 @@ namespace FerreteriaFerme
 
         private void Btn_modificar_Click(object sender, RoutedEventArgs e)
         {
-
+            Lista_pedido_pendiente lpp = new Lista_pedido_pendiente();
+            lpp.Show();
+            this.Hide();
         }
     }
 }

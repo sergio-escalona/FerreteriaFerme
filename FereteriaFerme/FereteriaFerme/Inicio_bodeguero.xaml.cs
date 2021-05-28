@@ -22,7 +22,7 @@ namespace FerreteriaFerme
         public Inicio_bodeguero()
         {
             InitializeComponent();
-            tb_nombre.Text = Login.rut;
+            tb_nombre.Text = Login.nombre;
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)

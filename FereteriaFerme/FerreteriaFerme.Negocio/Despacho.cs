@@ -247,5 +247,23 @@ namespace FerreteriaFerme.Negocio
             }
         }
 
+        public List<Despacho> ReadRutPendientes(string rut)
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.DESPACHO> listaDatos =
+                    bbdd.DESPACHO.Where(b => b.RUT_EMPLEADO == rut).Where(c => c.ID_ESTADO != 4).ToList<Datos.DESPACHO>();
+
+                List<Despacho> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Despacho>();
+            }
+        }
+
     }
 }
