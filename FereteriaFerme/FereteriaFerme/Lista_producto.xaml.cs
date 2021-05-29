@@ -22,12 +22,18 @@ namespace FereteriaFerme
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(int origen)
         {
             InitializeComponent();
             MostrarProducto();
-            Stock_Critico();
+            if (origen == 1)
+            {
+                Stock_Critico();
+            }            
+            this.origen = origen;
         }
+
+        int origen;
 
         private void MostrarProducto()
         {
@@ -78,13 +84,41 @@ namespace FereteriaFerme
         private void Stock_Critico()
         {
             Producto pro = new Producto();
-            int contar = pro.Stock().Count;
-            if (contar > 0)
+            int contar_criticos = pro.Stock().Count;
+            if (contar_criticos > 0)
             {
-                MessageBoxResult critico = MessageBox.Show("Desea ver productos con stock crítico?", "Hay "+contar.ToString()+" productos con stock crítico", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                MessageBoxResult critico = MessageBox.Show("Hay " + contar_criticos.ToString() + " productos con stock crítico", "¿Desea ver productos con stock crítico?", MessageBoxButton.YesNo, MessageBoxImage.Information);
                 if (critico == MessageBoxResult.Yes)
                 {
+                    Lista_stock_critico lsc = new Lista_stock_critico();
+                    lsc.ShowDialog();
+                    this.Hide();
+                }
 
+                else
+                {
+                    Producto_Vencido();
+                }
+            }
+
+            else
+            {
+                Producto_Vencido();
+            }
+        }
+
+        private void Producto_Vencido()
+        {
+            Producto pro = new Producto();
+            int contar_vencidos = pro.Vencimiento().Count;
+            if (contar_vencidos > 0)
+            {
+                MessageBoxResult critico = MessageBox.Show("Hay " + contar_vencidos.ToString() + " productos vencidos", "¿Desea ver productos vencidos?", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                if (critico == MessageBoxResult.Yes)
+                {
+                    Lista_vencidos lv = new Lista_vencidos();
+                    lv.ShowDialog();
+                    this.Hide();
                 }
             }
         }

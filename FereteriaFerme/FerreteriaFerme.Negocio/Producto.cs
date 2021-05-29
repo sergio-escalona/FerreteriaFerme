@@ -356,5 +356,23 @@ namespace FerreteriaFerme.Negocio
                 return new List<Producto>();
             }
         }
+
+        public List<Producto> Vencimiento()
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.PRODUCTO> listaDatos =
+                    bbdd.PRODUCTO.Where(b => b.FECHA_VENCIMIENTO < DateTime.Now).Where(c => c.STOCK > 0).ToList<Datos.PRODUCTO>();
+
+                List<Producto> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Producto>();
+            }
+        }
     }
 }

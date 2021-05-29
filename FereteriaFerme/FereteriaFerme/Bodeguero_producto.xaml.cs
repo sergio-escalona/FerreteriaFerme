@@ -41,7 +41,7 @@ namespace FerreteriaFerme
 
         private void Btn_listar_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
+            MainWindow mw = new MainWindow(1);
             mw.Show();
             this.Hide();
         }

@@ -34,7 +34,7 @@ namespace FerreteriaFerme
 
         private void Btn_listarProducto_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow lispro = new MainWindow();
+            MainWindow lispro = new MainWindow(2);
             lispro.Show();
             this.Hide();
         }
