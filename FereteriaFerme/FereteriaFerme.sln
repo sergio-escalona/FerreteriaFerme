@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerreteriaFerme.Negocio", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerreteriaFerme.Datos", "FerreteriaFerme.Datos\FerreteriaFerme.Datos.csproj", "{2182454F-697A-430E-8B68-04CFAEBE5463}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerreteriaFerme.NegocioTests", "FerreteriaFerme.NegocioTests\FerreteriaFerme.NegocioTests.csproj", "{8E0C9DD5-E65D-4ABF-A14D-13A294D8D54E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2182454F-697A-430E-8B68-04CFAEBE5463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2182454F-697A-430E-8B68-04CFAEBE5463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2182454F-697A-430E-8B68-04CFAEBE5463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E0C9DD5-E65D-4ABF-A14D-13A294D8D54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E0C9DD5-E65D-4ABF-A14D-13A294D8D54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E0C9DD5-E65D-4ABF-A14D-13A294D8D54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E0C9DD5-E65D-4ABF-A14D-13A294D8D54E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
