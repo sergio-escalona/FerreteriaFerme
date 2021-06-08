@@ -47,6 +47,7 @@
             </Button.BorderBrush>
         </Button>
         <Label Content="5." HorizontalAlignment="Left" Margin="253,308,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Image Margin="625,0,0,355" Source="Image1.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

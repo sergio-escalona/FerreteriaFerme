@@ -17,7 +17,7 @@
             </Button.BorderBrush>
         </Button>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="15,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.385,-0.218" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="31" Margin="128,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" RenderTransformOrigin="0.344,-3.686">
+        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="31" Margin="128,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" RenderTransformOrigin="0.344,-3.686" FontSize="20">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </TextBox.BorderBrush>
@@ -53,19 +53,19 @@
             </ComboBox.BorderBrush>
         </ComboBox>
         <Label Content="Descripción" HorizontalAlignment="Left" Margin="15,227,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="txt_descripcion" HorizontalAlignment="Left" Height="53" Margin="142,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="453">
+        <TextBox x:Name="txt_descripcion" HorizontalAlignment="Left" Height="53" Margin="142,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="453" FontSize="20">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </TextBox.BorderBrush>
         </TextBox>
         <Label Content="Precio CLP" HorizontalAlignment="Left" Margin="15,292,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="txt_clp" HorizontalAlignment="Left" Height="31" Margin="142,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_clp_Validacion">
+        <TextBox x:Name="txt_clp" HorizontalAlignment="Left" Height="31" Margin="142,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_clp_Validacion" FontSize="20">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </TextBox.BorderBrush>
         </TextBox>
         <Label Content="Precio USD" HorizontalAlignment="Left" Margin="311,292,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="txt_usd" HorizontalAlignment="Left" Height="31" Margin="445,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_usd_Validacion">
+        <TextBox x:Name="txt_usd" HorizontalAlignment="Left" Height="31" Margin="445,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txt_usd_Validacion" FontSize="20">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </TextBox.BorderBrush>
