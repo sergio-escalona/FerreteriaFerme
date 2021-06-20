@@ -30,7 +30,7 @@ namespace FerreteriaFerme
 
         private void MostrarResumen()
         {
-            int periodo = int.Parse(DateTime.Now.ToString("MMyyyy"));
+            int periodo = int.Parse(DateTime.Now.AddMonths(-1).ToString("MMyyyy"));
             Resumen_Productos rep = new Resumen_Productos();
             dtg_resumen.ItemsSource = rep.ReadPeriodo(periodo);
             dtg_resumen.Items.Refresh();
@@ -45,7 +45,7 @@ namespace FerreteriaFerme
 
         private void Btn_excel_Click(object sender, RoutedEventArgs e)
         {
-            string periodo = DateTime.Now.ToString("MMyyyy");
+            string periodo = DateTime.Now.AddMonths(-1).ToString("MMyyyy");
             dtg_resumen.SelectAllCells();
             dtg_resumen.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
             ApplicationCommands.Copy.Execute(null, dtg_resumen);
