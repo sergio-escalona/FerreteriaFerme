@@ -37,5 +37,12 @@ namespace FerreteriaFerme
             ia.Show();
             this.Hide();
         }
+
+        private void Btn_resumen_Click(object sender, RoutedEventArgs e)
+        {
+            Lista_resumen lr = new Lista_resumen();
+            lr.Show();
+            this.Hide();
+        }
     }
 }

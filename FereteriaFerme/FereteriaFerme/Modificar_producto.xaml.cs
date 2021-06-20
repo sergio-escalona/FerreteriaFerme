@@ -120,6 +120,13 @@ namespace FerreteriaFerme
                         vencimiento = null;
                     }
 
+                    string directorio = "C:\\productos";
+                    string path = System.IO.Path.Combine(directorio, Concatenar((short)cb_proveedor.SelectedValue, (short)cb_familia.SelectedValue, vencimiento, (short)cb_tipo.SelectedValue) + ".png");
+                    var encoder = new PngBitmapEncoder();
+                    encoder.Frames.Add(BitmapFrame.Create((BitmapSource)img_producto.Source));
+                    using (FileStream stream = new FileStream(path, FileMode.Create))
+                        encoder.Save(stream);
+
                     Producto prd = new Producto()
                     {
                         ID_PRODUCTO = id,
@@ -235,6 +242,33 @@ namespace FerreteriaFerme
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        //Concatenador de id producto
+        static long Concatenar(short proveedor, short familia, DateTime? vencimiento, short tipo)
+        {
+            // Convierte los valores a string
+            String s1 = proveedor.ToString();
+            String s2 = familia.ToString();
+            String s3;
+            if (vencimiento == null)
+            {
+                s3 = "00000000";
+            }
+            else
+            {
+                s3 = vencimiento?.ToString("ddMMyyyy");
+            }
+            String s4 = tipo.ToString();
+
+            // Concatena los strings
+            String s = s1 + s2 + s3 + s4;
+
+            // Convierte el string a int
+            long c = long.Parse(s);
+
+            // Retorna la id
+            return c;
         }
     }
 }

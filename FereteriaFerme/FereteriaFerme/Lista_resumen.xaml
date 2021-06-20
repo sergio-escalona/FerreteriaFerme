@@ -1,0 +1,38 @@
+﻿<Window x:Class="FerreteriaFerme.Lista_resumen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FerreteriaFerme"
+        mc:Ignorable="d"
+        Title="Lista_resumen" Height="450" Width="1200">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
+        </Grid.Background>
+        <DataGrid x:Name="dtg_resumen" HorizontalAlignment="Left" Height="308" Margin="10,64,-390,0" VerticalAlignment="Top" Width="1172" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="16" FontWeight="Bold">
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </DataGrid.BorderBrush>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Periodo" Binding="{Binding MES_ANNO}" />
+                <DataGridTextColumn Header="ID Producto" Binding="{Binding ID_PRODUCTO}" />
+                <DataGridTextColumn Header="Producto" Binding="{Binding NOMBRE_PRODUCTO}" />
+                <DataGridTextColumn Header="Tipo" Binding="{Binding TIPO_PRODUCTO}" />
+                <DataGridTextColumn Header="Familia" Binding="{Binding FAMILIA_PRODUCTO}" />
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding CANTIDAD}" />
+                
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" Width="178" RenderTransformOrigin="0.373,-0.143" Click="Btn_volver_Click" FontSize="20" FontWeight="Bold">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="RESUMEN MENSUAL" HorizontalAlignment="Left" Margin="460,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button x:Name="btn_excel" Content="GENERAR EXCEL" HorizontalAlignment="Left" Margin="474,377,0,0" VerticalAlignment="Top" Width="250" Height="33" FontSize="20" FontWeight="Bold" Click="Btn_excel_Click"/>
+
+    </Grid>
+</Window>

@@ -30,6 +30,20 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <Button x:Name="btn_resumen" Content="RESUMEN MENSUAL" HorizontalAlignment="Left" Margin="294,131,0,0" VerticalAlignment="Top" Width="274" FontSize="24" FontWeight="Bold" Click="Btn_resumen_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource Bordes}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="2." HorizontalAlignment="Left" Margin="253,131,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
     </Grid>
 </Window>

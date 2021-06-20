@@ -202,6 +202,9 @@
     <Compile Include="Lista_Recepcion.xaml.cs">
       <DependentUpon>Lista_Recepcion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lista_resumen.xaml.cs">
+      <DependentUpon>Lista_resumen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lista_stock_critico.xaml.cs">
       <DependentUpon>Lista_stock_critico.xaml</DependentUpon>
     </Compile>
@@ -431,6 +434,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Lista_Recepcion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lista_resumen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
