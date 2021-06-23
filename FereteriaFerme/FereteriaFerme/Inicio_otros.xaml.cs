@@ -26,7 +26,14 @@ namespace FerreteriaFerme
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)
         {
+            Login log = new Login();
+            log.Show();
+            this.Hide();
+        }
 
+        private void Btn_web_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://127.0.0.1:8000");
         }
     }
 }
