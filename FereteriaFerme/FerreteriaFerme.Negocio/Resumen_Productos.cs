@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Objects.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -199,6 +200,25 @@ namespace FerreteriaFerme.Negocio
             {
                 List<Datos.RESUMEN_PRODUCTOS> listaDatos =
                     bbdd.RESUMEN_PRODUCTOS.Where(b => b.MES_ANNO == periodo).ToList<Datos.RESUMEN_PRODUCTOS>();
+
+                List<Resumen_Productos> listaNegocio = GenerarListado(listaDatos);
+                return listaNegocio;
+            }
+            catch (Exception ex)
+            {
+                return new List<Resumen_Productos>();
+            }
+        }
+
+        //Buscar año
+        public List<Resumen_Productos> ReadAño(int anno)
+        {
+            Datos.FerreteriaFermeEntities bbdd = new Datos.FerreteriaFermeEntities();
+
+            try
+            {
+                List<Datos.RESUMEN_PRODUCTOS> listaDatos =
+                    bbdd.RESUMEN_PRODUCTOS.Where(b => b.MES_ANNO == anno).ToList<Datos.RESUMEN_PRODUCTOS>();
 
                 List<Resumen_Productos> listaNegocio = GenerarListado(listaDatos);
                 return listaNegocio;

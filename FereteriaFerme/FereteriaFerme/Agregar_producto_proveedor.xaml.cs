@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -116,6 +117,99 @@ namespace FerreteriaFerme
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Btn_enviar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                short proveedor = 0;
+                string nombre = string.Empty;
+                string correo = string.Empty;
+
+                Producto_Proveedor prp = new Producto_Proveedor();
+
+                if (prp.ReadCompra(id).Count > 0)
+                {
+                    Compra_Proveedor cop = new Compra_Proveedor()
+                    {
+                        ID_COMPRA = id
+                    };
+
+                    if (cop.Read())
+                    {
+                        proveedor = cop.ID_PROVEEDOR;
+                    }
+
+                    Proveedor pro = new Proveedor()
+                    {
+                        ID_PROVEEDOR = proveedor
+                    };
+
+                    if (pro.Read())
+                    {
+                        nombre = pro.NOMBRE_PROVEEDOR;
+                        correo = pro.CORREO;
+                    }
+
+                    string periodo = DateTime.Now.ToString("ddMMyyyy");
+                    dtg_producto.SelectAllCells();
+                    dtg_producto.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+                    ApplicationCommands.Copy.Execute(null, dtg_producto);
+                    String resultat = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+                    String result = (string)Clipboard.GetData(DataFormats.Text);
+                    dtg_producto.UnselectAllCells();
+                    System.IO.StreamWriter file1 = new System.IO.StreamWriter(@"C:\productos\"+ nombre + "_" + periodo + ".xls");
+                    file1.WriteLine(result.Replace(',', ' '));
+                    file1.Close();
+
+                    MailMessage mail = new MailMessage();
+                    
+                    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                    //Correo origen
+                    mail.From = new MailAddress("proyecto.ferme@gmail.com");
+                    //Correo destino
+                    mail.To.Add(correo);
+                    //Asunto
+                    mail.Subject = "Ferretria Ferme - Orden de productos";
+                    //Detalle del correo
+                    StringBuilder sbBody = new StringBuilder();
+                    //Cada uno es una línea
+                    sbBody.AppendLine("Estimado "+ nombre + ",");
+
+                    sbBody.AppendLine("Ferreteria Ferme ha solicitado los productos adjuntados en el archivo excel");
+
+                    sbBody.AppendLine("Saludos Cordiales");
+
+                    sbBody.AppendLine("Ferreteria Ferme");
+
+                    mail.Body = sbBody.ToString();
+                    //Archivo adjunto
+                    System.Net.Mail.Attachment attachment = new System.Net.Mail.Attachment(@"C:\productos\" + pro.NOMBRE_PROVEEDOR + "_" + periodo + ".xls");
+
+                    mail.Attachments.Add(attachment);
+
+                    //Colocar contraseña
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("proyecto.ferme@gmail.com", "");
+                    
+                    SmtpServer.Port = 587;
+                    SmtpServer.EnableSsl = true;
+
+                    SmtpServer.Send(mail);
+                    MessageBox.Show("Orden enviada");
+                }
+
+                else
+                {
+                    MessageBoxResult mal = MessageBox.Show("Debe ingresar al menos un producto para enviar la solicitud",
+                        "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
