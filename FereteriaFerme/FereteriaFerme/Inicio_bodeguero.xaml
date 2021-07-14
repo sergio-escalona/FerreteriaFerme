@@ -15,7 +15,7 @@
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="BIENVENIDO" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="357"><Run Text="BIENVENIDO"/><Run Text=" BODEGUERO"/></TextBlock>
         <TextBlock x:Name="tb_nombre" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="273" Foreground="#FF0000F3"/>
         <Button x:Name="btn_producto" Content="PRODUCTOS" HorizontalAlignment="Left" Margin="294,82,0,0" VerticalAlignment="Top" Width="211" FontSize="24" FontWeight="Bold" Click="Btn_producto_Click">
             <Button.Background>

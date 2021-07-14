@@ -118,7 +118,7 @@ namespace FerreteriaFerme
                     vencimiento = null;
                 }
 
-                string directorio = "C:\\productos";
+                string directorio = "C:\\Users\\CASA\\Downloads\\Fermefix - carro decente\\Fermefix\\app\\static\\app\\img";
                 string path = System.IO.Path.Combine(directorio, Concatenar((short)cb_proveedor.SelectedValue, (short)cb_familia.SelectedValue, vencimiento, (short)cb_tipo.SelectedValue) + ".png");
                 var encoder = new PngBitmapEncoder();
                 encoder.Frames.Add(BitmapFrame.Create((BitmapSource)img_producto.Source));

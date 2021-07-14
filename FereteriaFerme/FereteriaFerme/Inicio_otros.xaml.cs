@@ -22,6 +22,7 @@ namespace FerreteriaFerme
         public Inicio_otros()
         {
             InitializeComponent();
+            tb_nombre.Text = Login.nombre;
         }
 
         private void Btn_volver_Click(object sender, RoutedEventArgs e)

@@ -22,6 +22,7 @@ namespace FerreteriaFerme
         public Inicio_despachador()
         {
             InitializeComponent();
+            tb_nombre.Text = Login.nombre;
         }
 
         private void Btn_listar_Click(object sender, RoutedEventArgs e)

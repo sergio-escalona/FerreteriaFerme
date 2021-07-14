@@ -10,7 +10,7 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <DataGrid x:Name="dtg_despacho" HorizontalAlignment="Left" Height="270" Margin="10,66,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True">
+        <DataGrid x:Name="dtg_despacho" HorizontalAlignment="Left" Height="270" Margin="10,66,0,0" VerticalAlignment="Top" Width="772" AutoGenerateColumns="False" GridLinesVisibility="All" IsReadOnly="True" FontSize="20" FontWeight="Bold">
             <DataGrid.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </DataGrid.BorderBrush>

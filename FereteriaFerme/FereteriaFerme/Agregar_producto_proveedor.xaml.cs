@@ -189,7 +189,7 @@ namespace FerreteriaFerme
 
                     mail.Attachments.Add(attachment);
 
-                    //Colocar contraseña
+                    //RECORDATORIO: Colocar contraseña
                     SmtpServer.Credentials = new System.Net.NetworkCredential("proyecto.ferme@gmail.com", "");
                     
                     SmtpServer.Port = 587;

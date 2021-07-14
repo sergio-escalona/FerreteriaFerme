@@ -44,10 +44,9 @@ namespace FerreteriaFerme
                 {
                     if (usr.NOMBRE_USUARIO==txt_usuario.Text && usr.CONTRASENA==txt_contraseña.Password)
                     {
-                        nombre = usr.NOMBRE_USUARIO;
-
                         Empleado emp = new Empleado();
                         rut = emp.ReadUsuario(usr.ID_USUARIO).First().RUT_EMPLEADO;
+                        nombre = emp.ReadUsuario(usr.ID_USUARIO).First().NombreCompleto;
 
                         if (usr.ID_TIPOUSU == 1)
                         {

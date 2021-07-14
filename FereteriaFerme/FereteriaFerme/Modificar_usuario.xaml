@@ -10,40 +10,41 @@
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource ColorPrincipal}"/>
         </Grid.Background>
-        <Label Content="Nombre Usuario" HorizontalAlignment="Left" Margin="229,108,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_usuario" HorizontalAlignment="Left" Height="23" Margin="368,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+        <Label Content="Nombre Usuario" HorizontalAlignment="Left" Margin="188,95,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <TextBox x:Name="txt_usuario" HorizontalAlignment="Left" Height="36" Margin="402,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" FontSize="20" FontWeight="Bold">
             <TextBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="229,151,0,0" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="txt_contrasena1" HorizontalAlignment="Left" Margin="368,151,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="188,138,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <PasswordBox x:Name="txt_contrasena1" HorizontalAlignment="Left" Margin="402,138,0,0" VerticalAlignment="Top" Width="215" FontSize="20" FontWeight="Bold" Height="39">
             <PasswordBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </PasswordBox.BorderBrush>
         </PasswordBox>
-        <Label Content="Repetir contraseña" HorizontalAlignment="Left" Margin="229,194,0,0" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="txt_contrasena2" HorizontalAlignment="Left" Margin="368,200,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Repetir contraseña" HorizontalAlignment="Left" Margin="188,181,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <PasswordBox x:Name="txt_contrasena2" HorizontalAlignment="Left" Margin="402,187,0,0" VerticalAlignment="Top" Width="215" FontSize="20" FontWeight="Bold" Height="33">
             <PasswordBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </PasswordBox.BorderBrush>
         </PasswordBox>
-        <Label Content="Tipo usuario" HorizontalAlignment="Left" Margin="229,242,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_tipo" HorizontalAlignment="Left" Margin="368,242,0,0" VerticalAlignment="Top" Width="120">
+        <Label Content="Tipo usuario" HorizontalAlignment="Left" Margin="188,229,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_tipo" HorizontalAlignment="Left" Margin="402,229,0,0" VerticalAlignment="Top" Width="215" FontSize="20" FontWeight="Bold" Height="39">
             <ComboBox.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </ComboBox.BorderBrush>
         </ComboBox>
-        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="328,323,0,0" VerticalAlignment="Top" Width="75" Click="Btn_guardar_Click">
+        <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Margin="328,323,0,0" VerticalAlignment="Top" Width="133" Click="Btn_guardar_Click" FontSize="22" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="41,367,0,0" VerticalAlignment="Top" Width="75" Click="Btn_volver_Click">
+        <Button x:Name="btn_volver" Content="Volver" HorizontalAlignment="Left" Margin="41,367,0,0" VerticalAlignment="Top" Width="143" Click="Btn_volver_Click" FontSize="22" FontWeight="Bold">
             <Button.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource Bordes}"/>
             </Button.BorderBrush>
         </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="238,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"><Run Text="MODIFICAR "/><Run Text="USUARIO"/></TextBlock>
 
     </Grid>
 </Window>

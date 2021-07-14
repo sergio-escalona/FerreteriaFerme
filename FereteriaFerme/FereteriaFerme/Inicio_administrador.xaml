@@ -10,7 +10,7 @@
         <Grid.Background>
             <SolidColorBrush Color="#FF007BFF"/>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="BIENVENIDO" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="378"><Run Text="BIENVENIDO"/><Run Text=" ADMINISTRADOR"/></TextBlock>
         <TextBlock x:Name="tb_nombre" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="273" Foreground="#FF0000F3"/>
         <Button x:Name="btn_proveedor" Content="PROVEEDOR" HorizontalAlignment="Left" Margin="294,83,0,0" VerticalAlignment="Top" Width="260" Height="38" FontSize="24" FontWeight="Bold" Click="Btn_proveedor_Click">
             <Button.BorderBrush>
